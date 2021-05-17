@@ -1,0 +1,236 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2>Prototipo</h2>
+            <h4>Bienvenido, en este apartado se dara un acercamento sobre la relacion de la herramienta seleccionada
+                para la
+                construcción de pruebas unitarias y el prototipo de software propuesto </h4>
+            <h4>Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> las herramientas seleccionada segun la
+                arquitectura del prototipo propuesta seria <span class="junit" title="Junit"></span></h4>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid">
+            <section class="mgt0">
+                <h2 class="fragment highlight-blue">Junit</h2>
+                <p [ngStyle]="{'color': getRandom(1)}"></p>
+                <p class="fragment fade-up">Prototipo</p>
+                <p><span class="fragment step-fade-in-then-out">Para el desarrollo del prototipo se escogió la
+                        herramienta(framework) Junit, debido a que java es el lenguaje de programación seleccionado en
+                        la implementación del lado del servidor</span>
+                    <span class="fragment step-fade-in-then-out">Las pruebas unitarias del lado del servidor hacen parte
+                        del
+                        engranaje <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span></span>
+                    <span class="fragment step-fade-in-then-out">Por este motivo y para este ejemplo en particular es
+                        necesario que se realicen de forma satisfactoria para poder finalizar los procesos de pipeline
+                        en el
+                        proceso de orquestación</span>
+                    <span class="fragment step-fade-in-then-out">Las pruebas construidas son basicas con el objetivo de
+                        dar
+                        a conocer el funcionamiento de la herramienta y su integración, a continuación se presenta un
+                        ejemplo de codigo desarrollado</span>
+                </p>
+            </section>
+            <section class="mgt0">
+                <p>Archivo de construcción de pruebas: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">PrototipoTest.java</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|150">
+                    package com.example.demo;
+
+                    import static org.junit.Assert.assertEquals;
+                    import static org.junit.Assert.assertNotNull;
+                    
+                    import java.util.List;
+                    import java.util.stream.Collectors;
+                    
+                    import org.junit.Test;
+                    import org.junit.runner.RunWith;
+                    import org.mockito.Mockito;
+                    import org.powermock.api.mockito.PowerMockito;
+                    import org.powermock.core.classloader.annotations.PowerMockIgnore;
+                    import org.powermock.core.classloader.annotations.PrepareForTest;
+                    import org.powermock.modules.junit4.PowerMockRunner;
+                    import org.springframework.http.ResponseEntity;
+                    import org.springframework.security.authentication.AuthenticationManager;
+                    import org.springframework.security.core.Authentication;
+                    
+                    import com.google.common.collect.Lists;
+                    import com.openpojo.reflection.PojoClass;
+                    import com.openpojo.reflection.impl.PojoClassFactory;
+                    import com.example.demo.api.MainController;
+                    import com.example.demo.dto.LoginRequest;
+                    import com.example.demo.dto.Pagina1Dto;
+                    import com.example.demo.dto.Pagina1DtoForOneEntity;
+                    import com.example.demo.dto.Pagina1OneDto;
+                    import com.example.demo.dto.Pagina1UpdateDto;
+                    import com.example.demo.dto.Pagina2Dto;
+                    import com.example.demo.dto.Pagina2DtoForOneEntity;
+                    import com.example.demo.dto.Pagina2OneDto;
+                    import com.example.demo.dto.Pagina2UpdateDto;
+                    import com.example.demo.dto.RegistirationRequest;
+                    import com.example.demo.dto.TokenResponse;
+                    import com.example.demo.dto.UserDto;
+                    import com.example.demo.dto.UserPasswordDto;
+                    import com.example.demo.exception.ExceptionResponse;
+                    import com.example.demo.model.Pagina1;
+                    import com.example.demo.model.Pagina2;
+                    import com.example.demo.model.User;
+                    import com.example.demo.repository.UserRepository;
+                    import com.example.demo.service.imp.UserServiceImp;
+                    import com.example.demo.util.ApiPaths;
+                    import com.example.demo.util.TPage;
+                    import com.openpojo.validation.Validator;
+                    import com.openpojo.validation.ValidatorBuilder;
+                    import com.openpojo.validation.test.impl.GetterTester;
+                    import com.openpojo.validation.test.impl.SetterTester;    
+                    
+                    @RunWith{{ '(' }}PowerMockRunner.class{{ ')' }}
+                    @PrepareForTest{{ '(' }}{{ '{' }} MainController.class {{ '}' }}{{ ')' }}
+                    @PowerMockIgnore{{ '(' }}"javax.security.*"{{ ')' }}
+
+                    public class PrototipoTest {{ '{' }}
+
+                    @Test{{ '(' }}expected = NullPointerException.class{{ ')' }}
+                    public void testNullMainController{{ '(' }}{{ ')' }} throws Exception {{ '{' }}
+                        MainController srv = PowerMockito.spy{{ '(' }}new MainController{{ '(' }}null,null,null,null,null{{ ')' }}{{ ')' }};
+                        LoginRequest loginObj =new LoginRequest{{ '(' }}{{ ')' }};
+                        ResponseEntity{{ '<' }}TokenResponse{{ '>' }} loginResult = srv.login{{ '(' }}loginObj{{ ')' }};
+                        assertNotNull{{ '(' }}"No puede ser nulo el objeto retornado del login",loginResult{{ ')' }};
+                    {{ '}' }}
+                    
+                    @Test
+                    public void testMainControllerSingUpRequest{{ '(' }}{{ ')' }} throws Exception {{ '{' }}
+                        
+                //		Authentication vAuthentication = PowerMockito.mock{{ '(' }}Authentication.class{{ ')' }};
+                        UserRepository vUserRepository = PowerMockito.mock{{ '(' }}UserRepository.class{{ ')' }};
+                        PowerMockito.when{{ '(' }}vUserRepository.findByUsername{{ '(' }}Mockito.any{{ '(' }}{{ ')' }}{{ ')' }}{{ ')' }}.thenReturn{{ '(' }}new User{{ '(' }}{{ ')' }}{{ ')' }};
+                        
+                        UserServiceImp vUserServiceImp = PowerMockito.mock{{ '(' }}UserServiceImp.class{{ ')' }};
+                        PowerMockito.when{{ '(' }}vUserServiceImp.register{{ '(' }}Mockito.any{{ '(' }}{{ ')' }}{{ ')' }}{{ ')' }}.thenReturn{{ '(' }}true{{ ')' }};
+                        
+                        MainController srv = PowerMockito.spy{{ '(' }}new MainController{{ '(' }}vUserRepository,null,null,null,vUserServiceImp{{ ')' }}{{ ')' }};
+                        RegistirationRequest registirationRequest =new RegistirationRequest{{ '(' }}{{ ')' }};
+                        ResponseEntity{{ '<' }}Boolean{{ '>' }} loginResult = srv.signUp{{ '(' }}registirationRequest{{ ')' }};
+                        assertNotNull{{ '(' }}"No puede ser nulo el objeto retornado del login",loginResult{{ ')' }};
+                    {{ '}' }}
+                    
+
+                    @SuppressWarnings{{ '(' }}"rawtypes"{{ ')' }}
+                    @Test
+                    public void testPojo{{ '(' }}{{ ')' }} {{ '{' }}
+
+                        List{{ '<' }}Class{{ '>' }} classes = Lists.newArrayList{{ '(' }}
+                                Pagina1.class,
+                                Pagina2.class,
+                                User.class,
+                                Pagina2Dto.class,
+                                Pagina2OneDto.class,
+                                Pagina2UpdateDto.class,
+                                Pagina1Dto.class,
+                                Pagina2DtoForOneEntity.class,
+                                Pagina1OneDto.class,
+                                Pagina1UpdateDto.class,
+                                Pagina1DtoForOneEntity.class,
+                                UserDto.class,
+                                UserPasswordDto.class,
+                                RegistirationRequest.class,
+                                LoginRequest.class,
+                                TokenResponse.class,
+                                TPage.class,
+                                ExceptionResponse.class
+                        {{ ')' }};
+
+                        List{{ '<' }}PojoClass{{ '>' }} pojoClasses = classes.stream{{ '(' }}{{ ')' }}.map{{ '(' }}PojoClassFactory::getPojoClass{{ ')' }}.collect{{ '(' }}Collectors.toList{{ '(' }}{{ ')' }}{{ ')' }};
+                        Validator validator = ValidatorBuilder.create{{ '(' }}{{ ')' }}
+                                .with{{ '(' }}new SetterTester{{ '(' }}{{ ')' }}{{ ')' }}
+                                .with{{ '(' }}new GetterTester{{ '(' }}{{ ')' }}{{ ')' }}
+                                .build{{ '(' }}{{ ')' }};
+                        validator.validate{{ '(' }}pojoClasses{{ ')' }};
+
+                    {{ '}' }}
+
+                {{ '}' }}
+
+                  </code></pre>
+            </section>
+
+            <section class="mgt0">
+                <p>Metodo para testear operaciones de clase usuario usado para el login: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">testMainControllerSingUpRequest</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|80">
+                    @Test
+                    public void testMainControllerSingUpRequest{{ '(' }}{{ ')' }} throws Exception {{ '{' }}
+                        
+                //		Authentication vAuthentication = PowerMockito.mock{{ '(' }}Authentication.class{{ ')' }};
+                        UserRepository vUserRepository = PowerMockito.mock{{ '(' }}UserRepository.class{{ ')' }};
+                        PowerMockito.when{{ '(' }}vUserRepository.findByUsername{{ '(' }}Mockito.any{{ '(' }}{{ ')' }}{{ ')' }}{{ ')' }}.thenReturn{{ '(' }}new User{{ '(' }}{{ ')' }}{{ ')' }};
+                        
+                        UserServiceImp vUserServiceImp = PowerMockito.mock{{ '(' }}UserServiceImp.class{{ ')' }};
+                        PowerMockito.when{{ '(' }}vUserServiceImp.register{{ '(' }}Mockito.any{{ '(' }}{{ ')' }}{{ ')' }}{{ ')' }}.thenReturn{{ '(' }}true{{ ')' }};
+                        
+                        MainController srv = PowerMockito.spy{{ '(' }}new MainController{{ '(' }}vUserRepository,null,null,null,vUserServiceImp{{ ')' }}{{ ')' }};
+                        RegistirationRequest registirationRequest =new RegistirationRequest{{ '(' }}{{ ')' }};
+                        ResponseEntity{{ '<' }}Boolean{{ '>' }} loginResult = srv.signUp{{ '(' }}registirationRequest{{ ')' }};
+                        assertNotNull{{ '(' }}"No puede ser nulo el objeto retornado del login",loginResult{{ ')' }};
+                    {{ '}' }}
+                   </code></pre>
+            </section>
+
+            <section class="mgt0">
+                <p>Metodo para testear operaciones de encapsulamiento tipo pojo de diferentes clases: <span
+                        style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(2)}">testPojo</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|80">
+                    @SuppressWarnings{{ '(' }}"rawtypes"{{ ')' }}
+                    @Test
+                    public void testPojo{{ '(' }}{{ ')' }} {{ '{' }}
+
+                        List{{ '<' }}Class{{ '>' }} classes = Lists.newArrayList{{ '(' }}
+                                Pagina1.class,
+                                Pagina2.class,
+                                User.class,
+                                Pagina2Dto.class,
+                                Pagina2OneDto.class,
+                                Pagina2UpdateDto.class,
+                                Pagina1Dto.class,
+                                Pagina2DtoForOneEntity.class,
+                                Pagina1OneDto.class,
+                                Pagina1UpdateDto.class,
+                                Pagina1DtoForOneEntity.class,
+                                UserDto.class,
+                                UserPasswordDto.class,
+                                RegistirationRequest.class,
+                                LoginRequest.class,
+                                TokenResponse.class,
+                                TPage.class,
+                                ExceptionResponse.class
+                        {{ ')' }};
+
+                        List{{ '<' }}PojoClass{{ '>' }} pojoClasses = classes.stream{{ '(' }}{{ ')' }}.map{{ '(' }}PojoClassFactory::getPojoClass{{ ')' }}.collect{{ '(' }}Collectors.toList{{ '(' }}{{ ')' }}{{ ')' }};
+                        Validator validator = ValidatorBuilder.create{{ '(' }}{{ ')' }}
+                                .with{{ '(' }}new SetterTester{{ '(' }}{{ ')' }}{{ ')' }}
+                                .with{{ '(' }}new GetterTester{{ '(' }}{{ ')' }}{{ ')' }}
+                                .build{{ '(' }}{{ ')' }};
+                        validator.validate{{ '(' }}pojoClasses{{ ')' }};
+
+                    {{ '}' }}
+                   </code></pre>
+            </section>
+        </section>
+
+
+    </div>
+</div>
+
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('prototipoUniservidor')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(1)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(1)}">Etapas de Estudio</button>
+  </div>

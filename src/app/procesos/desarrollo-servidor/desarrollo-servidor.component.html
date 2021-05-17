@@ -1,0 +1,696 @@
+<div class="reveal">
+  <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+  <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+  <div class="slides">
+    <h2 class="tituloPaginas">{{proceso}}</h2>
+    <section class="topmid">
+      <h2 >Desarrollo del lado del Servidor</h2>
+     
+      <h3 >Back-End</h3>
+    
+      <h5 >Bienvenido, en este apartado se dara a conocer los aspectos relevantes para
+        desarrollar el back-end del prototipo </h5>
+      
+    </section>
+
+    <section data-transition="zoom">
+      <span style="display: none;" [ngStyle]="{'color': getRandom(0)}"></span>
+      <div class="desarrolloContenedor">
+        <p><a href="desarrolloServidor/#pom" [ngStyle]="{'color': getRandom(1)}">pom.xml :</a> Archivo de definición de
+          dependencias de maven, este archivo principal permite identificar todas las tecnologias, configuraciones y
+          generales del proyecto java</p>
+        <p><a href="desarrolloServidor/#PrototipoApplication"
+            [ngStyle]="{'color': getRandom(2)}">PrototipoApplication.java :</a> Clase que cuenta con el metodo <b>static
+            void main</b> que permite levantar la aplicación como servicio</p>
+        <p><a href="desarrolloServidor/#Pagina1RestController"
+            [ngStyle]="{'color': getRandom(4)}">Pagina1RestController.java :</a> Documento que funge como controlador
+          tipo rest de los servicios http expuestos para el control de la clase pagina1</p>
+        <p><a href="desarrolloServidor/#Pagina1Dto" [ngStyle]="{'color': getRandom(1)}">Pagina1Dto.java :</a> Clase del
+          objeto pagina1 de transferencia de datos visible/usable en la pagina proveniente desde la base de datos</p>
+        <p><a href="desarrolloServidor/#Pagina1" [ngStyle]="{'color': getRandom(2)}">Pagina1.java :</a> Clase que funge
+          como entidad de base de datos de parte del servidor, no debe ser visible por la aplicación cliente</p>
+      </div>
+    </section>
+
+    <section data-transition="zoom" id="pom">
+      <section style="    padding: 6rem;">
+        <h4 style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(2)}">pom.xml</h4>
+        <pre data-id="code-animation"><code class="hljs">
+          {{ '<' }}?xml version="1.0" encoding="UTF-8"?{{ '>' }}
+          {{ '<' }}project xmlns="http://maven.apache.org/POM/4.0.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"{{ '>' }}
+            {{ '<' }}modelVersion{{ '>' }}4.0.0{{ '<' }}/modelVersion{{ '>' }}
+            {{ '<' }}parent{{ '>' }} 
+              {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+              {{ '<' }}artifactId{{ '>' }}spring-boot-starter-parent{{ '<' }}/artifactId{{ '>' }}
+              {{ '<' }}version{{ '>' }}2.1.5.RELEASE{{ '<' }}/version{{ '>' }}
+              {{ '<' }}relativePath /{{ '>' }}
+            {{ '<' }}/parent{{ '>' }}
+            {{ '<' }}groupId{{ '>' }}com.example{{ '<' }}/groupId{{ '>' }}
+            {{ '<' }}artifactId{{ '>' }}Prototipo-Udi{{ '<' }}/artifactId{{ '>' }}
+            {{ '<' }}version{{ '>' }}0.0.1-SNAPSHOT{{ '<' }}/version{{ '>' }}
+            {{ '<' }}name{{ '>' }}Prototipo-Udi{{ '<' }}/name{{ '>' }}
+            {{ '<' }}description{{ '>' }}Prototipo Proyecto grado Udi{{ '<' }}/description{{ '>' }}
+            
+            {{ '<' }}properties{{ '>' }}
+              {{ '<' }}java.version{{ '>' }}1.8{{ '<' }}/java.version{{ '>' }}
+              {{ '<' }}!-- {{ '<' }}maven.compiler.target{{ '>' }}11{{ '<' }}/maven.compiler.target{{ '>' }} {{ '<' }}maven.compiler.source{{ '>' }}11{{ '<' }}/maven.compiler.source{{ '>' }} --{{ '>' }}
+              {{ '<' }}jacoco.version{{ '>' }}0.8.5{{ '<' }}/jacoco.version{{ '>' }}
+              {{ '<' }}sonar.core.codeCoveragePlugin{{ '>' }}jacoco{{ '<' }}/sonar.core.codeCoveragePlugin{{ '>' }}
+              {{ '<' }}powermock.version{{ '>' }}1.7.0{{ '<' }}/powermock.version{{ '>' }}
+              {{ '<' }}maven-surefire-plugin.version{{ '>' }}2.19.1{{ '<' }}/maven-surefire-plugin.version{{ '>' }}
+              {{ '<' }}maven-failsafe-plugin.version{{ '>' }}2.12.4{{ '<' }}/maven-failsafe-plugin.version{{ '>' }}
+              {{ '<' }}junit.version{{ '>' }}4.12{{ '<' }}/junit.version{{ '>' }}
+            {{ '<' }}/properties{{ '>' }}
+          
+            {{ '<' }}dependencies{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}spring-boot-starter-data-jpa{{ '<' }}/artifactId{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}spring-boot-starter-data-rest{{ '<' }}/artifactId{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}spring-boot-starter-web{{ '<' }}/artifactId{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}spring-boot-starter-security{{ '<' }}/artifactId{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt --{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}io.jsonwebtoken{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}jjwt{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}version{{ '>' }}0.9.1{{ '<' }}/version{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}org.projectlombok{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}lombok{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}optional{{ '>' }}true{{ '<' }}/optional{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}org.modelmapper{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}modelmapper{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}version{{ '>' }}0.7.5{{ '<' }}/version{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}spring-boot-devtools{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}scope{{ '>' }}runtime{{ '<' }}/scope{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}org.postgresql{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}postgresql{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}scope{{ '>' }}runtime{{ '<' }}/scope{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}spring-boot-starter-test{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}scope{{ '>' }}test{{ '<' }}/scope{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}org.jacoco{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}org.jacoco.agent{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}version{{ '>' }}${{ '{' }}jacoco.version{{ '}' }}{{ '<' }}/version{{ '>' }}
+                {{ '<' }}classifier{{ '>' }}runtime{{ '<' }}/classifier{{ '>' }}
+                {{ '<' }}scope{{ '>' }}test{{ '<' }}/scope{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}junit{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}junit{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}scope{{ '>' }}test{{ '<' }}/scope{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}org.powermock{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}powermock-module-junit4{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}version{{ '>' }}2.0.2{{ '<' }}/version{{ '>' }}
+                {{ '<' }}scope{{ '>' }}test{{ '<' }}/scope{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}org.powermock{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}powermock-api-mockito2{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}version{{ '>' }}2.0.2{{ '<' }}/version{{ '>' }}
+                {{ '<' }}scope{{ '>' }}test{{ '<' }}/scope{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}org.mockito{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}mockito-core{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}scope{{ '>' }}test{{ '<' }}/scope{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                {{ '<' }}groupId{{ '>' }}com.openpojo{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId{{ '>' }}openpojo{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}version{{ '>' }}0.8.3{{ '<' }}/version{{ '>' }}
+                {{ '<' }}scope{{ '>' }}test{{ '<' }}/scope{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+              {{ '<' }}dependency{{ '>' }}
+                  {{ '<' }}groupId{{ '>' }}com.google.guava{{ '<' }}/groupId{{ '>' }}
+                  {{ '<' }}artifactId{{ '>' }}guava{{ '<' }}/artifactId{{ '>' }}
+                  {{ '<' }}version{{ '>' }}r05{{ '<' }}/version{{ '>' }}
+              {{ '<' }}/dependency{{ '>' }}
+            {{ '<' }}/dependencies{{ '>' }}
+          
+            {{ '<' }}build{{ '>' }}
+              {{ '<' }}plugins{{ '>' }}
+                {{ '<' }}plugin{{ '>' }}
+                  {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                  {{ '<' }}artifactId{{ '>' }}spring-boot-maven-plugin{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}/plugin{{ '>' }}
+                {{ '<' }}plugin{{ '>' }}
+                  {{ '<' }}groupId{{ '>' }}org.apache.maven.plugins{{ '<' }}/groupId{{ '>' }}
+                  {{ '<' }}artifactId{{ '>' }}maven-compiler-plugin{{ '<' }}/artifactId{{ '>' }}
+                  {{ '<' }}!-- {{ '<' }}configuration{{ '>' }} {{ '<' }}release{{ '>' }}11{{ '<' }}/release{{ '>' }} {{ '<' }}/configuration{{ '>' }} --{{ '>' }}
+                {{ '<' }}/plugin{{ '>' }}
+                {{ '<' }}plugin{{ '>' }}
+                  {{ '<' }}groupId{{ '>' }}org.jacoco{{ '<' }}/groupId{{ '>' }}
+                  {{ '<' }}artifactId{{ '>' }}jacoco-maven-plugin{{ '<' }}/artifactId{{ '>' }}
+                  {{ '<' }}version{{ '>' }}${{ '{' }}jacoco.version{{ '}' }}{{ '<' }}/version{{ '>' }}
+                  {{ '<' }}executions{{ '>' }}
+                    {{ '<' }}execution{{ '>' }}
+                      {{ '<' }}id{{ '>' }}default-instrument{{ '<' }}/id{{ '>' }}
+                      {{ '<' }}goals{{ '>' }}
+                        {{ '<' }}goal{{ '>' }}instrument{{ '<' }}/goal{{ '>' }}
+                      {{ '<' }}/goals{{ '>' }}
+                    {{ '<' }}/execution{{ '>' }}
+                    {{ '<' }}execution{{ '>' }}
+                      {{ '<' }}id{{ '>' }}default-restore-instrumented-classes{{ '<' }}/id{{ '>' }}
+                      {{ '<' }}goals{{ '>' }}
+                        {{ '<' }}goal{{ '>' }}restore-instrumented-classes{{ '<' }}/goal{{ '>' }}
+                      {{ '<' }}/goals{{ '>' }}
+                    {{ '<' }}/execution{{ '>' }}
+                    {{ '<' }}execution{{ '>' }}
+                      {{ '<' }}id{{ '>' }}default-prepare-agent{{ '<' }}/id{{ '>' }}
+                      {{ '<' }}goals{{ '>' }}
+                        {{ '<' }}goal{{ '>' }}prepare-agent{{ '<' }}/goal{{ '>' }}
+                      {{ '<' }}/goals{{ '>' }}
+                      {{ '<' }}configuration{{ '>' }}
+                        {{ '<' }}includes{{ '>' }}
+                          {{ '<' }}include{{ '>' }}{{ '<' }}/include{{ '>' }}
+                        {{ '<' }}/includes{{ '>' }}
+                      {{ '<' }}/configuration{{ '>' }}
+                    {{ '<' }}/execution{{ '>' }}
+                    {{ '<' }}execution{{ '>' }}
+                      {{ '<' }}id{{ '>' }}default-report{{ '<' }}/id{{ '>' }}
+                      {{ '<' }}phase{{ '>' }}prepare-package{{ '<' }}/phase{{ '>' }}
+                      {{ '<' }}goals{{ '>' }}
+                        {{ '<' }}goal{{ '>' }}report{{ '<' }}/goal{{ '>' }}
+                      {{ '<' }}/goals{{ '>' }}
+                      {{ '<' }}configuration{{ '>' }}
+                        {{ '<' }}excludes{{ '>' }}
+                          {{ '<' }}exclude{{ '>' }}{{ '<' }}/exclude{{ '>' }}
+                        {{ '<' }}/excludes{{ '>' }}
+                      {{ '<' }}/configuration{{ '>' }}
+                    {{ '<' }}/execution{{ '>' }}
+                  {{ '<' }}/executions{{ '>' }}
+                {{ '<' }}/plugin{{ '>' }}
+                {{ '<' }}plugin{{ '>' }}
+                  {{ '<' }}groupId{{ '>' }}org.apache.maven.plugins{{ '<' }}/groupId{{ '>' }}
+                  {{ '<' }}artifactId{{ '>' }}maven-surefire-plugin{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}/plugin{{ '>' }}
+                {{ '<' }}plugin{{ '>' }}
+                  {{ '<' }}groupId{{ '>' }}org.apache.maven.plugins{{ '<' }}/groupId{{ '>' }}
+                  {{ '<' }}artifactId{{ '>' }}maven-failsafe-plugin{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}/plugin{{ '>' }}
+                {{ '<' }}plugin{{ '>' }}
+                   {{ '<' }}artifactId{{ '>' }}maven-deploy-plugin{{ '<' }}/artifactId{{ '>' }}
+                   {{ '<' }}version{{ '>' }}2.8.2{{ '<' }}/version{{ '>' }}
+                   {{ '<' }}executions{{ '>' }}
+                      {{ '<' }}execution{{ '>' }}
+                         {{ '<' }}id{{ '>' }}default-deploy{{ '<' }}/id{{ '>' }}
+                         {{ '<' }}phase{{ '>' }}deploy{{ '<' }}/phase{{ '>' }}
+                         {{ '<' }}goals{{ '>' }}
+                            {{ '<' }}goal{{ '>' }}deploy{{ '<' }}/goal{{ '>' }}
+                         {{ '<' }}/goals{{ '>' }}
+                      {{ '<' }}/execution{{ '>' }}
+                   {{ '<' }}/executions{{ '>' }}
+                {{ '<' }}/plugin{{ '>' }}
+                {{ '<' }}plugin{{ '>' }}
+                   {{ '<' }}groupId{{ '>' }}org.apache.maven.plugins{{ '<' }}/groupId{{ '>' }}
+                   {{ '<' }}artifactId{{ '>' }}maven-deploy-plugin{{ '<' }}/artifactId{{ '>' }}
+                   {{ '<' }}version{{ '>' }}${{ '{' }}maven-deploy-plugin.version{{ '}' }}{{ '<' }}/version{{ '>' }}
+                   {{ '<' }}configuration{{ '>' }}
+                      {{ '<' }}skip{{ '>' }}true{{ '<' }}/skip{{ '>' }}
+                   {{ '<' }}/configuration{{ '>' }}
+                {{ '<' }}/plugin{{ '>' }}
+                {{ '<' }}plugin{{ '>' }}
+                   {{ '<' }}groupId{{ '>' }}org.sonatype.plugins{{ '<' }}/groupId{{ '>' }}
+                   {{ '<' }}artifactId{{ '>' }}nexus-staging-maven-plugin{{ '<' }}/artifactId{{ '>' }}
+                   {{ '<' }}version{{ '>' }}1.5.1{{ '<' }}/version{{ '>' }}
+                   {{ '<' }}executions{{ '>' }}
+                      {{ '<' }}execution{{ '>' }}
+                         {{ '<' }}id{{ '>' }}default-deploy{{ '<' }}/id{{ '>' }}
+                         {{ '<' }}phase{{ '>' }}deploy{{ '<' }}/phase{{ '>' }}
+                         {{ '<' }}goals{{ '>' }}
+                            {{ '<' }}goal{{ '>' }}deploy{{ '<' }}/goal{{ '>' }}
+                         {{ '<' }}/goals{{ '>' }}
+                      {{ '<' }}/execution{{ '>' }}
+                   {{ '<' }}/executions{{ '>' }}
+                   {{ '<' }}configuration{{ '>' }}
+                      {{ '<' }}serverId{{ '>' }}nexus{{ '<' }}/serverId{{ '>' }}
+                      {{ '<' }}nexusUrl{{ '>' }}http://localhost:8081/nexus/{{ '<' }}/nexusUrl{{ '>' }}
+                      {{ '<' }}skipStaging{{ '>' }}true{{ '<' }}/skipStaging{{ '>' }}
+                   {{ '<' }}/configuration{{ '>' }}
+                {{ '<' }}/plugin{{ '>' }}
+              {{ '<' }}/plugins{{ '>' }}
+            {{ '<' }}/build{{ '>' }}
+          
+            {{ '<' }}profiles{{ '>' }}
+          
+              {{ '<' }}profile{{ '>' }}
+                {{ '<' }}id{{ '>' }}dev{{ '<' }}/id{{ '>' }}
+                {{ '<' }}activation{{ '>' }}
+                  {{ '<' }}activeByDefault{{ '>' }}true{{ '<' }}/activeByDefault{{ '>' }}
+                {{ '<' }}/activation{{ '>' }}
+                {{ '<' }}properties{{ '>' }}
+                  {{ '<' }}activatedProperties{{ '>' }}dev{{ '<' }}/activatedProperties{{ '>' }}
+                  {{ '<' }}sonar.host.url{{ '>' }}
+                            http://localhost:9000
+                          {{ '<' }}/sonar.host.url{{ '>' }}
+                {{ '<' }}/properties{{ '>' }}
+              {{ '<' }}/profile{{ '>' }}
+          
+              {{ '<' }}profile{{ '>' }}
+                {{ '<' }}id{{ '>' }}prod{{ '<' }}/id{{ '>' }}
+                {{ '<' }}properties{{ '>' }}
+                  {{ '<' }}activatedProperties{{ '>' }}prod{{ '<' }}/activatedProperties{{ '>' }}
+                {{ '<' }}/properties{{ '>' }}
+              {{ '<' }}/profile{{ '>' }}
+            {{ '<' }}/profiles{{ '>' }}
+            
+            {{ '<' }}distributionManagement{{ '>' }}
+               {{ '<' }}snapshotRepository{{ '>' }}
+                  {{ '<' }}id{{ '>' }}nexus{{ '<' }}/id{{ '>' }}
+                  {{ '<' }}url{{ '>' }}http://localhost:8081/repository/maven-snapshots/{{ '<' }}/url{{ '>' }}
+               {{ '<' }}/snapshotRepository{{ '>' }}
+            {{ '<' }}/distributionManagement{{ '>' }}
+          
+          {{ '<' }}/project{{ '>' }}
+          
+        </code></pre>
+      </section>
+
+      <section>
+        <p><span [ngStyle]="{'color': getRandom(1)}">parent :</span> El proyecto depende o tiene como padre la
+          dependencia spring-boot-starter-parent, necesaria para trabajar bajo proyectos de spring boot</p>
+        <pre data-id="code-animation"><code class="hljs">
+                
+                {{ '<' }}parent{{ '>' }}
+                {{ '<' }}groupId>org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                {{ '<' }}artifactId>spring-boot-starter-parent{{ '<' }}/artifactId{{ '>' }}
+                {{ '<' }}version>2.1.5.RELEASE{{ '<' }}/version{{ '>' }}
+                {{ '<' }}/parent{{ '>' }}
+                
+              </code></pre>
+      </section>
+
+      <section>
+        <p><span [ngStyle]="{'color': getRandom(2)}">properties :</span> Listado de caracteristicas reutilizables dentro
+          del archivo pom.xml, ejemplo ${{ '{' }}jacoco.version{{ '}' }}</p>
+        <pre data-id="code-animation"><code class="hljs">
+                {{ '<' }}properties{{ '>' }}
+                {{ '<' }}java.version{{ '>' }}1.8{{ '<' }}/java.version{{ '>' }}
+                {{ '<' }}jacoco.version{{ '>' }}0.8.5{{ '<' }}/jacoco.version{{ '>' }}
+                {{ '<' }}sonar.core.codeCoveragePlugin{{ '>' }}jacoco{{ '<' }}/sonar.core.codeCoveragePlugin{{ '>' }}
+                {{ '<' }}powermock.version{{ '>' }}1.7.0{{ '<' }}/powermock.version{{ '>' }}
+                {{ '<' }}maven-surefire-plugin.version{{ '>' }}2.19.1{{ '<' }}/maven-surefire-plugin.version{{ '>' }}
+                {{ '<' }}maven-failsafe-plugin.version{{ '>' }}2.12.4{{ '<' }}/maven-failsafe-plugin.version{{ '>' }}
+                {{ '<' }}junit.version{{ '>' }}4.12{{ '<' }}/junit.version{{ '>' }}
+            {{ '<' }}/properties{{ '>' }}
+              </code></pre>
+      </section>
+
+      <section>
+        <p><span [ngStyle]="{'color': getRandom(4)}">dependencies :</span> listado de capacidades agregadas y
+          descargadas desde el repositorio maven gratuito</p>
+        <pre data-id="code-animation"><code class="hljs">
+                {{ '<' }}dependencies{{ '>' }}
+                    ...
+                    {{ '<' }}/dependencies{{ '>' }}
+              </code></pre>
+      </section>
+
+      <section>
+        <p><span [ngStyle]="{'color': getRandom(4)}">build/plugins :</span> Configuraciones particulares por paquetes de
+          instalación, asi como las dependencias agregan capacidades adicionales al proyecto</p>
+        <pre data-id="code-animation"><code class="hljs">
+                    {{ '<' }}build{{ '>' }}
+                    {{ '<' }}plugins{{ '>' }}
+                            ...
+                            {{ '<' }}plugins{{ '>' }}
+                            {{ '<' }}build{{ '>' }}
+                </code></pre>
+      </section>
+
+      <section>
+        <p><span [ngStyle]="{'color': getRandom(4)}">profiles :</span> Capacidad de proyectos maven de permitir
+          configurar ambientes de ejecución distintos segun las necesidades del proyecto, ejemplo perfil
+          pruebas/productivo</p>
+        <pre data-id="code-animation"><code class="hljs">
+                    {{ '<' }}profiles{{ '>' }}
+                    {{ '<' }}profile{{ '>' }}
+                            ...
+                            {{ '<' }}profile{{ '>' }}
+                            {{ '<' }}profiles{{ '>' }}
+                </code></pre>
+      </section>
+    </section>
+
+    <section data-transition="zoom" id="PrototipoApplication">
+      <section>
+        <h4 style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(2)}">PrototipoApplication.java</h4>
+        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2-22|23">
+          package com.example.demo;
+
+          import org.modelmapper.ModelMapper;
+          import org.modelmapper.convention.MatchingStrategies;
+          import org.springframework.boot.SpringApplication;
+          import org.springframework.boot.autoconfigure.SpringBootApplication;
+          import org.springframework.context.annotation.Bean;
+          import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+          
+          @SpringBootApplication
+          public class PrototipoApplication {{ '{' }}
+          
+            public static void main{{ '(' }}String{{ '[' }}{{ ']' }} args{{ ')' }} {{ '{' }}
+              SpringApplication.run(PrototipoApplication.class, args);
+            {{ '}' }}
+            @Bean
+            public ModelMapper getModelMapper() {{ '{' }}
+              ModelMapper modelmapper =new ModelMapper();
+              modelmapper.getConfiguration{{ '(' }}{{ ')' }}.setMatchingStrategy(MatchingStrategies.STRICT);
+              return modelmapper;
+            {{ '}' }}
+          
+          {{ '}' }}          
+                  </code></pre>
+      </section>
+
+      <section>
+        <p><span [ngStyle]="{'color': getRandom(1)}">public static void main :</span> metodo definido en el lenguaje
+          java como predeterminado para ejecución de aplicaciones de forma externa</p>
+        <pre data-id="code-animation"><code class="hljs">
+          public static void main{{ '(' }}String{{ '[' }}{{ ']' }} args{{ ')' }} {{ '{' }}
+          SpringApplication.run(PrototipoApplication.class, args);
+        {{ '}' }}
+              </code></pre>
+      </section>
+    </section>
+
+    <section data-transition="zoom" id="Pagina1RestController">
+      <section style="padding-top: 7rem;">
+        <h4 style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(2)}">Pagina1RestController.java</h4>
+        <pre data-id="code-animation"><code class="hljs">
+          package com.example.demo.api;
+
+          import java.util.List;
+          
+          import javax.validation.Valid;
+          
+          import org.springframework.data.domain.Pageable;
+          import org.springframework.http.ResponseEntity;
+          import org.springframework.web.bind.annotation.CrossOrigin;
+          import org.springframework.web.bind.annotation.DeleteMapping;
+          import org.springframework.web.bind.annotation.GetMapping;
+          import org.springframework.web.bind.annotation.PathVariable;
+          import org.springframework.web.bind.annotation.PostMapping;
+          import org.springframework.web.bind.annotation.PutMapping;
+          import org.springframework.web.bind.annotation.RequestBody;
+          import org.springframework.web.bind.annotation.RequestMapping;
+          import org.springframework.web.bind.annotation.RequestParam;
+          import org.springframework.web.bind.annotation.RestController;
+          import com.example.demo.dto.Pagina1Dto;
+          import com.example.demo.dto.Pagina1OneDto;
+          import com.example.demo.dto.Pagina1UpdateDto;
+          import com.example.demo.dto.Pagina2Dto;
+          import com.example.demo.dto.Pagina2UpdateDto;
+          import com.example.demo.service.imp.Pagina1ServiceImp;
+          import com.example.demo.util.ApiPaths;
+          import com.example.demo.util.TPage;
+          
+          import javassist.NotFoundException;
+          
+          @RestController
+          @RequestMapping{{ '(' }}ApiPaths.Pagina1Ctrl.CTRL{{ ')' }}
+          @CrossOrigin
+          public class Pagina1RestController {{ '{' }}
+          
+            private final Pagina1ServiceImp pagina1ServiceImp;
+          
+            public Pagina1RestController{{ '(' }}Pagina1ServiceImp pagina1ServiceImp{{ ')' }} {{ '{' }}
+              super{{ '(' }}{{ ')' }};
+              this.pagina1ServiceImp = pagina1ServiceImp;
+            {{ '}' }}
+          
+            
+            @GetMapping{{ '(' }}{{ ')' }}
+            public ResponseEntity{{ '<' }}List{{ '<' }}Pagina1Dto{{ '>' }}{{ '>' }} getAll{{ '(' }}{{ ')' }} throws NotFoundException {{ '{' }}
+              List{{ '<' }}Pagina1Dto{{ '>' }} pagina1Dtos = pagina1ServiceImp.getAll{{ '(' }}{{ ')' }};
+              return ResponseEntity.ok{{ '(' }}pagina1Dtos{{ ')' }};
+            {{ '}' }}
+          
+            
+            @GetMapping{{ '(' }}"/pagination"{{ ')' }}
+            public ResponseEntity{{ '<' }}TPage{{ '<' }}Pagina1Dto{{ '>' }}{{ '>' }} getAllByPagination{{ '(' }}Pageable pageable{{ ')' }} throws NotFoundException {{ '{' }}
+              TPage{{ '<' }}Pagina1Dto{{ '>' }} data = pagina1ServiceImp.getAllPageable{{ '(' }}pageable{{ ')' }};
+              return ResponseEntity.ok{{ '(' }}data{{ ')' }};
+            {{ '}' }}
+          
+            
+            @GetMapping{{ '(' }}"/find"{{ ')' }}
+            public ResponseEntity{{ '<' }}List{{ '<' }}Pagina1Dto{{ '>' }}{{ '>' }} findAllByName{{ '(' }}@RequestParam String name{{ ')' }} throws NotFoundException {{ '{' }}
+              List{{ '<' }}Pagina1Dto{{ '>' }} pagina1Dtos = pagina1ServiceImp.findAllByName{{ '(' }}name{{ ')' }};
+              return ResponseEntity.ok{{ '(' }}pagina1Dtos{{ ')' }};
+            {{ '}' }}
+          
+            
+            @GetMapping{{ '(' }}"/{{ '{' }}id}"{{ ')' }}
+            public ResponseEntity{{ '<' }}Pagina1OneDto{{ '>' }} getOnePagina1{{ '(' }}@PathVariable{{ '(' }}name = "id", required = true{{ ')' }} Long id{{ ')' }}
+                throws NotFoundException {{ '{' }}
+              return ResponseEntity.ok{{ '(' }}pagina1ServiceImp.getOne{{ '(' }}id{{ ')' }}{{ ')' }};
+            {{ '}' }}
+          
+            @PostMapping{{ '(' }}{{ ')' }}
+            public ResponseEntity{{ '<' }}Pagina1Dto{{ '>' }} createPagina1{{ '(' }}@Valid @RequestBody Pagina1Dto pagina1Dto{{ ')' }} {{ '{' }}
+              return ResponseEntity.ok{{ '(' }}pagina1ServiceImp.save{{ '(' }}pagina1Dto{{ ')' }}{{ ')' }};
+            {{ '}' }}
+          
+            @PutMapping{{ '(' }}"/{{ '{' }}id}"{{ ')' }}
+            public ResponseEntity{{ '<' }}Pagina1UpdateDto{{ '>' }} updatePagina1{{ '(' }}@PathVariable{{ '(' }}name = "id", required = true{{ ')' }} Long id,
+                @Valid @RequestBody Pagina1UpdateDto pagina1UpdateDto{{ ')' }} throws NotFoundException {{ '{' }}
+              return ResponseEntity.ok{{ '(' }}pagina1ServiceImp.update{{ '(' }}id, pagina1UpdateDto{{ ')' }}{{ ')' }};
+            {{ '}' }}
+          
+            @DeleteMapping{{ '(' }}"/{{ '{' }}id}"{{ ')' }}
+            public ResponseEntity{{ '<' }}Boolean{{ '>' }} deletePagina2{{ '(' }}@PathVariable{{ '(' }}name = "id", required = true{{ ')' }} Long id{{ ')' }}
+                throws NotFoundException {{ '{' }}
+              return ResponseEntity.ok{{ '(' }}pagina1ServiceImp.delete{{ '(' }}id{{ ')' }}{{ ')' }};
+            {{ '}' }}
+          {{ '}' }}
+          
+
+              </code></pre>
+      </section>
+
+      <section>
+        <p><span [ngStyle]="{'color': getRandom(1)}">anotaciones :</span> RestController permite definir la clase como
+          recurso de peticiones http para servicios rest, por otro lado, RequestMapping permite definir el path o ruta
+          relativa http para acceder al mismo al momento del consumo</p>
+        <pre data-id="code-animation"><code class="hljs">
+          @RestController
+          @RequestMapping(ApiPaths.Pagina1Ctrl.CTRL)
+          //public static final String CTRL = BASE_PATH + "/pagina1";
+              </code></pre>
+      </section>
+
+      <section style="padding-top: 3rem;">
+        <p style="    font-size: xx-large;"><span [ngStyle]="{'color': getRandom(2)}">request metodos :</span> son
+          metodos con capacidad de exponer accesos rest de tipo GET,POST,PUT,DELETE comunmente usados para la
+          construccion de Apis que alimenten datos de aplicaciones web o moviles. En el ejemplo se evidencia la
+          cosntrucción de un metodo tipo GET</p>
+        <pre data-id="code-animation"><code class="hljs">
+          @GetMapping{{ '(' }}"/pagination"{{ ')' }}
+          public ResponseEntity{{ '<' }}TPage{{ '<' }}Pagina1Dto{{ '>' }}{{ '>' }} getAllByPagination{{ '(' }}Pageable pageable{{ ')' }} throws NotFoundException {{ '{' }}
+            TPage{{ '<' }}Pagina1Dto{{ '>' }} data = pagina1ServiceImp.getAllPageable{{ '(' }}pageable{{ ')' }};
+            return ResponseEntity.ok{{ '(' }}data{{ ')' }};
+          {{ '}' }}
+              </code></pre>
+      </section>
+
+    </section>
+
+    <section data-transition="zoom" id="Pagina1Dto">
+      <section style="padding-top: 7rem;">
+        <h4 style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(2)}">Pagina1Dto.java</h4>
+        <pre data-id="code-animation"><code class="hljs">
+          package com.example.demo.dto;
+
+import javax.validation.constraints.NotNull;
+
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Data
+public class Pagina1Dto {{ '{' }}
+
+	private Long id;
+
+	@NotNull
+	private String campo1;
+
+	@NotNull
+	private String campo2;
+
+	private String campo3;
+
+	private String campo4;
+
+	private String campo5;
+
+	private List{{ '<' }}Pagina2DtoForOneEntity{{ '>' }} pagina2s;
+
+{{ '}' }}
+
+              </code></pre>
+      </section>
+
+      <section>
+        <p><span [ngStyle]="{'color': getRandom(1)}">anotaciones :</span> @Getter
+          y @Setter permiten agregar la propiedad de encapsulamiento automaticamente a las propiedades de la clase, por
+          otro lado</p>
+        <pre data-id="code-animation"><code class="hljs">
+          @Getter
+          @Setter
+              </code></pre>
+      </section>
+
+      <section style="padding-top: 3rem;">
+        <p style="    font-size: xx-large;"><span [ngStyle]="{'color': getRandom(2)}">Dto :</span> el objetivo de
+          definir clases Dto es el de limitar el acceso a los objetos de la base de datos</p>
+        <pre data-id="code-animation"><code class="hljs">
+          public class Pagina1Dto {{ '{' }}
+              </code></pre>
+      </section>
+
+    </section>
+
+
+
+    <section data-transition="zoom" id="Pagina1">
+      <section style="padding-top: 7rem;">
+        <h4 style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(2)}">Pagina1.java</h4>
+        <pre data-id="code-animation"><code class="hljs">
+          package com.example.demo.model;
+
+          import java.util.List;
+          
+          import javax.persistence.CascadeType;
+          import javax.persistence.Column;
+          import javax.persistence.Entity;
+          import javax.persistence.FetchType;
+          import javax.persistence.GeneratedValue;
+          import javax.persistence.GenerationType;
+          import javax.persistence.Id;
+          import javax.persistence.Lob;
+          import javax.persistence.OneToMany;
+          import javax.persistence.SequenceGenerator;
+          import javax.persistence.Table;
+          import javax.validation.constraints.NotNull;
+          
+          import org.hibernate.annotations.Type;
+          
+          import lombok.Getter;
+          import lombok.NoArgsConstructor;
+          import lombok.Setter;
+          
+          @Getter
+          @Setter
+          @NoArgsConstructor
+          @Entity
+          @Table{{ '(' }}name = "pagina1"{{ ')' }}
+          public class Pagina1 {{ '{' }}
+          
+            @Id
+            @GeneratedValue{{ '(' }}strategy = GenerationType.AUTO{{ ')' }}
+            private Long id;
+          
+            @NotNull
+            @Column{{ '(' }}name = "campo1", length = 100{{ ')' }}
+            private String campo1;
+          
+              @Type{{ '(' }}type = "text"{{ ')' }}
+              @Lob
+            @Column{{ '(' }}name = "campo2", length = 8000{{ ')' }}
+            private String campo2;
+          
+            @NotNull
+            @Column{{ '(' }}name = "campo3", length = 100{{ ')' }}
+            private String campo3;
+          
+            @Column{{ '(' }}name = "campo4", length = 100, unique = true{{ ')' }}
+            private String campo4;
+          
+            @Column{{ '(' }}name = "campo5", length = 100{{ ')' }}
+            private String campo5;
+          
+            @OneToMany{{ '(' }}mappedBy = "pagina1", cascade = CascadeType.ALL, fetch = FetchType.EAGER{{ ')' }}
+            private List{{ '<' }}Pagina2{{ '>' }} pagina2s;
+          {{ '}' }}
+          
+              </code></pre>
+      </section>
+
+      <section>
+        <p><span [ngStyle]="{'color': getRandom(1)}">anotaciones :</span> @Entity permite definir la clase como entidad
+          de la base de datos, por otr lado, @Table permite definir el tipo de entidad, y con la propieda name se indica
+          el nombre de la tabla</p>
+        <pre data-id="code-animation"><code class="hljs">
+          @Entity
+          @Table{{ '(' }}name = "pagina1"{{ ')' }}
+              </code></pre>
+      </section>
+
+      <section style="padding-top: 3rem;">
+        <p style="    font-size: xx-large;"><span [ngStyle]="{'color': getRandom(2)}">Anotaciones de Propiedades
+            :</span> se mencionaran algunas de ellas, @id permite indicar si el campo es llave de la tabla,
+          @GeneratedValue indica que el valor es asignado automaticamente, @Column permite indicar cualidades como el
+          nombre y tamaño, esta anotacion no es necesaria si el nombre de la propiedad es identico al de la base de
+          datos,@NotNull define que el contenido de la propiedad no puede ser nulo, @OneToMany tipo de relacion que
+          tiene el campo con otra entidad de la base de datos </p>
+        <pre data-id="code-animation"><code class="hljs">
+          @Id
+          @GeneratedValue(strategy = GenerationType.AUTO)
+          @Column(name = "campo5", length = 100)
+          @NotNull
+          @OneToMany(mappedBy = "pagina1", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+              </code></pre>
+      </section>
+
+    </section>
+
+
+
+
+  </div>
+</div>
+
+<div class="divBotom">
+  <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+  <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+  <button style="margin: 0.2rem;" mat-raised-button (click)="ir('desarrolloServidor')" [ngStyle]="{'background-color': getRandom(1)}">Volver a iniciar el <b>Contenido</b></button>
+  <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+  <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(1)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+  <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+</div>

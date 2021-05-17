@@ -1,0 +1,25 @@
+.mgt0{
+    top: 0px!important;
+}
+
+.postman{
+    background: url("../../assets/img/postman.png") center / cover no-repeat;
+    width: 61px;
+    height: 61px;
+    display: inline-block;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.newman{
+   /* background: url("../../assets/img/newman.png") center / cover no-repeat;*/
+   content: 'Newman';
+    width: 190px;
+    height: 42px;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.newman:after {
+    content:  'Newman';
+  }

@@ -1,0 +1,21 @@
+.eclipse{
+    background: url("../../../assets/img/eclipse.png") center / cover no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.code{
+    background: url("../../../assets/img/code.png") center / cover no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.reveal .slides section .fragment.highlight-green.visible {
+    color: #17ff2e!important;
+}
+
+.topmid {
+    top: 110px !important;
+}

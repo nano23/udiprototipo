@@ -1,0 +1,78 @@
+<div class="reveal">
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section class="topmid">
+            <h2 >Documentos de Confluence</h2>
+       
+            <h5 >Como herramienta colaborativa cuenta con una gran cantidad de tipos de documentos para diferentes tipos de propositos en una organizacion, algunas de ellas pueden generar algun tipo de costo pero cuentan con una gran variedad de herramientas libres </h5>
+
+            <h5 ><span class="confluence"></span></h5>        
+        </section>
+
+        <section data-background="assets/img/fondo/confluencedoc1.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 0rem;">
+            
+            <div class="fragment" style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;">
+                <p class="fragment highlight-blue">TIPO DE DOCUMENTOS</p>
+                <p>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;"><span [ngStyle]="{'color': getRandom(4)}">Pagina en Blanco</span> Este tipo de documento es el mas libre que existe y permite agregar todo tipo de contenido soportado por el lenguaje html </span>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;"><span [ngStyle]="{'color': getRandom(4)}">Entrada de Blog</span> Se asemeja al funcionamiento de un blog, documento facil de compartir de forma externa </span>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;"><span [ngStyle]="{'color': getRandom(4)}">Analisis DAFO</span> Documento que permite evaluar datos por medio de formulas como las aplicadas en excel </span>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;"><span [ngStyle]="{'color': getRandom(4)}">Analisis Ejecutivo</span> Documento que se puede alimentar de integraciones para generar informes de rendimiento de alto nivel </span>
+                </p>
+            </div>
+        </section>
+
+        <section data-background="assets/img/fondo/confluencedoc2.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 0rem;">
+            
+            <div class="fragment" style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;">
+                <p class="fragment highlight-blue">EJEMPLO DE BLOG</p>
+                <p>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;">La imagen de ejemplo sirve para llevarse una idea clara de la forma de creación de contenido</span>
+                </p>
+            </div>
+        </section>
+
+
+        <section data-background="assets/img/fondo/confluencedoc3.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 0rem;">
+            
+            <div class="fragment" style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;">
+                <p class="fragment highlight-blue">EJEMPLO DE DOCUMENTO LIBRE</p>
+                <p>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;">Es posible relacionar otro tipo de documentos como se evidencia en la imagen</span>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;">Tambien es posible evidenciar la integración con la herramienta jira en el componente tipo grilla agregado en donde se visualiza un vinculo con la incidencia</span>
+                </p>
+            </div>
+        </section>
+
+
+        <section data-background="assets/img/fondo/confluencedoc4.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 0rem;">
+            
+            <div class="fragment" style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 0rem!important;">
+                <p class="fragment highlight-blue">COMPONENTE DE UTILIDAD</p>
+                <p>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;">Confluence cuenta con una poderosa utilidad tipo servicio que es reutilizable, un ejemplo de sus amplia gama de funcionalidades seria</span>
+                    <span class="fragment step-fade-in-then-out" style="font-size: x-large;">Para crear los documentos enlazados con Jira debemos iniciar con el carácter de / y esto nos permite desplegar un motor de componente donde podemos instalar más apartados, tecleamos Bitbucket y automáticamente nos salen las incidencias que están en Jira para poder enlazarlas, confluence también nos permite comentar el código gracias a sus componentes</span>
+                </p>
+            </div>
+        </section>
+       
+    
+    </div>
+</div>
+
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('documentosConfluence')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(1)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(1)}">Etapas de Estudio</button>
+  </div>

@@ -1,0 +1,47 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section class="topmid">
+            <h2>Definición</h2>
+            <h5 >Bienvenido, en este apartado se dara un acercamento sobre la herramienta seleccionada para la gestión del repositorio de artefactos </h5>
+            <h5 >Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> la herramienta seleccionada segun la
+                arquitectura del prototipo propuesta seria <span class="nexus"></span></h5>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid" >
+            <p class="fragment highlight-blue">Nexus Repository</p>
+            <p  [ngStyle]="{'color': getRandom(1)}"></p>
+            <p class="fragment fade-up" [ngStyle]="{'color': getRandom(1)}">¿ Que es ?</p>
+            <p><span class="fragment step-fade-in-then-out">Es un administrador de repositorios de dependencias, esta herramienta permite usar diversos proxys, recopilar y administrar todas las dependencias para evitar conflictos con todos los archivos tipo JAR generados</span>
+                <span class="fragment step-fade-in-then-out">Nexus ayuda a proporcionar una óptima distribución de cualquier tipo de software o lenguaje</span>
+                <span class="fragment step-fade-in-then-out">Las configuraciones internas de Nexus permiten compilar múltiples tipos de artefactos que luego estarán utilizables para otros desarrolladores</span>
+                <span class="fragment step-fade-in-then-out">Nexus nos permite centralizar las dependencias, ofreciendo una fácil colaboración entre los miembros del equipo</span></p>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid">
+            <p class="fragment highlight-blue">Nexus Repository</p>
+            <p  [ngStyle]="{'color': getRandom(4)}"></p>
+            <p class="fragment fade-up" [ngStyle]="{'color': getRandom(4)}">¿ Por que es util en <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span> ?</p>
+            <p><span class="fragment step-fade-in-then-out">Los repositorios de artefactos permiten almacenar copias del proyecto de forma remota</span>
+                <span class="fragment step-fade-in-then-out">Una finalidad es compartir el código del proyecto con otros colaboradores y/o interesados</span>
+                <span class="fragment step-fade-in-then-out">Permiten el manejo de archivos binarios y paquetes de compilación generados desde casi cualquier compilador de código</span>
+                <span class="fragment step-fade-in-then-out">Pertenece intrínsecamente a tecnicas de almacenamiento, copias de seguridad y reutilización del codigo, proceso de garantia que da calidad en el desarrollo del software</span></p>
+        </section>
+
+       
+
+    </div>
+</div>
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('definicionArtefactos')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

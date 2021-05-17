@@ -1,0 +1,50 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2>Definición</h2>
+            <h4>Bienvenido, en este apartado se dara un acercamento sobre la herramienta seleccionada para la
+                construcción de pruebas unitarias del lado del cliente</h4>
+            <h4>Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> las herramientas seleccionada segun la
+                arquitectura del prototipo propuesta seria <span class="karma" title="karma"></span><span class="jasmine" title="jasmine"></span></h4>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2 class="fragment highlight-blue">Karma/Jasmine</h2>
+            <p [ngStyle]="{'color': getRandom(1)}"></p>
+            <p class="fragment fade-up">¿ Que es ?</p>
+            <p><span class="fragment step-fade-in-then-out">Las pruebas unitarias del lado del cliente determinan la
+                    funcionalidad del código, a través de test que verifican si el comportamiento y la lógica son
+                    correctos</span>
+                <span class="fragment step-fade-in-then-out">Jasmine es una herramienta que nos permite realizar pruebas
+                    unitarias, se puede ejecutar en diversos tipos de plataforma, Jasmine sobre sale gracias a que
+                    permite realizar pruebas unitarias de forma asíncrona</span>
+                <span class="fragment step-fade-in-then-out">El framework de angular implementa por default la
+                    herramienta de pruebas unitarias Jasmine, gracias a esto podemos realizar pruebas de forma nativa y
+                    las dos tecnologías van a correr de forma armónica</span>
+                <span class="fragment step-fade-in-then-out">Es importante resaltar que la sintaxis de Jasmine es muy
+                    simple y minimalista, además cada test creado se cuenta como una función propia del usuario. Jasmine
+                    también cuenta con suites, specs, expectations, matchers</span>
+                <span class="fragment step-fade-in-then-out">Jasmine permite crear las pruebas, funciona como un
+                    framework de desarrollo de pruebas en el lenguaje typescript</span>
+                <span class="fragment step-fade-in-then-out">Karma se encarga de leer y ejecutar las pruebas creadas en
+                    Jasmin, generar reportes con los resultados y ejecutar procesos en fase de ejecución </span>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('definicionUnicliente')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

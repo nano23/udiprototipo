@@ -1,0 +1,94 @@
+<div class="reveal">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section class="topmid">
+            <h2 >Clonación del Repositorio</h2>
+           
+            <h5 >La clonación es un proceso que permite crear una copia local identica de las
+                fuentes del repositorio en la nube, con la finalidad de realizar modificaciones que posteriormente seran
+                integradas con el codigo original</h5>
+            <h5 >En este apartado se vera un ejemplo de como se realiza una clonación de
+                forma exitosa</h5>
+        </section>
+
+        <section>
+            <section data-transition="fade-in slide-out" style="padding: 3rem;">
+                <p class="fragment highlight-blue">Ejemplo clonación</p>
+                <p><span class="fragment slide mR1" style="color: white;">En este ejemplo practico se describe un
+                        pequeño paso a paso de como realizar una clonación de repositorio principal a local </span></p>
+            </section>
+
+            <section data-transition="fade-in slide-out" style="padding: 3rem;">
+                <p class="fragment highlight-blue">Requisito Previo </p>
+                <p><span class="fragment slide mR1" style="color: white;">Es necesario descargar e instalar el software
+                        Git en el equipo local en el que se realizara la clonación </span></p>
+                <p><span class="fragment slide mR1" style="color: white;">Es posible descargarlo desde la url <a
+                            href="https://git-scm.com/downloads" target="_blank">Git descargar</a> </span></p>
+            </section>
+
+            <section data-background="assets/img/fondo/bitbucketclonafondo1.png" class="backImgForceCenter"
+                data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 20rem;">
+                <div class="fragment"
+                    style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;">
+                    <h3>1) Copiar el comando con la URl del repositorio a clonar desde la herramienta de bitbucket</h3>
+                </div>
+            </section>
+
+            <section data-transition="fade-in slide-out" style="padding: 3rem;">
+                <p class="fragment highlight-blue">Conexión</p>
+                <p><span class="fragment slide mR1" style="color: white;font-size: large;">2) Se debe implementar el
+                        comando de git que nos permite clonar el repositorio en ambiente local, es necesario establecer
+                        un canal de comunicación entre nuestro ambiente local(Git) con el ambiente remoto(Bitbucket),
+                        estos canales de comunicación pueden ser por llaves públicas y privadas conocidos como SSH o
+                        pueden ser por protocolo HTTP, en esta imagen veremos cómo Bitbucket nos despliega una interfaz
+                        para el usuario y contraseña con la finalidad de comprobar la conexión entre local y
+                        remoto</span></p>
+            </section>
+
+            <section data-background="assets/img/fondo/bitbucketclonafondo2.png"
+                class="backImgForceCenter backImgForceCenter2" data-transition="fade-in slide-out"
+                style="padding: 3rem;padding-top: 20rem;">
+                <div class="fragment"
+                    style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;">
+                    <h3 [ngStyle]="{'color': getRandom(2)}">Conexión</h3>
+                </div>
+            </section>
+
+            <section data-transition="fade-in slide-out" style="padding: 3rem;">
+                <p class="fragment highlight-blue">Descarga</p>
+                <p><span class="fragment slide mR1" style="color: white;">3)Si se finaliza la comunicación entre
+                        ambientes y este se realiza de forma satisfactoria podemos corroborarlo con unos mensajes como
+                        los siguientes</span></p>
+            </section>
+
+            <section data-background="assets/img/fondo/bitbucketclonafondo3.png"
+                class="backImgForceCenter backImgForceCenter2" data-transition="fade-in slide-out"
+                style="padding: 3rem;padding-top: 20rem;">
+                <div class="fragment"
+                    style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;">
+                    <h3 [ngStyle]="{'color': getRandom(2)}">Descarga</h3>
+                </div>
+            </section>
+
+        </section>
+
+
+    </div>
+</div>
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('clonacionBitbucket')" [ngStyle]="{'background-color': getRandom(1)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(1)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

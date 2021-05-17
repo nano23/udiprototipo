@@ -1,0 +1,42 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2>Definición</h2>
+            <h4>Bienvenido, en este apartado se dara un acercamento sobre la herramienta seleccionada para el
+                reporte de cobertura de codigo</h4>
+            <h4>Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> las herramientas seleccionada segun la
+                arquitectura del prototipo propuesta seria <span class="jacoco" title="jacoco"></span></h4>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2 class="fragment highlight-blue">Jacoco</h2>
+            <p [ngStyle]="{'color': getRandom(1)}"></p>
+            <p class="fragment fade-up">¿ Que es ?</p>
+            <p><span class="fragment step-fade-in-then-out">Cobertura de código es un indicador de medida que notifica cuántas líneas / bloques / arcos de su código se ejecutan mientras se lanzan las pruebas automatizadas.</span>
+                <span class="fragment step-fade-in-then-out">La cobertura del código se recopila mediante el uso de una herramienta especializada para instrumentar los binarios a fin de agregar llamadas de seguimiento y ejecutar un conjunto completo de pruebas automatizadas contra el producto instrumentado</span>
+                <span class="fragment step-fade-in-then-out">Jacoco realiza los seguimientos y genera un reporte HTML dentro de un entorno local</span>
+                <span class="fragment step-fade-in-then-out">Dicho reporte lo podemos visualizar en nuestro navegador, esta herramienta nos permite ver cada archivo del proyecto, permitiendo verificar paso a paso la cobertura de cada paquete</span>
+                <span class="fragment step-fade-in-then-out">Si en el reporte de Jacoco entramos a un paquete especifico podremos ver las líneas de código recorridas, cuales fueron los escenarios analizados y cuáles son las rutas que aún no tienen cobertura</span>
+                <span class="fragment step-fade-in-then-out">Se usa por medio de anotaciones java en el codigo de pruebas unitarias</span>
+                
+       
+            </p>
+        </section>
+
+    </div>
+</div>
+
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('definicionCobertura')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

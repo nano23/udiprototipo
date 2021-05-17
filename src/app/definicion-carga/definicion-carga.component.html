@@ -1,0 +1,45 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2>Definición</h2>
+            <h4>Bienvenido, en este apartado se dara un acercamento sobre la herramienta seleccionada para las pruebas de carga</h4>
+            <h4>Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> las herramientas seleccionadas segun la
+                arquitectura del prototipo propuesta serian <span class="jmeter" title="Jmeter"></span>
+                <span class="blazemeter" title="Blazemeter"></span>
+                <span class="taurus" title="Taurus"></span></h4>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2 class="fragment highlight-blue">Jmeter/Blazemeter/Taurus</h2>
+            <p [ngStyle]="{'color': getRandom(1)}"></p>
+            <p class="fragment fade-up">¿ Que es ?</p>
+            <p><span class="fragment step-fade-in-then-out">Tienen como objetivo general, observar el comportamiento de una aplicación o proyecto</span>
+                <span class="fragment step-fade-in-then-out">Se observa el rendimiento bajo una cantidad de peticiones determinada, los usuarios podrían ser concurrentes y se puede especificar qué tipos de tareas serán las ejecutadas</span>
+                <span class="fragment step-fade-in-then-out">Uno de los factor mas importante es determinar el tiempo de ejecución de la prueba</span>
+                <span class="fragment step-fade-in-then-out">Para el prototipo web se utilizarán tres herramientas para poder cumplir estas pruebas de carga BlazeMeter,Jmeter y taurus</span>
+                <span class="fragment step-fade-in-then-out">BlazeMeter es un todo un marco de trabajo pero para nuestro caso utilizaremos el plugin del navegador chrome para capturar las acciones realizadas sobre la pagina web del prototipo</span>
+
+                <span class="fragment step-fade-in-then-out">La otra herramienta de pruebas de carga es Jmeter,esta, se descarga y se instala como cualquier programa, el link para descargarlo es https://jmeter.apache.org/</span>
+                <span class="fragment step-fade-in-then-out">Con Jmeter se pueden construir manualmente pruebas de carga asi como tambien importar pruebas generadas desde herramientas como BlazeMeter para hacerles modificaciones y ejecutarlas</span>
+                <span class="fragment step-fade-in-then-out">La ultima herramienta de pruebas de carga es Taurus,esta, se descarga y se instala facilmente, el link para descargarlo es https://gettaurus.org/</span>
+                <span class="fragment step-fade-in-then-out">Finalmente con la herramienta Taurus es posible ejecutar <span class="tooltip2"><span class="tooltip2">scripts<span class="tooltiptext">secuencia de comandos en un lenguaje legible por una maquina</span></span><span class="tooltiptext">secuencia de comandos en un lenguaje legible por una maquina</span></span> de pruebas en formayo yml creados con anterioridad por herramientas como blazemeter o jmeter</span>
+                <span class="fragment step-fade-in-then-out">Los scripts de Taurus se usan para complementar procesos <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span>, como por ejemplo permitir ejecucion en segundo plano de pruebas de carga sobre servidores en la nube de blazemeter</span>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('definicionCarga')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

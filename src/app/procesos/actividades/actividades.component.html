@@ -1,0 +1,116 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 style="text-transform: uppercase; text-align: center;padding-bottom: 0rem;font-size: larger; color: rgb(71, 23, 246);border-bottom: 1px solid;padding: 1rem;" [ngStyle]="{'color': getRandom(2)}">{{getProceso()}}</h2>
+
+        <section *ngIf="proceso ==='prototipo'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p  style="font-size: revert;">ACTIVIDAD</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p  style="    font-size: large;text-align: justify;font-size: x-large;">Para reforzar tus conocimientos debes realizar las siguientes actividades:</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">1) <span  [ngStyle]="{'color': getRandom(3)}">Instalar el <span class="tooltip2">IDE<span class="tooltiptext">Entorno de desarrollo de software integrado</span></span> de desarrollo de software para Front-End Visual Studio Code</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">2) <span  [ngStyle]="{'color': getRandom(3)}">Instalar el <span class="tooltip2">IDE<span class="tooltiptext">Entorno de desarrollo de software integrado</span></span> de desarrollo de software para Back-End eclipse</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">3) <span  [ngStyle]="{'color': getRandom(3)}">Crear un proyecto "Hola Mundo" usando angular</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='seguimiento'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p  style="font-size: x-large;">ACTIVIDAD</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p  style="    font-size: large;text-align: justify;font-size: x-large;">Para reforzar tus conocimientos debes realizar las siguientes actividades:</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">1) <span  [ngStyle]="{'color': getRandom(3)}">Crear un proyecto gratuita usando la herramienta de administracion de proyectos en la nube Jira</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">2) <span  [ngStyle]="{'color': getRandom(3)}">Crear una actividad en el proyecto y asignarla a algun participante</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">3) <span  [ngStyle]="{'color': getRandom(3)}">Asociar la actividad creada en jira con un branch en bitbucket</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='repositorio'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p  style="font-size: x-large;">ACTIVIDAD</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p  style="    font-size: large;text-align: justify;font-size: x-large;">Para reforzar tus conocimientos debes realizar las siguientes actividades:</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">1) <span  [ngStyle]="{'color': getRandom(3)}">Crear un repositorio en bitbucket</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">2) <span  [ngStyle]="{'color': getRandom(3)}">Conectarse al repositorio usando la herramienta tortoise git</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">3) <span  [ngStyle]="{'color': getRandom(3)}">Realizar cambios en su repositorio local y unificarlos con el repositorio en la nube</span></p>
+        </section>
+
+        
+        <section *ngIf="proceso ==='colaboración'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p  style="font-size: x-large;">ACTIVIDAD</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p  style="    font-size: large;text-align: justify;font-size: x-large;">Para reforzar tus conocimientos debes realizar las siguientes actividades:</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">1) <span  [ngStyle]="{'color': getRandom(3)}">Crear un proyecto con la herramienta Confluence</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">2) <span  [ngStyle]="{'color': getRandom(3)}">Integrar un documento de Jira con Confluence</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">3) <span  [ngStyle]="{'color': getRandom(3)}">Crear algun tipo de documento de los que Confluence tiene disponibles</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='artefactos'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p  style="font-size: x-large;">ACTIVIDAD</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p  style="    font-size: large;text-align: justify;font-size: x-large;">Para reforzar tus conocimientos debes realizar las siguientes actividades:</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">1) <span  [ngStyle]="{'color': getRandom(3)}">Descargar y ejecutar la herramienta Nexus Repository</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">2) <span  [ngStyle]="{'color': getRandom(3)}">Siguiendo los pasos del ejemplo del contenido informativo realizar una integración versionando el codigo de algun proyecto</span></p>
+        </section>
+
+
+        <section *ngIf="proceso ==='unitariascliente'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p  style="font-size: x-large;">ACTIVIDAD</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p  style="    font-size: large;text-align: justify;font-size: x-large;">Para reforzar tus conocimientos debes realizar las siguientes actividades:</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">1) <span  [ngStyle]="{'color': getRandom(3)}">Crear un archivo de pruebas unitarias en un proyecto angular usando Karma y/o Jasmin</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">2) <span  [ngStyle]="{'color': getRandom(3)}">Ejecutar el comando de pruebas unitarias y verificar el resultado</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariasserver'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p  style="font-size: x-large;">ACTIVIDAD</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p  style="    font-size: large;text-align: justify;font-size: x-large;">Para reforzar tus conocimientos debes realizar las siguientes actividades:</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">1) <span  [ngStyle]="{'color': getRandom(3)}">Crear un archivo de pruebas unitarias en un proyecto java usando Junit</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">2) <span  [ngStyle]="{'color': getRandom(3)}">Ejecutar el comando de pruebas unitarias y verificar el resultado</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='cobertura'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p  style="font-size: x-large;">ACTIVIDAD</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p  style="    font-size: large;text-align: justify;font-size: x-large;">Para reforzar tus conocimientos debes realizar las siguientes actividades:</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">1) <span  [ngStyle]="{'color': getRandom(3)}">Integrar a un proyecto con archivos de pruebas unitarias en java usando Junit la dependencia de jacoco</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">2) <span  [ngStyle]="{'color': getRandom(3)}">Ejecutar el comando de ejecución de pruebas unitarias y verificar el resultado de cobertura de codigo</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='calidad'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p  style="font-size: x-large;">ACTIVIDAD</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p  style="    font-size: large;text-align: justify;font-size: x-large;">Para reforzar tus conocimientos debes realizar las siguientes actividades:</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">1) <span  [ngStyle]="{'color': getRandom(3)}">Generar un reporte de calidad de codigo desde un proyecto java sobre sonarqube</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">2) <span  [ngStyle]="{'color': getRandom(3)}">Realizar cambios a un proyecto java y volver a generar el reporte de calidad del codigo para ver las diferencias reflejadas sobre el sonarqube</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebasintegracion'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p  style="font-size: x-large;">ACTIVIDAD</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p  style="    font-size: large;text-align: justify;font-size: x-large;">Para reforzar tus conocimientos debes realizar las siguientes actividades:</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">1) <span  [ngStyle]="{'color': getRandom(3)}">Generar un caso de ejemplo de consumo de algun rest <span class="tooltip2">API<span class="tooltiptext">Interfaz de programación de aplicaciones</span></span> usando la herramienta Postman</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">2) <span  [ngStyle]="{'color': getRandom(3)}">Exportar de postman una colección de consumos rest <span class="tooltip2">API<span class="tooltiptext">Interfaz de programación de aplicaciones</span></span> de ejemplo en formato <span class="tooltip2">JSON<span class="tooltiptext">es un formato de texto sencillo para el intercambio de datos</span></span> para ejecutarlos usando Newman desde linea de comandos</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebascarga'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p  style="font-size: x-large;">ACTIVIDAD</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p  style="    font-size: large;text-align: justify;font-size: x-large;">Para reforzar tus conocimientos debes realizar las siguientes actividades:</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">1) <span  [ngStyle]="{'color': getRandom(3)}">Usando la herramienta Blazemeter capturar las acciones de uso de una pagina web construida por el estudiante</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">2) <span  [ngStyle]="{'color': getRandom(3)}">Ejecutar reportes de pruebas de carga usando Jmeter con taurus y analisar el resultado obtenido</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='orquestación'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p  style="font-size: x-large;">ACTIVIDAD</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p  style="    font-size: large;text-align: justify;font-size: x-large;">Para reforzar tus conocimientos debes realizar las siguientes actividades:</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">1) <span  [ngStyle]="{'color': getRandom(3)}">Usando la herramienta Jenkins orquestar el despliegue automatico de una aplicación en java </span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;">2) <span  [ngStyle]="{'color': getRandom(3)}">Analisar el resultado del ejemplo anteriormente mencionado en la consola de Jenkins</span></p>
+        </section>
+
+    </div>
+
+</div>
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(1)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+</div>

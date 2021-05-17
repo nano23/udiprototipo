@@ -1,0 +1,57 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas" style="margin-top: 1em;">{{getProceso()}}</h2>
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2>Ejemplo</h2>
+            <h4>Bienvenido, en este apartado se mostrara un ejemplo de la herramienta seleccionada
+                para la construcción de pruebas unitarias del lado del servidor y el prototipo de software propuesto </h4>
+            <h4>Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> las herramientas seleccionada segun la
+                arquitectura del prototipo propuesta seria <span class="junit" title="Junit"></span></h4>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid">
+            <section class="mgt0">
+                <h2 class="fragment highlight-blue">Junit</h2>
+                <p [ngStyle]="{'color': getRandom(1)}"></p>
+                <p class="fragment fade-up">Ejemplo</p>
+                <p><span class="fragment step-fade-in-then-out">Para realizar las pruebas unitarias del lado del servidor
+                        se ejecuta el comando "mvn test" desde la raiz del proyecto</span>
+                    <span class="fragment step-fade-in-then-out">A continuacion se evidencia un ejemplo en video con
+                        resultado negativo</span>
+                    <span class="fragment step-fade-in-then-out">Posteriormente se realizara una modificación en el
+                        codigo para corregir el error de la prueba</span>
+                    <span class="fragment step-fade-in-then-out">Finalmente se ejecutara nuevamente la prueba para
+                        visualizar el resultado correcto</span>
+                </p>
+            </section>
+        </section>
+
+        <section data-background-video="assets/video/pruebaUnitaria2.mp4" data-background-color="#000000">
+            <div class="divVideo" style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 26rem!important;">
+                <h4 [ngStyle]="{'color': getRandom(2)}">Ejemplo de ejecución prueba unitaria</h4>
+                <p><span class="fragment step-fade-in-then-out">Los asserts se usan en las pruebas para validar un resultado esperado</span>
+                    <span class="fragment step-fade-in-then-out">Si no se cumple la condicion del assert la prueba falla</span>
+                    <span class="fragment step-fade-in-then-out">Existen frameworks adicionales para la construccion de pruebas como mokito o powermock</span>
+                    <span class="fragment step-fade-in-then-out">Los mocks se usan para simular un comportamiento que no se tiene en el momento de la prueba</span>
+                    <span class="fragment step-fade-in-then-out"></span>
+                </p>
+            </div>
+        </section>
+
+
+
+    </div>
+</div>
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('ejemploUniservidor')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(1)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(1)}">Etapas de Estudio</button>
+  </div>

@@ -1,0 +1,326 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2>Prototipo</h2>
+            <h4>Bienvenido, en este apartado se dara un acercamento sobre la relacion de las herramientas seleccionadas
+                para las pruebas de integración y el prototipo de software propuesto </h4>
+            <h4>Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> las herramientas seleccionada segun la
+                arquitectura del prototipo propuesta seria <span class="postman" title="Postman"></span><span
+                    class="newman" title="Newman"></span></h4>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid">
+            <section class="mgt0">
+                <h2 class="fragment highlight-blue">Postman/Newman</h2>
+                <p [ngStyle]="{'color': getRandom(1)}"></p>
+                <p class="fragment fade-up">Prototipo</p>
+                <p><span class="fragment step-fade-in-then-out">Para lograr determinar si los programas funcionan de
+                        forma correcta, es importante ejecutar pruebas de integración</span>
+                    <span class="fragment step-fade-in-then-out">Existen programas que permiten realizar pruebas de
+                        forma automática, para este caso del proyecto se utilizaran tres herramientas que son Postman,
+                        Newman y Jenkins</span>
+                    <span class="fragment step-fade-in-then-out">Con postman se debe generar una colección de datos,
+                        esto es necesario debido a que Newman permite ejecutar dichas colecciones mediante comandos
+                        <span class="tooltip2">nodejs<span class="tooltiptext">entorno en tiempo de ejecución multiplataforma, de código abierto en el lenguaje javascript</span></span></span>
+                    <span class="fragment step-fade-in-then-out">Un ejemplo de prueba de integración seria crear el
+                        consumo por peticion POST para el metodo de Login</span>
+                    <span class="fragment step-fade-in-then-out">En el Postman se debe a realizar una exportación de los
+                        datos obtenidos</span>
+                    <span class="fragment step-fade-in-then-out">En el ejemplo se le envia un usuario y una contraseña,
+                        y en la respuesta retorna el mismo usuario pasado como parámetro y un token, con un estado 200
+                        que significa que todo trascurrió bien</span>
+                    <span class="fragment step-fade-in-then-out">Para poder continuar con el proceso de integración
+                        continua, debes instalar Newman que es una herramienta que ayuda a complementar los datos
+                        obtenidos con Postman</span>
+
+                    <span class="fragment step-fade-in-then-out">Newman es posible instalarlo usando <span class="tooltip2">nodejs<span class="tooltiptext">entorno en tiempo de ejecución multiplataforma, de código abierto en el lenguaje javascript</span></span> con el
+                        siguiente comando "npm install newman"</span>
+                    <span class="fragment step-fade-in-then-out">El comando para la ejecución de una colección de
+                        pruebas postman en newman es "newman run 'nombre_del_json_destino.json'"</span>
+
+                    <span class="fragment step-fade-in-then-out">A continuacion se evidencia un ejemplo de script json
+                        exportado desde postman:</span>
+
+                </p>
+            </section>
+            <section class="mgt0">
+                <p>Archivo de dependencias de Maven: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">postman_collection.json</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|300">
+                    {{ '{' }}
+	"info": {{ '{' }}
+		"_postman_id": "68bea2e6-eb70-4efd-a77b-c0b3460b2a80",
+		"name": "Prototipo Dev Ops",
+		"description": "Prototipo Dev Ops",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	{{ '}' }},
+	"item": {{ '[' }}
+		{{ '{' }}
+			"name": "Login",
+			"event": {{ '[' }}
+				{{ '{' }}
+					"listen": "test",
+					"script": {{ '{' }}
+						"id": "648f8cd5-968e-47f9-b72e-35ccf74045b6",
+						"exec": {{ '[' }}
+							"var jsonData = JSON.parse(responseBody);\r",
+							"var consDate = new Date().toISOString();\r",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);\r",
+							"postman.setEnvironmentVariable(\"consDate\", consDate);"
+						{{ ']' }},
+						"type": "text/javascript"
+					{{ '}' }}
+				{{ '}' }},
+				{{ '{' }}
+					"listen": "prerequest",
+					"script": {{ '{' }}
+						"id": "28ced319-947b-432b-a3c4-521aeb8212c9",
+						"exec": {{ '[' }}
+							"pm.request.url.query.each((q) => {{ '{' }}\r",
+							"     q.update(encodeURI(q.toString()))\r",
+							"{{ '}' }});"
+						{{ ']' }},
+						"type": "text/javascript"
+					{{ '}' }}
+				{{ '}' }}
+			{{ ']' }},
+			"request": {{ '{' }}
+				"method": "POST",
+				"header": {{ '[' }}
+					{{ '{' }}
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					{{ '}' }}
+				{{ ']' }},
+				"body": {{ '{' }}
+					"mode": "raw",
+					"raw": "{{ '{' }}\r\n\t\"username\": \"DIOS\",\r\n\t\"password\": \"Admin123\"\r\n }",
+					"options": {{ '{' }}
+						"raw": {{ '{' }}
+							"language": "json"
+						{{ '}' }}
+					{{ '}' }}
+				{{ '}' }},
+				"url": {{ '{' }}
+					"raw": "http://localhost:8181/api/main/sign-in",
+					"protocol": "http",
+					"host": {{ '[' }}
+						"localhost"
+					{{ ']' }},
+					"port": "8181",
+					"path": {{ '[' }}
+						"api",
+						"main",
+						"sign-in"
+					{{ ']' }}
+				{{ '}' }},
+				"description": "metodo para ingresar y generar token"
+			{{ '}' }},
+			"response": {{ '[' }}{{ ']' }}
+		{{ '}' }},
+		{{ '{' }}
+			"name": "Get Paginas 1",
+			"event": {{ '[' }}
+				{{ '{' }}
+					"listen": "prerequest",
+					"script": {{ '{' }}
+						"id": "3ea87fee-6626-4abc-9029-90be652e5703",
+						"exec": {{ '[' }}
+							"pm.request.url.query.each((q) => {{ '{' }}\r",
+							"     q.update(encodeURI(q.toString()))\r",
+							"{{ '}' }});"
+						{{ ']' }},
+						"type": "text/javascript"
+					{{ '}' }}
+				{{ '}' }}
+			{{ ']' }},
+			"request": {{ '{' }}
+				"method": "GET",
+				"header": {{ '[' }}
+					{{ '{' }}
+						"key": "Authorization",
+						"value": "Bearer {{ '{' }}{{ '{' }}token{{ '}' }}{{ '}' }}",
+						"type": "text"
+					{{ '}' }}
+				{{ ']' }},
+				"url": {{ '{' }}
+					"raw": "http://localhost:8181/api/pagina1/pagination?size=10&totalElements=0&totalPages=0&page=0",
+					"protocol": "http",
+					"host": {{ '[' }}
+						"localhost"
+					{{ ']' }},
+					"port": "8181",
+					"path": {{ '[' }}
+						"api",
+						"pagina1",
+						"pagination"
+					{{ ']' }},
+					"query": {{ '[' }}
+						{{ '{' }}
+							"key": "size",
+							"value": "10"
+						{{ '}' }},
+						{{ '{' }}
+							"key": "totalElements",
+							"value": "0"
+						{{ '}' }},
+						{{ '{' }}
+							"key": "totalPages",
+							"value": "0"
+						{{ '}' }},
+						{{ '{' }}
+							"key": "page",
+							"value": "0"
+						{{ '}' }}
+					{{ ']' }}
+				{{ '}' }},
+				"description": "traer datos de pagina 1"
+			{{ '}' }},
+			"response": {{ '[' }}{{ ']' }}
+		{{ '}' }},
+		{{ '{' }}
+			"name": "Crear Pagina 1",
+			"event": {{ '[' }}
+				{{ '{' }}
+					"listen": "prerequest",
+					"script": {{ '{' }}
+						"id": "34d12ba0-5e29-4ef1-9c8d-7d99b7d39016",
+						"exec": {{ '[' }}
+							"pm.request.url.query.each((q) => {{ '{' }}\r",
+							"     q.update(encodeURI(q.toString()))\r",
+							"{{ '}' }});"
+						{{ ']' }},
+						"type": "text/javascript"
+					{{ '}' }}
+				{{ '}' }}
+			{{ ']' }},
+			"request": {{ '{' }}
+				"method": "POST",
+				"header": {{ '[' }}
+					{{ '{' }}
+						"key": "Authorization",
+						"value": "Bearer {{ '{' }}{{ '{' }}token{{ '}' }}{{ '}' }}",
+						"type": "text"
+					{{ '}' }}
+				{{ ']' }},
+				"body": {{ '{' }}
+					"mode": "raw",
+					"raw": "{{ '{' }}\r\n\t\"campo1\": \"pruebaN1_{{ '{' }}{{ '{' }}consDate{{ '}' }}{{ '}' }}\",\r\n\t\"campo2\": \"pruebaN2_{{ '{' }}{{ '{' }}consDate{{ '}' }}{{ '}' }}\",\r\n    \"campo3\": \"pruebaN3_{{ '{' }}{{ '{' }}consDate{{ '}' }}{{ '}' }}@.com\",\r\n    \"campo4\": \"pruebaN4_{{ '{' }}{{ '{' }}consDate{{ '}' }}{{ '}' }}\",\r\n    \"campo5\": \"pruebaN5_{{ '{' }}{{ '{' }}consDate{{ '}' }}{{ '}' }}\" \r\n }",
+					"options": {{ '{' }}
+						"raw": {{ '{' }}
+							"language": "json"
+						{{ '}' }}
+					{{ '}' }}
+				{{ '}' }},
+				"url": {{ '{' }}
+					"raw": "http://localhost:8181/api/pagina1",
+					"protocol": "http",
+					"host": {{ '[' }}
+						"localhost"
+					{{ ']' }},
+					"port": "8181",
+					"path": {{ '[' }}
+						"api",
+						"pagina1"
+					{{ ']' }}
+				{{ '}' }},
+				"description": "metodo para crear registro en pagina 1"
+			{{ '}' }},
+			"response": {{ '[' }}{{ ']' }}
+		{{ '}' }}
+	{{ ']' }},
+	"protocolProfileBehavior": {{ '{' }}{{ '}' }}
+}
+                  </code></pre>
+            </section>
+
+            <section class="mgt0">
+                <p>Cabecera del archivo: <span style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(2)}">info</span></p>
+                 <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="1-6">
+                    "info": {{ '{' }}
+                    "_postman_id": "68bea2e6-eb70-4efd-a77b-c0b3460b2a80",
+                    "name": "Prototipo Dev Ops",
+                    "description": "Prototipo Dev Ops",
+                    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+                {{ '}' }},
+                   </code></pre>
+             </section>
+
+             <section class="mgt0">
+                <p>Ejemplo request: <span style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(2)}">Crear Pagina 1</span></p>
+                 <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|200">
+                    {{ '{' }}
+                    "name": "Crear Pagina 1",
+                    "event": {{ '[' }}
+                        {{ '{' }}
+                            "listen": "prerequest",
+                            "script": {{ '{' }}
+                                "id": "34d12ba0-5e29-4ef1-9c8d-7d99b7d39016",
+                                "exec": {{ '[' }}
+                                    "pm.request.url.query.each((q) => {{ '{' }}\r",
+                                    "     q.update(encodeURI(q.toString()))\r",
+                                    "{{ '}' }});"
+                                {{ ']' }},
+                                "type": "text/javascript"
+                            {{ '}' }}
+                        {{ '}' }}
+                    {{ ']' }},
+                    "request": {{ '{' }}
+                        "method": "POST",
+                        "header": {{ '[' }}
+                            {{ '{' }}
+                                "key": "Authorization",
+                                "value": "Bearer {{ '{' }}{{ '{' }}token{{ '}' }}{{ '}' }}",
+                                "type": "text"
+                            {{ '}' }}
+                        {{ ']' }},
+                        "body": {{ '{' }}
+                            "mode": "raw",
+                            "raw": "{{ '{' }}\r\n\t\"campo1\": \"pruebaN1_{{ '{' }}{{ '{' }}consDate{{ '}' }}{{ '}' }}\",\r\n\t\"campo2\": \"pruebaN2_{{ '{' }}{{ '{' }}consDate{{ '}' }}{{ '}' }}\",\r\n    \"campo3\": \"pruebaN3_{{ '{' }}{{ '{' }}consDate{{ '}' }}{{ '}' }}@.com\",\r\n    \"campo4\": \"pruebaN4_{{ '{' }}{{ '{' }}consDate{{ '}' }}{{ '}' }}\",\r\n    \"campo5\": \"pruebaN5_{{ '{' }}{{ '{' }}consDate{{ '}' }}{{ '}' }}\" \r\n }",
+                            "options": {{ '{' }}
+                                "raw": {{ '{' }}
+                                    "language": "json"
+                                {{ '}' }}
+                            {{ '}' }}
+                        {{ '}' }},
+                        "url": {{ '{' }}
+                            "raw": "http://localhost:8181/api/pagina1",
+                            "protocol": "http",
+                            "host": {{ '[' }}
+                                "localhost"
+                            {{ ']' }},
+                            "port": "8181",
+                            "path": {{ '[' }}
+                                "api",
+                                "pagina1"
+                            {{ ']' }}
+                        {{ '}' }},
+                        "description": "metodo para crear registro en pagina 1"
+                    {{ '}' }},
+                    "response": {{ '[' }}{{ ']' }}
+                {{ '}' }}
+                   </code></pre>
+             </section>
+
+   
+
+        </section>
+
+
+    </div>
+</div>
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('prototipoIntegracion')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(1)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(1)}">Etapas de Estudio</button>
+  </div>

@@ -1,0 +1,95 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2>Prototipo</h2>
+            <h4>Bienvenido, en este apartado se dara un acercamento sobre la relacion de la herramienta seleccionada
+                para la
+                construcción de pruebas unitarias y el prototipo de software propuesto </h4>
+            <h4>Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> las herramientas seleccionada segun la
+                arquitectura del prototipo propuesta seria <span class="karma"></span><span class="jasmine"></span></h4>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid">
+            <section class="mgt0">
+                <h2 class="fragment highlight-blue">Karma/Jasmine</h2>
+                <p [ngStyle]="{'color': getRandom(1)}"></p>
+                <p class="fragment fade-up">Prototipo</p>
+                <p><span class="fragment step-fade-in-then-out">Para el desarrollo del prototipo se escogieron las
+                        herramientas(frameworks) de Jasmin y karma, debido a que angular es el marco de trabajo con el
+                        que
+                        se implementó el lado del cliente</span>
+                    <span class="fragment step-fade-in-then-out">Las pruebas unitarias del lado del cliente hacen parte
+                        del
+                        engranaje <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span></span>
+                    <span class="fragment step-fade-in-then-out">Por este motivo y para este ejemplo en particular es
+                        necesario que se realicen de forma satisfactoria para poder finalizar los procesos de pipeline
+                        en el
+                        proceso de orquestación</span>
+                    <span class="fragment step-fade-in-then-out">Las pruebas construidas son basicas con el objetivo de
+                        dar
+                        a conocer el funcionamiento de la herramienta y su integración, a continuación se presenta un
+                        ejemplo de codigo desarrollado</span>
+                </p>
+            </section>
+            <section class="mgt0">
+                <p>Archivo de construcción de pruebas: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">app.component.spec.ts</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|80">
+
+                import {{ '{' }} TestBed, async {{ '}' }} from '@angular/core/testing';
+                import {{ '{' }} RouterTestingModule {{ '}' }} from '@angular/router/testing';
+                import {{ '{' }} AppComponent {{ '}' }} from './app.component';
+                import {{ '{' }} HttpClientTestingModule {{ '}' }} from '@angular/common/http/testing'
+
+                describe{{ '(' }}'AppComponent', {{ '(' }}{{ ')' }} => {{ '{' }}
+                beforeEach{{ '(' }}async{{ '(' }}{{ '(' }}{{ ')' }} => {{ '{' }}
+                    TestBed.configureTestingModule{{ '(' }}{{ '{' }}
+                    declarations: [AppComponent],
+                    imports: [ RouterTestingModule,HttpClientTestingModule ],
+                    {{ '}' }}{{ ')' }}.compileComponents{{ '(' }}{{ ')' }};
+                {{ '}' }}{{ ')' }}{{ ')' }};
+
+                it{{ '(' }}`el titulo debe ser 'Prototipo DevOps'`, async{{ '(' }}{{ '(' }}{{ ')' }} => {{ '{' }}
+                    const fixture = TestBed.createComponent{{ '(' }}AppComponent{{ ')' }};
+                    const app = fixture.debugElement.componentInstance;
+                    expect{{ '(' }}app.title{{ ')' }}.toEqual{{ '(' }}'Prototipo DevOps'{{ ')' }};
+                {{ '}' }}{{ ')' }}{{ ')' }};
+
+                it{{ '(' }}'debería crear la aplicación', {{ '(' }}{{ ')' }} => {{ '{' }}
+                    const fixture = TestBed.createComponent{{ '(' }}AppComponent{{ ')' }};
+                    const app = fixture.debugElement.componentInstance;
+                    expect{{ '(' }}app{{ ')' }}.toBeTruthy{{ '(' }}{{ ')' }};
+                {{ '}' }}{{ ')' }};
+
+                {{ '}' }}{{ ')' }};
+                  </code></pre>
+            </section>
+
+            <section class="mgt0">
+                <p>Función de prueba que verifica el titulo: <span style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(2)}">it</span></p>
+                 <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|80">
+                it{{ '(' }}`el titulo debe ser 'Prototipo DevOps'`, async{{ '(' }}{{ '(' }}{{ ')' }} => {{ '{' }}
+                const fixture = TestBed.createComponent{{ '(' }}AppComponent{{ ')' }};
+                const app = fixture.debugElement.componentInstance;
+                expect{{ '(' }}app.title{{ ')' }}.toEqual{{ '(' }}'Prototipo DevOps'{{ ')' }};
+                {{ '}' }}{{ ')' }}{{ ')' }};
+                   </code></pre>
+             </section>
+    
+             <section class="mgt0">
+                <p>Función de prueba que verifica que la clase AppComponent se instancie correctamente: <span style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(2)}">it</span></p>
+                 <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|80">
+                    it{{ '(' }}'debería crear la aplicación', {{ '(' }}{{ ')' }} => {{ '{' }}
+                    const fixture = TestBed.createComponent{{ '(' }}AppComponent{{ ')' }};
+                    const app = fixture.debugElement.componentInstance;
+                    expect{{ '(' }}app{{ ')' }}.toBeTruthy{{ '(' }}{{ ')' }};
+                  {{ '}' }}{{ ')' }};
+                   </code></pre>
+             </section>
+        </section>
+
+
+    </div>
+</div>

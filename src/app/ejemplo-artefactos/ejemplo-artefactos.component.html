@@ -1,0 +1,68 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section>
+            <h2 >Ejemplo de Versionamiento</h2>
+            <br><br>
+            <h5 >Bienvenido, en este apartado se dara un acercamento con un ejemplo de versionamiento en la herramienta Nexus Repository  </h5>
+            <br>
+            <h5 ><span class="nexus"></span></h5>        
+        </section>
+
+        
+        <section  data-transition="fade-in slide-out" class="topmid">
+            <p style="    color: #1b91ff;">Pre Configuración</p>
+            <p><span class="fragment step-fade-in-then-out">Es necerio tener previa configuración de un proyecto java con maven</span>
+                <span class="fragment step-fade-in-then-out">En el archivo. pom se realiza la siguiente configuración, se debe asignar la URL del nexus y su respectivo puerto, en la parte final de la imagen se observa el distributionManagement, esta configuración es la que permite guardar el proyecto en la ruta.</span>
+                
+                </p>  
+        </section>
+        
+
+        
+        <section data-background="assets/img/fondo/nexus11.png" class="backImgForceCenter" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(1)}" >Configuración del pom de maven</h3>
+            </div>
+        </section>
+
+        <section  data-transition="fade-in slide-out" class="topmid">
+            <p style="    color: #1b91ff;">Versionar Codigo</p>
+            <p>
+                <span class="fragment step-fade-in-then-out">Para poder subir los cambios al repositorio de Nexus se ejecuta el comando <span [ngStyle]="{'color': getRandom(3)}">mvn clean deploy install -P dev</span>, este comando crea la copia en el repositorio de artefactos</span>
+                </p>    
+        </section>
+
+        <section data-background="assets/img/fondo/nexus9.png" class="backImgForceCenter" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(1)}" >Comando maven para crear versionamiento</h3>
+            </div>
+        </section>
+
+        <section  data-transition="fade-in slide-out" class="topmid">
+            <p style="    color: #1b91ff;">Post Ejecución</p>
+            <p><span class="fragment slide mR1" >Después de ejecutar los respectivos deploy al servidor de artefactos, se observa en el gestor de administración como van quedando las versiones por fecha</span></p>
+        </section>
+
+        <section data-background="assets/img/fondo/nexus10.png" class="backImgForceCenter" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(1)}" >Estado de versión del codigo</h3>
+            </div>
+        </section>
+
+
+    </div>
+</div>
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('ejemploArtefactos')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

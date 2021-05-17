@@ -1,0 +1,381 @@
+/* You can add global styles to this file, and also import other style files */
+@import '_variables';
+@import '~bootstrap/scss/bootstrap';
+@import '~font-awesome/scss/font-awesome';
+@import '~animate.css/animate.min.css';
+@import '~highlight.js/styles/github.css';
+
+.jumbotron {
+    //margin-top: 3.4rem;
+    margin-bottom: 0rem;
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.4rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+
+    .btn{
+        margin: .5rem;
+    }
+
+    .buttons a{
+        margin: 0.2rem;
+    }
+
+}
+
+@include media-breakpoint-up(sm) {
+    .jumbotron {
+       // margin-top: 3.4rem;
+        margin-bottom: 0rem;
+        h1 {
+            font-size: 3.6rem;
+            margin-bottom: 1.8rem;
+        }
+        p {
+            font-size: 1.4rem;
+        }
+        .buttons a{
+            margin: 0.3rem;
+        }
+    }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.backImgForceCenter .slide-background-content{
+    background-repeat: no-repeat!important;  
+    /*background-position: 0% 0%!important;*/
+    background-size: 95% 95%!important;
+    }
+
+    .backImgEzqInfderecha .slide-background-content{
+        position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 350px 250px!important;
+    background-position: right 66px top 74%!important;
+        }
+
+        //imagen 80 % y centrada por que es pequeña
+        .backImgForceCenter2 .slide-background-content{
+        position: absolute;
+    width: 80%!important;
+    height: 100%;
+    background-position: 50% 50%;
+    margin-left: 10%;
+}
+
+    .reveal .slides section .fragment.highlight-purple.visible {
+        color: #d30eea!important;
+    }
+
+    .mR1{
+        margin-right: 0.5rem;
+    }
+
+    .reveal .hljs {
+        background-color: #272822!important;
+    }
+
+    .hljs-attr{
+        color: white!important;
+    }
+
+    .hljs-string, .hljs-doctag {
+        color: #28a745!important;
+    }
+
+    .t100{
+        top: 100px!important;
+    }
+
+    app-principal button{
+        padding: 1rem!important;
+    }
+
+    app-principal button > span{
+        color: white;
+        font-size: x-large!important;
+    }
+
+    app-principal button:hover {
+        background-color: #E7DFDD!important;
+    }
+    
+
+    app-principal button:hover > span{
+        color: black!important;
+    }
+
+    app-objetivos button{
+        padding: 1rem!important;
+    }
+
+    app-objetivos button > span{
+        color: white;
+        font-size: x-large!important;
+    }
+
+    app-objetivos button:hover {
+        background-color: #E7DFDD!important;
+    }
+    
+
+    app-objetivos button:hover > span{
+        color: black!important;
+    }
+
+    app-evaluacion button{
+        padding: 1rem!important;
+    }
+
+    app-evaluacion button > span{
+        color: white;
+        font-size: x-large!important;
+    }
+
+    app-evaluacion button:hover {
+        background-color: #E7DFDD!important;
+    }
+    
+
+    app-evaluacion button:hover > span{
+        color: black!important;
+    }
+
+
+    app-actividades button{
+        padding: 1rem!important;
+    }
+
+    app-actividades button > span{
+        color: white;
+        font-size: x-large!important;
+    }
+
+    app-actividades button:hover {
+        background-color: #E7DFDD!important;
+    }
+    
+
+    app-actividades button:hover > span{
+        color: black!important;
+    }
+
+    /* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #4717F6;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #A239CA;
+  }
+
+  .tituloPaginas{
+    text-align: center!important;
+    padding: 3rem!important;
+    font-size: xxx-large!important;
+    color: #a239ca!important;
+    text-transform: uppercase!important;
+  }
+
+  .navigate-left:hover, .navigate-right:hover{
+    background: none!important;
+  }
+
+  .hljs-keyword, .hljs-selector-tag, .hljs-subst {
+    color: #4717f6 !important;
+    font-weight: bold;
+}
+
+.reveal .hljs-ln-numbers {
+    color: #9e9e9e!important;
+}
+
+
+.hljs-ln-line{
+    color: #9e9e9e!important;
+}
+
+.reveal pre code {
+    color: #b5b7ae;
+}
+
+
+app-ejecucion .navigate-left {
+    color: #404396!important;
+        opacity: .6!important;
+    }
+
+    app-ejecucion .navigate-right {
+        color: #404396!important;
+            opacity: .6!important;
+        }
+
+        app-administracion-proyecto  .navigate-left {
+            color: #404396!important;
+                opacity: .6!important;
+            }
+        
+            app-administracion-proyecto .navigate-right {
+                color: #404396!important;
+                    opacity: .6!important;
+                }
+
+                app-seguimiento-incidencias  .navigate-left {
+            color: #404396!important;
+                opacity: .6!important;
+            }
+        
+            app-seguimiento-incidencias .navigate-right {
+                color: #404396!important;
+                    opacity: .6!important;
+                }
+
+.reveal .slides section .fragment.step-fade-in-then-out {
+	opacity: 0;
+	display: none; }
+.reveal .slides section .fragment.step-fade-in-then-out.current-fragment {
+	opacity: 1;
+	display: inline; }
+
+    .reveal h4{
+        font-size: 0.6em!important;
+
+        letter-spacing: 2px!important;
+    }
+
+    .reveal h2{
+        padding-top: 60px!important;
+    }
+
+    .reveal .h2n{
+        padding-top: 0px!important;
+    }
+
+    .topmid{
+        top: 150px!important;
+    }
+
+    .divHome{
+        max-width: 90%!important;
+        text-align: center;
+        margin: 0px auto;
+        display: block;
+    }
+
+    .divVideo{
+        font-size: 0.7em!important;
+    }
+
+
+    .divBotom{
+        font-size: small!important;
+    display: block;
+    padding: 1rem;
+    position: absolute;
+    bottom: 12px;
+    right: auto;
+    z-index: 9999;
+    }
+
+    .divBotom span{
+        font-size: small!important;
+    }
+
+    button b{
+        text-transform: uppercase;
+    }
+
+    .reveal .controls {
+        font-size: 13px!important;
+        bottom: 0px!important;
+    }
+
+    .reveal .controls .controls-arrow {
+        color: #66ab8c!important;
+    }
+
+    .reveal p {
+        font-size: 0.6em !important;
+    }
+
+    .reveal h5{
+        font-size: 0.6em!important;
+
+        letter-spacing: 2px!important;
+    }
+
+
+    .tooltip2 {
+        position: relative;
+        display: inline-block;
+        //border-bottom: 1px dotted black;
+        font-style: oblique;
+        text-shadow: 2px 2px 3px #66ab8c!important;
+      }
+      
+      .tooltip2 .tooltiptext {
+        visibility: hidden;
+        width: 100%;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 1rem;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -60px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: small;
+        text-transform: lowercase;
+        border: 1px solid;
+        border-color: #b9b9b9;
+        text-shadow: none!important;
+        min-width: 200px;
+      }
+      
+      .tooltip2 .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+      }
+      
+      .tooltip2:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+      
+      .divBotom button{
+        padding: 1rem !important;
+        color: white;
+      }
+
+      .divBotom button:hover {
+        background-color: #E7DFDD !important;
+        color: black;
+    }

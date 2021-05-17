@@ -1,0 +1,14 @@
+<button style="display: none;" mat-raised-button (click)="ir('prototipo')" [ngStyle]="{'background-color': getRandom(0)}"></button>
+<button style="display: none;" mat-raised-button (click)="ir('seguimiento')" [ngStyle]="{'background-color': getRandom(1)}"></button>
+<button style="display: none;" mat-raised-button (click)="ir('repositorio')" [ngStyle]="{'background-color': getRandom(2)}"></button>
+<button style="display: none;" mat-raised-button (click)="ir('repositorio')" [ngStyle]="{'background-color': getRandom(5)}"></button>
+<button style="display: none;" mat-raised-button (click)="ir('prototipo')" [ngStyle]="{'background-color': getRandom(4)}"></button>
+<h2 class="tituloPaginas">{{getProceso()}}</h2>
+<div style="padding: 2rem;">
+<div class="row" style="margin-left: 10%;margin-right: 10%;">
+<button class="butonSel" style="width: 50%;    border-top-left-radius: 10px;" mat-raised-button (click)="ir('objetivos')" [ngStyle]="{'background-color': getRandom(0)}">1) Objetivo de Aprendizaje</button>
+<button class="butonSel" style="width: 50%;    border-top-right-radius: 10px;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(1)}">2) Contenido Informativo</button>
+<button class="butonSel" style="width: 50%;    border-bottom-left-radius: 10px;" mat-raised-button (click)="ir('actividades')" [ngStyle]="{'background-color': getRandom(2)}">3) Actividades de Aprendizaje</button>
+<button class="butonSel" style="width: 50%;     border-bottom-right-radius: 10px;" mat-raised-button (click)="ir('evaluacion')" [ngStyle]="{'background-color': getRandom(4)}">4) Evaluación</button>
+</div>
+</div>

@@ -1,0 +1,74 @@
+<div class="reveal">
+
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section  class="topmid">
+            <h2 >Seguimiento de Incidencias</h2>
+        
+            <h5 >Bienvenido, en este apartado se conoceran las capacidades de la herramienta Jira en temas relacionados con seguimiento y control de incidencias  </h5>
+            <br>
+            <h5 ><span class="jira"></span></h5>        
+        </section>
+
+        <section data-background="assets/img/fondo/jiragantt1.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 12rem;">
+            <p class="fragment highlight-blue">JIRA</p>
+            <p class="fragment fade-up" [ngStyle]="{'color': getRandom(1)}">Hoja de Ruta</p>
+            <p><span class="fragment slide mR1" style="color: rgb(56, 55, 55);font-size: large;">Herramienta tipo diagrama de gantt, permite visualizar en una linea de tiempo el estado de las diferentes incidencias del proyecto</span></p>
+        </section>
+
+        <section data-background="assets/img/fondo/jiragantt2.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 12rem;">
+            <p class="fragment highlight-blue">JIRA</p>
+            <p class="fragment fade-up" [ngStyle]="{'color': getRandom(1)}">Detalle - Hoja de Ruta</p>
+            <p><span class="fragment slide mR1" style="color: rgb(56, 55, 55);font-size: large;"> Sin salir del control tipo gantt en un panel lateral es posible visualisar el detalle de cada incidencia</span></p>
+        </section>
+
+        <section data-background="assets/img/fondo/jiraincidencias.png"  data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 14rem;">
+            <p class="fragment highlight-blue">JIRA</p>
+            <p class="fragment fade-up" [ngStyle]="{'color': getRandom(1)}">Panel de Incidencias</p>
+            <p><span class="fragment slide mR1" style="color: black;">Esta opcion presenta todas las incidencias en una vista tipo tabla permitiendo filtrar y ordenar de multiples formas</span></p>
+        </section>
+
+        <section>
+            <p  [ngStyle]="{'color': getRandom(2)}">Detalle de Incidencias</p>
+            <br><br>
+            <p><span class="fragment slide mR1">Completa descripción del estado actual de la incidencia, contiene datos tales como, Nombre, descripcion, estado actual, informador, procesos relacionados con el repositorio entre otros</span></p>
+
+        </section>
+
+        <section data-background="assets/img/fondo/jiradetalle.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 12rem;">
+            <p [ngStyle]="{'color': getRandom(1)}" style="display: none;"></p>
+        </section>
+
+
+        <section data-background-video="assets/video/crearincidencia.mp4" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 26rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(1)}" >Creación de Incidencia</h3>
+                <p><span class="fragment step-fade-in-then-out">Los campos con * son obligatorios</span>
+                    <span class="fragment step-fade-in-then-out">En la descripción es posible agregar todo tipo de caracteres html</span>
+                    <span class="fragment step-fade-in-then-out">Es posible adjuntar archivos</span>
+                    <span class="fragment step-fade-in-then-out">Es posible crear campos configurables</span></p>
+            </div>
+        </section>
+
+      
+
+        
+    </div>
+</div>
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('ejemploOrquestacion')" [ngStyle]="{'background-color': getRandom(1)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(1)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

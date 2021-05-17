@@ -1,0 +1,43 @@
+
+
+
+<div fxFlex="100" fxFlex.lt-sm="100" class="divHome">
+<div class="row wrap sector">
+    <mat-card>
+        <mat-card-title>Desarrollo del contenido del proceso de <b>{{getProceso()}}</b></mat-card-title>
+        <div fxLayout="row wrap" fxLayoutGap="8px grid">
+            <ng-container *ngFor="let opt of opciones; let i = index">
+            <span style="display: none;" [ngStyle]="{'background-color': getRandom(i)}"></span>
+            <div fxFlex="100" style="color: white;color:{{i===3 ? 'black': ''}};" fxFlex.lt-sm="100" class="box bg-blue" [ngStyle]="{'background-color': getRandom(i)}" [@bounce]="bounce" (click)="ir(opt.ir)">{{opt.nombre}}</div>
+        </ng-container>
+        </div>
+    </mat-card>
+</div>
+<!--<div class="row">
+    <div>
+        <h1>Titulo 1</h1>
+        <div class="box bg-blue" [@flip]="flip" (click)="ir('ejemplo')">Seguimiento de Incidencias y Administración del proyecto</div>
+        <div class="box bg-blue" [@flip]="flip">Repositorio de Fuentes</div>
+        <div class="box bg-blue" [@flip]="flip">Orquestación</div>
+        <div class="box bg-blue" [@flip]="flip">Repositorio de Artefactos(dependencias)</div>
+        <div class="box bg-blue" [@flip]="flip">Compilación</div>
+    </div>
+</div>
+<div class="row">
+    <div>
+        <h1>Titulo 2</h1>
+        <div class="box bg-blue" [@jackInTheBox]="jackInTheBox">Pruebas Unitarias(servidor)</div>
+        <div class="box bg-blue" [@jackInTheBox]="jackInTheBox">Pruebas Unitarias(cliente)</div>
+        <div class="box bg-blue" [@jackInTheBox]="jackInTheBox">Pruebas de integración</div>
+        <div class="box bg-blue" [@jackInTheBox]="jackInTheBox">Pruebas de carga</div>
+        <div class="box bg-blue" [@jackInTheBox]="jackInTheBox">Cobertura de código</div>
+    </div>
+</div>
+
+<div class="row">
+    <h1>Titulo 3</h1>
+    <div class="box bg-blue" [@bounce]="bounce">Reporte de calidad del código</div>
+    <div class="box bg-blue" [@bounce]="bounce">Colaboración</div>
+</div>
+-->
+

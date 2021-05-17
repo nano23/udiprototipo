@@ -1,0 +1,124 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 style="text-transform: uppercase; text-align: center;padding-bottom: 0rem;font-size: larger; color: #a239ca;border-bottom: 1px solid;padding: 1rem;" [ngStyle]="{'color': getRandom(1)}">{{getProceso()}}</h2>
+        <section *ngIf="proceso ==='prototipo'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class=" slide" style="font-size: revert;">OBJETIVOS</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p class=" fade-up" style="    font-size: large;text-align: justify;font-size: x-large;">A continuación se relaciona el listado de objetivos para el proceso seleccionado</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Conocer los entornos de desarrollo para generar el prototipo</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Comprender como se desarrolla un Front-end que funcione como prototipo</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Entender como se desarrolla un Back-end que funcione como prototipo</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Idenficar opciones web probables para un prototipo </span></p>
+        </section>
+
+
+        <section *ngIf="proceso ==='seguimiento'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class=" slide" style="font-size: x-large;">OBJETIVOS</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p class=" fade-up" style="    font-size: large;text-align: justify;font-size: x-large;">A continuación se relaciona el listado de objetivos para el proceso seleccionado</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Conocer Jira como herramienta de administracion de proyectos</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Utilziar Jira como instrumento de control y seguimiento de incidencias</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Comprender como se integra un software de administracion de proyecto con un repositorio en la nube</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='repositorio'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class=" slide" style="font-size: x-large;">OBJETIVOS</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p class=" fade-up" style="    font-size: large;text-align: justify;font-size: x-large;">A continuación se relaciona el listado de objetivos para el proceso seleccionado</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Conocer Bitbucket como herramienta de administracion de proyectos</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Entender como se conecta aun repositorio en la nube</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Saber como se realiza un proceso de push o actualización de cambios en el repositorio</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='colaboración'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class=" slide" style="font-size: x-large;">OBJETIVOS</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p class=" fade-up" style="    font-size: large;text-align: justify;font-size: x-large;">A continuación se relaciona el listado de objetivos para el proceso seleccionado</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Conocer la herramienta colaborativa Confluence</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Comprender la integracion de Confluence con las otras herramientas <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span></span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Entender el funcionamiento de los documentos en la herramienta Confluence</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='artefactos'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class=" slide" style="font-size: x-large;">OBJETIVOS</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p class=" fade-up" style="    font-size: large;text-align: justify;font-size: x-large;">A continuación se relaciona el listado de objetivos para el proceso seleccionado</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Conocer las virtudes de la herramienta Nexus Repository</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Entender los procesos de instalación y configuración de la herramienta anteriormente mencionada</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Identificar un ejemplo practico de integración de la herramienta en <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span></span></p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariascliente'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class=" slide" style="font-size: x-large;">OBJETIVOS</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p class=" fade-up" style="    font-size: large;text-align: justify;font-size: x-large;">A continuación se relaciona el listado de objetivos para el proceso seleccionado</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Relacionar el concepto de pruebas unitarias del lado del cliente en un modelo <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span></span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Destacar la importancia de implementar pruebas unitarias en el desarrollo de software front-end</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Construir pruebas unitarias del lado del cliente</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariasserver'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class=" slide" style="font-size: x-large;">OBJETIVOS</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p class=" fade-up" style="    font-size: large;text-align: justify;font-size: x-large;">A continuación se relaciona el listado de objetivos para el proceso seleccionado</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Relacionar el concepto de pruebas unitarias del lado del servidor en un modelo <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span></span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Destacar la importancia de implementar pruebas unitarias en el desarrollo de software back-end</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Construir pruebas unitarias del lado del servidor</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='cobertura'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class=" slide" style="font-size: x-large;">OBJETIVOS</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p class=" fade-up" style="    font-size: large;text-align: justify;font-size: x-large;">A continuación se relaciona el listado de objetivos para el proceso seleccionado</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Relacionar el concepto de cobertura de codigo en un modelo <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span></span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Identificar la importancia de ejecutar procesos de cobertura de codigo para mejorar la calidad del codigo</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Estructurar ejemplos de cobertura de codigo</span></p>
+        </section>
+        
+        <section *ngIf="proceso ==='calidad'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class=" slide" style="font-size: x-large;">OBJETIVOS</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p class=" fade-up" style="    font-size: large;text-align: justify;font-size: x-large;">A continuación se relaciona el listado de objetivos para el proceso seleccionado</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Conocer el concepto de reporte de calidad del codigo en un modelo <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span></span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Determinar la importancia de generar reportes de calidad del codigo para mejorar la naturaleza del codigo</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Construir casos de reportes de calidad del codigo</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebasintegracion'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class=" slide" style="font-size: x-large;">OBJETIVOS</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p class=" fade-up" style="    font-size: large;text-align: justify;font-size: x-large;">A continuación se relaciona el listado de objetivos para el proceso seleccionado</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Relacionar el concepto de pruebas de integración en un modelo <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span></span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Determinar la importancia de construir pruebas de integración</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Hacer uso de los conocimientos de pruebas de integración para aplicarlo en desarrollo de proyectos</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebascarga'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class=" slide" style="font-size: x-large;">OBJETIVOS</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p class=" fade-up" style="    font-size: large;text-align: justify;font-size: x-large;">A continuación se relaciona el listado de objetivos para el proceso seleccionado</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Relacionar el concepto de pruebas de carga en un modelo <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span></span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Determinar la importancia de construir pruebas de carga para conocer la tolerancia a fallos de una aplicación</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Hacer uso de los conocimientos de pruebas de carga para aplicarlo en desarrollo de proyectos</span></p>
+        </section>
+
+        <section *ngIf="proceso ==='orquestación'"  class="backImgEzqInfderecha t100" data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class=" slide" style="font-size: x-large;">OBJETIVOS</p>
+            <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+            <p class=" fade-up" style="    font-size: large;text-align: justify;font-size: x-large;">A continuación se relaciona el listado de objetivos para el proceso seleccionado</p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Relacionar el concepto de orquestación en un modelo <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span></span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Determinar la importancia de orquestar procesos automaticos</span></p>
+            <p class=" slide mR1" style="text-align: justify;font-size: x-large;"><span class="check"></span><span  [ngStyle]="{'color': getRandom(3)}">Hacer uso de los conocimientos de la herramienta jenkis en el desarrollo de proyectos</span></p>
+        </section>
+
+
+    </div>
+
+</div>
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(1)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+</div>

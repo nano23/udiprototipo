@@ -1,0 +1,38 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2>Definición</h2>
+            <h4>Bienvenido, en este apartado se dara un acercamento sobre la herramienta seleccionada para las pruebas de integración</h4>
+            <h4>Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> las herramientas seleccionadas segun la
+                arquitectura del prototipo propuesta serian <span class="postman" title="Postman"></span><span class="newman" title="Newman"></span></h4>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2 class="fragment highlight-blue">Postman/Newman</h2>
+            <p [ngStyle]="{'color': getRandom(1)}"></p>
+            <p class="fragment fade-up">¿ Que es ?</p>
+            <p><span class="fragment step-fade-in-then-out">La misión de las pruebas de integración es verificar el correcto ensamblaje entre los distintos componentes una vez que han sido probados unitariamente con el fin de comprobar que interactúan correctamente a través de sus interfaces</span>
+                <span class="fragment step-fade-in-then-out">Las herramientas de pruebas de integración se miden por, capacidad de generar <span class="tooltip2">scripts<span class="tooltiptext">secuencia de comandos en un lenguaje legible por una maquina</span></span> de ejecución de pruebas,tiempo de respuesta en la ejecución de pruebas y la facilidad y el tiempo con que el usuario puede crear pruebas de integración</span>
+                <span class="fragment step-fade-in-then-out">Cuando ejecutamos un programa que controla el cumplimiento de pruebas y determina si los resultados arrojados son los esperados, hablamos de la automatización de pruebas de integración</span>
+                <span class="fragment step-fade-in-then-out">Postman nos permite consumir APIs con la finalidad de poder crear flujos de trabajo, conectados por medio de colecciones y peticiones, los tests pueden tener asserts que nos permiten validar la información</span>
+                <span class="fragment step-fade-in-then-out">Newman en un complemento  que ejecuta desde un servidor <span class="tooltip2">nodejs<span class="tooltiptext">entorno en tiempo de ejecución multiplataforma, de código abierto en el lenguaje javascript</span></span> un script de postman que nos permite sacar aún más rendimiento, permite que las colecciones existentes se puedan integrar con Jenkins, admitiendo la automatización de las pruebas</span>
+                <span class="fragment step-fade-in-then-out">Las pruebas de integración dependen de una aplicación montada, ya que su funcionalidad es ejecutar el <span class="tooltip2">JSON<span class="tooltiptext">es un formato de texto sencillo para el intercambio de datos</span></span> de postman por medio de newman</span>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('definicionIntegracion')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

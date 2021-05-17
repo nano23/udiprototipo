@@ -1,0 +1,49 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section class="topmid">
+            <h2 >Adminsitración de Confluence</h2>
+           
+            <h5 >Bienvenido, en este apartado se dara un acercamento sobre la herramienta en la nube seleccionada para la gestión documental y colaborativa del proyecto  </h5>
+           
+            <h5 >Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> la herramienta seleccionada segun la arquitectura del prototipo propuesta seria <span class="confluence"></span></h5>        
+        </section>
+
+        <section data-transition="fade-in slide-out" >
+            <p class="fragment highlight-blue">CONFLUENCE</p>
+            <p class="fragment fade-up" [ngStyle]="{'color': getRandom(1)}">¿ Que es ?</p>
+            <p><span class="fragment slide mR1" style="color: white;font-size: large;">confluence es una herramienta que nos permite trabajar en equipo, sin importar la ubicación en donde se encuentren los diferentes miembros del equipo, confluence nos permite crear planes para el proyecto, nos permite agregar contenido dinámico y de multimedia.</span></p>
+        </section>
+
+        <section data-background="assets/img/fondo/CONFLUENCEFondo1.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 12rem;">
+            <p [ngStyle]="{'color': getRandom(1)}" style="display: none;"></p>
+        </section>
+
+        <section  data-transition="fade-in slide-out" >
+            <p style="    color: #1b91ff;">CONFLUENCE</p>
+            <p><span class=" mR1" >A continuación se describen brevemente las funciones</span></p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1" [ngStyle]="{'color': getRandom(1)}">Home: </span> Pagina de resumen con la información importante para el usuario en sesion</p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1" [ngStyle]="{'color': getRandom(2)}">Documentos recientes: </span> Listado de documentos mas usados o con marcas particulares para tener en cuenta</p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1" [ngStyle]="{'color': getRandom(3)}">Espacios de trabajo: </span> Apartado que permite crear o unirse a grupos con la finalidad de trabajar temas independientes</p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1" [ngStyle]="{'color': getRandom(4)}">Publicaciones: </span> Sección dedicada a publicaciones generales de ambito general y que puedan interesar a todos los involucrados en el proyecto</p>
+        </section>
+
+      
+
+        
+    </div>
+</div>
+
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('administracionConfluence')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

@@ -1,0 +1,55 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2>Ejemplo</h2>
+            <h4>Bienvenido, en este apartado se mostrara un ejemplo de la herramienta seleccionada
+                para el reporte de calidad del codigo y el prototipo de software propuesto </h4>
+            <h4>Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> las herramientas seleccionada segun la
+                arquitectura del prototipo propuesta seria <span class="sonar"></span></h4>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid">
+            <section class="mgt0">
+                <h2 class="fragment highlight-blue">Sonarqube</h2>
+                <p [ngStyle]="{'color': getRandom(1)}"></p>
+                <p class="fragment fade-up">Ejemplo</p>
+                <p><span class="fragment step-fade-in-then-out">Para visualizar el reporte de calidad del codigo se debe ejecutar algun comando maven adicionando sonar:sonar al final</span>
+                    <span class="fragment step-fade-in-then-out">A continuacion se evidencia un ejemplo en video de ejecución de prueba que genera reporte de calidad del codigo</span>
+                </p>
+            </section>
+        </section>
+
+        <section data-background-video="assets/video/pruebaCalidad.mp4" data-background-color="#000000">
+            <div class="divVideo" style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 23rem!important;">
+                <h4 [ngStyle]="{'color': getRandom(2)}">Ejemplo de reporte de calidad del codigo</h4>
+                <p><span class="fragment step-fade-in-then-out">Para obtener un resumen un poco más detallado, se pulsa sobre la palabra que Prototipo-Udi, la herramienta permite que se pueda navegar a través de cada uno de sus módulos <span class="tooltip2">bugs<span class="tooltiptext">Error de software</span></span>, Vulnerabilities, Security entre otras, también es importante notar que Sonarqube se integra con Jacoco</span>
+                    <span class="fragment step-fade-in-then-out">Los <span class="tooltip2">bugs<span class="tooltiptext">Error de software</span></span> son errores en el software, que generan conflictos al momento de ejecutar el código, también se aplica este término como un desencadenador de resultados inesperados</span>
+                    <span class="fragment step-fade-in-then-out">Seleccionar en el menú, el apartado de Code Smell, va a permitir gestionar un reporte donde se podrá observar como la herramienta de Sonarqube interpreta el código que se puede mejorar, en cuanto a las buenas prácticas del código</span>
+                    <span class="fragment step-fade-in-then-out">Se integra con jacoco para presentar el reporte de cobertura de codigo</span>
+                    <span class="fragment step-fade-in-then-out">Sonarqube permite visualizar la cobertura del código, la diferencia de esta cobertura con la que brinda Jacoco, es que estos reportes se pueden compartir con todo el grupo de desarrollo o personas implicadas en el proyecto</span>
+                    <span class="fragment step-fade-in-then-out">El código duplicado también es objeto de identificación por medio de esta herramienta, gracias a la detección del código duplicado se pueden reutilizar métodos por medio del cambio de parámetros.</span>
+                    <span class="fragment step-fade-in-then-out">Cada vez que solucionamos algo en el entorno de desarrollo del proyecto, se podrá hacer huso de una nueva ejecución sobre el proyecto, cada nueva ejecución brinda un nuevo reporte donde podremos compararlos con reportes anteriores.</span>
+                        <span class="fragment step-fade-in-then-out"></span>
+                </p>
+            </div>
+        </section>
+
+
+
+    </div>
+</div>
+
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('ejemploCalidad')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(1)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(1)}">Etapas de Estudio</button>
+  </div>

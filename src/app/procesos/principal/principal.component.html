@@ -1,0 +1,29 @@
+<h2 class="tituloPaginas">Etapas de estudio</h2>
+<div style="text-align: center;
+display: grid;
+padding: 1rem;
+margin-left: 10%;
+    margin-right: 10%;
+    overflow-y: auto;
+    height: -webkit-fill-available;
+    max-height: 650px;">
+<button style="display: none;" mat-raised-button (click)="ir('prototipo')" [ngStyle]="{'background-color': getRandom(0)}">Desarrollo del Prototipo</button>
+<button style="display: none;" mat-raised-button (click)="ir('seguimiento')" [ngStyle]="{'background-color': getRandom(1)}">Seguimiento de Incidencias y Administración del proyecto</button>
+<button style="display: none;" mat-raised-button (click)="ir('repositorio')" [ngStyle]="{'background-color': getRandom(2)}">Repositorio de Fuentes</button>
+
+
+
+    <button style="margin: 1rem;" mat-raised-button (click)="ir('prototipo')" [ngStyle]="{'background-color': getRandom(0)}">1) Desarrollo del Prototipo</button>
+    <button style="margin: 1rem;" mat-raised-button (click)="ir('seguimiento')" [ngStyle]="{'background-color': getRandom(1)}">2) Seguimiento de Incidencias y Administración del proyecto</button>
+    <button style="margin: 1rem;" mat-raised-button (click)="ir('repositorio')" [ngStyle]="{'background-color': getRandom(2)}">3) Repositorio de Fuentes</button>
+    <button style="margin: 1rem;" mat-raised-button (click)="ir('cobertura')" [ngStyle]="{'background-color': getRandom(1)}">4) Cobertura de código</button>
+    <button style="margin: 1rem;" mat-raised-button (click)="ir('calidad')" [ngStyle]="{'background-color': getRandom(2)}">5) Reporte de calidad del código</button>
+    <button style="margin: 1rem;" mat-raised-button (click)="ir('colaboración')" [ngStyle]="{'background-color': getRandom(0)}">6) Colaboración</button>
+    <button style="margin: 1rem;" mat-raised-button (click)="ir('artefactos')" [ngStyle]="{'background-color': getRandom(1)}">7) Repositorio de Artefactos(dependencias)</button>
+   <!-- <button style="margin: 1rem;" mat-raised-button (click)="ir('compilacion')" [ngStyle]="{'background-color': getRandom(2)}">Compilación</button>-->
+    <button style="margin: 1rem;" mat-raised-button (click)="ir('unitariasserver')" [ngStyle]="{'background-color': getRandom(0)}">8) Pruebas Unitarias(servidor)</button>
+    <button style="margin: 1rem;" mat-raised-button (click)="ir('unitariascliente')" [ngStyle]="{'background-color': getRandom(1)}">9) Pruebas Unitarias(cliente)</button>
+    <button style="margin: 1rem;" mat-raised-button (click)="ir('pruebasintegracion')" [ngStyle]="{'background-color': getRandom(2)}">10) Pruebas de integración</button>
+    <button style="margin: 1rem;" mat-raised-button (click)="ir('pruebascarga')" [ngStyle]="{'background-color': getRandom(0)}">11) Pruebas de carga</button>
+    <button style="margin: 1rem;" mat-raised-button (click)="ir('orquestación')" [ngStyle]="{'background-color': getRandom(1)}">12) Orquestación</button>
+</div>

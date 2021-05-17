@@ -1,0 +1,106 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section class="topmid" style="top: 80px !important;">
+            <h2 >Instalación y configuracion del reposotorio de artefactos</h2>
+      
+            <h5 >Bienvenido, en este apartado se dara un acercamento a los procesos de instalación y configuración en la herramienta Nexus Repository  </h5>
+       
+            <h5 ><span class="nexus"></span></h5>        
+        </section>
+
+        <section  data-transition="fade-in slide-out" class="topmid">
+            <p style="    color: #1b91ff;">Descarga</p>
+            <p><span class="fragment slide mR1" >Para descargar el contenido de instalación se debe dirigir a la pagina <a href="https://www.sonatype.com/products/repository-pro" target="_blank">Nexus Repository</a></span></p>
+            <p><span class="fragment slide mR1">En cualquier sistema operativo que se pretenda instalar y configurar, nexus funciona como un sistema independiente y par replicarlo en otra maquina solo basta con copiar y pegar todo su contenido</span></p>
+        </section>
+
+        <section data-background="assets/img/fondo/nexus1.png" class="backImgForceCenter" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(1)}" >Pagina Descarga</h3>
+            </div>
+        </section>
+
+        <section  data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 8rem;">
+            <p style="    color: #1b91ff;">Ejecución</p>
+            <p><span class="fragment slide mR1" >Una vez descargado el Nexus Repository, se tendrá acceso al archivo ejecutable para su correspondiente instalación</span></p>
+            <p><span class="fragment slide mR1" >Para poder inicializar la herramienta, se copia la ruta y se ejecuta el comando de instalación nexus.exe /run</span></p>
+        </section>
+
+        <section data-background="assets/img/fondo/nexus2.png" class="backImgForceCenter" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(1)}" >File System</h3>
+            </div>
+        </section>
+
+        <section data-background="assets/img/fondo/nexus3.png" class="backImgForceCenter" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(1)}" >Ejecución</h3>
+            </div>
+        </section>
+
+
+        <section  data-transition="fade-in slide-out" class="topmid">
+            <p style="    color: #1b91ff;">Interfaz</p>
+            <p><span class="fragment step-fade-in-then-out">Finalizada la ejecución del Nexus Repository, se inicializa una interface web en donde podemos gestionar todos nuestros repositorios de artefactos</span>
+                <span class="fragment step-fade-in-then-out">Para poder inicializar la herramienta, se debe proceder a realizar su respectivo Login, el primer ingreso tiene por default el nombre de usuario admin y la contraseña se encuentra en la ruta indicada por la interface</span>
+                
+                </p>  
+        </section>
+        
+
+        
+        <section data-background="assets/img/fondo/nexus4.png" class="backImgForceCenter" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(1)}" >Interface</h3>
+            </div>
+        </section>
+
+        <section data-background="assets/img/fondo/nexus5.png" class="backImgForceCenter" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(1)}" >Login</h3>
+            </div>
+        </section>
+
+        <section  data-transition="fade-in slide-out" class="topmid" >
+            <p style="    color: #1b91ff;">Configurar Nuevo Repositorio</p>
+            <p><span class="fragment step-fade-in-then-out">Finalizado el Login, se vera la siguiente interfaz, debes crear un nuevo repositorio, esto se logra por medio del icono del engranaje de color verde</span>
+                <span class="fragment step-fade-in-then-out">Ahora se debe seleccionar algún tipo de repositorio para ser creado, para el proyecto se escoge el repositorio de Maven2(hosted), esta selección es debido a que lo que se realizara es guardar en el repositorio por ende seleccionados hosted</span>
+                <span class="fragment step-fade-in-then-out">Después de selección el Maven2 (hosted), se despliega una nueva interfaz en donde se debe seleccionar alguno de los repositorios que por defecto crear la herramienta, para el proyecto se selecciona Maven-snapshots</span>
+                </p>          
+        </section>
+
+        <section data-background="assets/img/fondo/nexus6.png" class="backImgForceCenter" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(1)}" >Administración de repositorios</h3>
+            </div>
+        </section>
+
+        <section data-background="assets/img/fondo/nexus7.png" class="backImgForceCenter" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(1)}" >Tipo Repositorio</h3>
+            </div>
+        </section>
+
+        <section data-background="assets/img/fondo/nexus8.png" class="backImgForceCenter" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(1)}" >Ejemplo creación repositorio</h3>
+            </div>
+        </section>
+        
+    </div>
+</div>
+
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('instalacionArtefactos')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

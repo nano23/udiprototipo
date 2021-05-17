@@ -1,0 +1,91 @@
+<div class="reveal">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section class="topmid">
+            <h2 >Adminsitración del proyecto</h2>
+    
+            <h5 >Bienvenido, en este apartado se dara un acercamento sobre la herramienta en la nube seleccionada para gestión del proyecto  </h5>
+          
+            <h5 >Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> la herramienta seleccionada segun la arquitectura del prototipo propuesta seria <span class="jira"></span></h5>        
+        </section>
+
+        <section data-background="assets/img/fondo/jiraFondo1.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 12rem;">
+            <p class="fragment highlight-blue">JIRA</p>
+            <p class="fragment fade-up" [ngStyle]="{'color': getRandom(1)}">¿ Que es ?</p>
+            <p><span class="fragment slide mR1" style="color: rgb(56, 55, 55);font-size: large;">Es una herramienta en la nube comunmente usada para gestión de proyectos y seguimiento de erorres en desarrollo software.</span></p>
+            <p><span class="fragment slide mR1" style="color: rgb(56, 55, 55);font-size: large;">Permite integrarse con multiples servicios para llevar a cabo procesos <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span>, como por ejemplo, conectarse con la herramienta bitbucket encargada de gestionar los repositorios de fuentes, otro ejemplo seria, la conexion con confluence herramienta para gestion documental </span></p>
+        </section>
+
+        <section  data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 8rem;">
+            <p style="    color: #1b91ff;">JIRA</p>
+            <p class="fragment fade-up" [ngStyle]="{'color': getRandom(1)}">Administración</p>
+            <p><span class="fragment slide mR1" >En esta opcion se tiene la posiblidad de administrar las propiedas, permisos y capacidades del proyecto</span></p>
+            <p><span class="fragment slide mR1">Por ejemplo, Nombre, responsable del proyecto y/o categoria </span></p>
+        </section>
+
+        <section data-background="assets/img/fondo/jiraFondo2.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 12rem;">
+            <p [ngStyle]="{'color': getRandom(1)}" style="display: none;"></p>
+        </section>
+
+        <section  data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 3rem;">
+            <p style="    color: #1b91ff;">JIRA</p>
+            <p><span class=" mR1" >A continuación se describen brevemente las funciones configurables</span></p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1" [ngStyle]="{'color': getRandom(1)}">Tablero: </span> Permite modelar el dashboard de incidencias de la herramienta Jira denominado con ese mismo nombre en español, tablero</p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1" [ngStyle]="{'color': getRandom(2)}">Acesso: </span> Otorga facultades sobre otros usuarios a las respectivas funcionalidades de la herramienta en el proyecto</p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1" [ngStyle]="{'color': getRandom(3)}">Tipo de Incidencias: </span> Funcionalidad que permite estructurar las incidencias segun parametros definidos por el usuario</p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1" [ngStyle]="{'color': getRandom(4)}">Notificaciones: </span> Capacidad de informar via correo electronico acerca de variaciones en los estados de incidencias sobre el proyecto</p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1" [ngStyle]="{'color': getRandom(1)}">Funciones: </span> Permite aumentar las competencias del Jira con herramientas adicionales propias de la herramienta, ejemplo generadores de informes</p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1" [ngStyle]="{'color': getRandom(2)}">Aplicaciones: </span> Utilidades de terceros instables en Jira para aumentar las capacidades del proyecto, por lo general generan un costo</p>
+        </section>
+
+        <section data-background="assets/img/fondo/jiraFondo3.png" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(1)}" >Tablero</h3>
+            </div>
+        </section>
+
+        <section data-background="assets/img/fondo/jiraFondo5.png" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(2)}" >Acesso</h3>
+            </div>
+        </section>
+
+        <section data-background="assets/img/fondo/jiraFondo6.png" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(3)}" >Tipo de Incidencias</h3>
+            </div>
+        </section>
+
+        <section data-background="assets/img/fondo/jiraFondo7.png" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(4)}" >Notificaciones</h3>
+            </div>
+        </section>
+
+        <section data-background="assets/img/fondo/jiraFondo8.png" data-background-color="#000000" >
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 28rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(1)}" >Funciones</h3>
+            </div>
+        </section>
+
+        
+    </div>
+</div>
+
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('administracionProyecto')" [ngStyle]="{'background-color': getRandom(1)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(1)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

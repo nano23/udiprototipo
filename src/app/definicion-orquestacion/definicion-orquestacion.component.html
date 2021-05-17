@@ -1,0 +1,46 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2>Definición</h2>
+            <h4>Bienvenido, en este apartado se dara un acercamento sobre la herramienta seleccionada para la Orquestación</h4>
+            <h4>Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> la herramienta seleccionada segun la
+                arquitectura del prototipo propuesta seria <span class="jenkins" title="Jenkins"></span></h4>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2 class="fragment highlight-blue">Jenkins</h2>
+            <p [ngStyle]="{'color': getRandom(1)}"></p>
+            <p class="fragment fade-up">¿ Que es ?</p>
+            <p><span class="fragment step-fade-in-then-out">La integración continua es la encargada de preparar y gestionar los datos o recursos de una aplicación que va a ser desplegada en un ambiente X</span>
+                <span class="fragment step-fade-in-then-out">La integración contiene tareas programadas de diferentes formas, ejemplo, programadas con un lenguaje determinado, que ejecutan recursos en una red o una nube para llevar a cabo integraciones de una aplicación</span>
+                <span class="fragment step-fade-in-then-out">El despliegue continuo es una fase que se encarga de la implementación de la integración, su objetivo principal es implementar y entregar los nuevos cambios a un ambiente, ejemplo, servidor de servicios de usuario final </span>
+                <span class="fragment step-fade-in-then-out">El despliegue continuo se distingue en que todo el proceso se lleva a cabo de forma automatizada en procesos conocidos como <span class="tooltip2">pipelines<span class="tooltiptext">Fracción de proceso de un ciclo de vida DevOps</span></span>.</span>
+                <span class="fragment step-fade-in-then-out">Los <span class="tooltip2">pipelines<span class="tooltiptext">Fracción de proceso de un ciclo de vida DevOps</span></span> son basicamente ciclos completos del comportamiento de una parte de la aplicación o toda la aplicación, la codificación en Jenkins se realiza en el lenguaje Groovy</span>
+
+                <span class="fragment step-fade-in-then-out">Un <span class="tooltip2">pipelines<span class="tooltiptext">Fracción de proceso de un ciclo de vida DevOps</span></span> puede tener multiples condiciones para su ejecucion, entre ellas programación de tarea automatica cada x tiempo definida con una expresión regular</span>
+                <span class="fragment step-fade-in-then-out">Un proyecto de desarrollo enfocado a infraestructuras hibridas necesita implementar una orquestación de servicios, con la finalidad de sacar el máximo</span>
+                <span class="fragment step-fade-in-then-out">Los proyectos que gestionan e integran las infraestructuras hibridas son descritos como proyectos de valor, debido a su enfoque ágil y flexible</span>
+                <span class="fragment step-fade-in-then-out">Jenkins es un servidor tipo open source que ayuda a implementar CI(integración continua), con el fin de permitir automatizar múltiples tipos de tareas</span>
+                <span class="fragment step-fade-in-then-out">Jenkins funciona como un verificador del proyecto desarrollado, garantizando que todo funcione en las condicione idóneas antes de ser enviado a ambientes como producción</span>
+                <span class="fragment step-fade-in-then-out">Jenkins puede detectar los cambios en tiempo real del proyecto y determinar si es viable o no el despliegue del proyecto y en caso de no encontrar viabilidad generar una falla</span>
+
+                <span class="fragment step-fade-in-then-out">Recomendacion: Para Jenkins y procesos de integración continua lo óptimo es utilizar conexión por medio de webhooks para que procesos como, integración con repositorio de fuentes(Bitbucket), pueda interactuar de forma automática</span>
+            </p>
+        </section>
+
+    </div>
+</div>
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('definicionOrquestacion')" [ngStyle]="{'background-color': getRandom(1)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(1)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+</div>

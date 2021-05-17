@@ -1,0 +1,62 @@
+<div class="reveal">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section class="topmid">
+            <h2 >Integración entre Jira y Bitbucket</h2>
+            
+            <h5 >Bienvenido, en este apartado se mencionaran aspectos de intregración entre dos aplicaciones en la nube hermanas desarrolladas por un mismo fabricante, Atlassian  </h5>
+            
+            <h5 ><span class="atlassian"></span><span class="jira"></span><span class="bitbucket"></span></h5>        
+        </section>
+
+        <section  data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 3rem;">
+            <p style="    color: #1b91ff;">JIRA - BITBUCKET</p>
+            <p><span class=" mR1" >Integraciones a conocer</span></p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1" [ngStyle]="{'color': getRandom(4)}">Solicitud de Integración: </span> Proceso que se debe llevar a cabo para poder integrar las dos aplicaciones en la nube</p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1" [ngStyle]="{'color': getRandom(1)}">Codigo: </span> Aplicación de Jira que puede ser instalada de forma gratuita y permite integrarse con un proyecto bitbucket creado previamente </p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1" [ngStyle]="{'color': getRandom(2)}">Merge: </span> Es un proceso en el cual los cambios de codigo pasan al repositorio principal, jira permite visualizar las diferentes etapas de confirmación para la incidencia seleccionada</p>
+
+        </section>
+
+        
+        <section data-background="assets/img/fondo/jirasolicitud.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 24rem;">
+            <p class="fragment fade-up" style="background-color: #3e3d3cdb;">JIRA - BITBUCKET</p>
+            <p class="fragment fade-up" [ngStyle]="{'color': getRandom(1)}" style="background-color: #3e3d3cdb;font-size: smaller;
+            width: 140%;
+            margin: 0px auto;
+            text-align: center;
+            margin-left: -20%;">Existe un proceso de autorización en cada aplicación para que sea efectiva la integración, tambien es bueno mencionar que existen niveles de permiso para cada operación que se realice entre dichas aplicaciones</p>
+        </section>
+
+        <section data-background="assets/img/fondo/jiracodigo.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 12rem;">
+            <p class="fragment fade-up" style="background-color: #3e3d3cdb;">JIRA - BITBUCKET</p>
+            <p class="fragment fade-up" [ngStyle]="{'color': getRandom(2)}" style="background-color: #3e3d3cdb;">Ejemplo de proyecto Bitbucket asociado</p>
+        </section>
+      
+        <section data-background="assets/img/fondo/jiramerge.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 8rem;">
+            <p class="fragment fade-up" style="background-color: #3e3d3cdb;">JIRA - BITBUCKET</p>
+            <p class="fragment fade-up" style="background-color: #3e3d3cdb;"><span [ngStyle]="{'color': getRandom(3)}" class="fragment step-fade-in-then-out">confirmaciones de cambios para el repositorio PrototipoUdiPaginaWeb </span>
+                <span class="fragment step-fade-in-then-out" [ngStyle]="{'color': getRandom(4)}">los dos merges de confirmación primero debieron pasar por un proceso de <i>solicitud de incorporación de cambios</i>, como se indica en una de las pestañas </span>
+        </section>
+
+        
+    </div>
+</div>
+
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('ejemploOrquestacion')" [ngStyle]="{'background-color': getRandom(1)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(1)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

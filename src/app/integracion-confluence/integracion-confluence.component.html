@@ -1,0 +1,58 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section class="topmid">
+            <h2 >Integración con Confluence</h2>
+            <h5 >Para gestionar la administración de los miembros implicados en el desarrollo se utiliza un software que se especializa en gestionar la colaboración de equipos de desarrollo, su integración con Bitbucket y Jira sucede de forma nativa, debido a que las tres pertenecen a la misma empresa Atlassian, puede funcionar en entorno local y también a nivel de servidores, la forma de lograr la conexión con Jira es por medio del plugin de páginas, donde podremos conectar un espacio  </h5>
+            <h5 ><span class="confluence"></span></h5>        
+        </section>
+
+        <section data-background="assets/img/fondo/confluence1.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 0rem;">
+            
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;">
+                <p class="fragment highlight-blue">CONFLUENCE</p>
+                <p>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;">Unifica tu plan de trabajos de desarrollo con las potentes integraciones de Jira, que incluyen hojas de ruta de seguimiento de incidencias y de actualización de forma dinámica.</span>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;">Integraciones a la perfección con todo el paquete de la organizacion Atlassian y optimizar el trabajo con herramientas en la nube</span>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;">Confluence y Jira son poderosas herramientas por si solas, pero juntas, pueden transformar la froma en que los equipos colaboran en proyectos</span>
+                </p>
+            </div>
+        </section>
+
+        <section data-background="assets/img/fondo/confluence2.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 12rem;">
+            
+            <div class="fragment" style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+                <p class="fragment highlight-blue">CREACION</p>
+                <p>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;">Ejemplo de creación de un nuevo espacio desde Jira</span>
+				</p>
+            </div>
+        </section>
+
+        <section data-background="assets/img/fondo/confluence3.png" class="backImgForceCenter" data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 12rem;">
+            
+            <div class="fragment" style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+                <p class="fragment highlight-blue">INTEGRACION</p>
+                <p>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;">Ejemplo de integración de un documento desde jira</span>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;">Confluence funge como una base de conocimientos de documentación y requisitos de productos</span>
+                    <span class="fragment step-fade-in-then-out" style="font-size: smaller;">Confluence resuelve la desorganización de la documentación</span> 
+				</p>
+            </div>
+        </section>
+    
+    </div>
+</div>
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('integracionConfluence')" [ngStyle]="{'background-color': getRandom(1)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(1)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

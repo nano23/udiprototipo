@@ -1,0 +1,148 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section  class="topmid">
+            <h2 >Adminsitración del Repositorio</h2>
+            <h5 >Bienvenido, en este apartado se dara un acercamento sobre la herramienta en
+                la nube seleccionada para gestión del repositorio de fuentes </h5>
+            <h5 >Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> la herramienta seleccionada segun la
+                arquitectura del prototipo propuesta seria <span class="bitbucket"></span></h5>
+        </section>
+
+        <section data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 8rem;">
+            <p class="fragment highlight-blue">Bitbucket</p>
+            <p class="fragment fade-up" [ngStyle]="{'color': getRandom(1)}">¿ Que es ?</p>
+            <p><span class="fragment slide mR1" style="color: white;font-size: large;">Un repositorio es una bodega de
+                    versiones del codigo fuente de un proyecto.</span></p>
+            <p><span class="fragment slide mR1" style="color: white;font-size: large;">Bitbucket utiliza el sistema de
+                    control de versiones Git, es una herramienta en la nube que se amolda segun las necesidades del
+                    cliente teniendo planes comerciales y gratuitos</span></p>
+        </section>
+
+        <section data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 3rem;">
+            <p style="    color: #1b91ff;">Bitbucket</p>
+            <p><span class=" mR1">A continuación se describen brevemente las funciones configurables</span></p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1"
+                    [ngStyle]="{'color': getRandom(1)}">Resumen: </span> sumario con actividades del usuario</p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1"
+                    [ngStyle]="{'color': getRandom(2)}">Repositorios: </span> Listado de repositorios a los que se tiene
+                acceso</p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1"
+                    [ngStyle]="{'color': getRandom(3)}">Proyectos: </span> Funcionalidad que permite visualizar los
+                proyectos dentro del bitbucket</p>
+            <p style="font-size: large;text-align: justify;"><span class=" mR1"
+                    [ngStyle]="{'color': getRandom(4)}">Solicitudes de Unión: </span> Permite visualizar las solicitudes
+                de unificación de codigo, es proceso permite mejorar la calidad del codigo haciendo un filtro previo a
+                la unificación del codigo del repositorio central</p>
+        </section>
+
+        <section data-background="assets/img/fondo/bitbucketfondo1.png" class="backImgForceCenter"
+            data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 10rem;">
+            <div class="fragment"
+                style="background-color: rgba(0, 0, 0, 0.9) ;padding: 20px;margin-top: 0rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(2)}">Resumen</h3>
+            </div>
+
+            <div class="fragment"
+                style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important; font-size: large;">
+                <h3>Permite visualizar un resumen de la actividad del usuario en la herramienta</h3>
+            </div>
+
+
+            <div class="fragment"
+                style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;font-size: large">
+                <h3>Información que se visualiza: repositorios a los que esta vinculado el usaurio, solicitudes de unión
+                    de codigo, incidencias de Jira</h3>
+            </div>
+
+        </section>
+
+        <section>
+            <section data-background="assets/img/fondo/bitbucketfondo2.png" class="backImgForceCenter"
+                data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 12rem;">
+                <p class="fragment highlight-blue">Repositorios</p>
+                <p><span class="fragment slide mR1" style="color: rgb(56, 55, 55);">Concede al usuario la posibilidad de
+                        acceder a las configuraciones de cada repositorio al que tenga permisos </span></p>
+            </section>
+
+            <section data-background="assets/img/fondo/bitbucketfondo3.png" class="backImgForceCenter"
+                data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 20rem;">
+                <div class="fragment"
+                    style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;">
+                    <h3 [ngStyle]="{'color': getRandom(2)}">Detalle del repositorio</h3>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section data-background="assets/img/fondo/bitbucketfondo4.png" class="backImgForceCenter"
+                data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 12rem;">
+                <p class="fragment highlight-blue">Proyectos</p>
+                <p><span class="fragment slide mR1" style="color: rgb(56, 55, 55);">La herramienta tiene la facultad de
+                        creación de proyectos </span></p>
+                <p><span class="fragment slide mR1" style="color: rgb(56, 55, 55);">Esto permite llevar un orden, es
+                        posible crear una asociación de multiples repositorios a un mismo proyecto</span></p>
+            </section>
+
+            <section data-background="assets/img/fondo/bitbucketfondo5.png" class="backImgForceCenter"
+                data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 10rem;">
+                <div class="fragment"
+                    style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;">
+                    <h3 [ngStyle]="{'color': getRandom(2)}">Repositorios asociados al proyecto</h3>
+                </div>
+            </section>
+
+            <section data-background="assets/img/fondo/bitbucketfondo6.png" class="backImgForceCenter"
+                data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 12rem;">
+                <div class="fragment"
+                    style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;">
+                    <h3 [ngStyle]="{'color': getRandom(2)}">Detalle del proyecto</h3>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section data-background="assets/img/fondo/bitbucketfondo7.png" class="backImgForceCenter"
+                data-transition="fade-in slide-out" style="padding: 3rem;padding-top: 10rem;">
+                <div class="fragment"
+                    style="background-color: rgba(0, 0, 0, 0.9) ;padding: 20px;margin-top: 0rem!important;">
+                    <h3 [ngStyle]="{'color': getRandom(2)}">Solicitudes de Unión</h3>
+                </div>
+
+                <div class="fragment"
+                    style="background-color: rgba(0, 0, 0, 0.9) ;padding: 20px;margin-top: 0.5rem!important;">
+                    <h3 style="font-size: large;"> Permite visualizar las solicitudes
+                        de unificación de codigo, es proceso permite mejorar la calidad del codigo haciendo un filtro
+                        previo a
+                        la unificación del codigo del repositorio centra</h3>
+                </div>
+            </section>
+
+            <section data-background="assets/img/fondo/bitbucketfondo8.png"
+                class="backImgForceCenter backImgForceCenter2" data-transition="fade-in slide-out"
+                style="padding: 3rem;padding-top: 12rem;">
+                <div class="fragment"
+                    style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;">
+                    <h3 [ngStyle]="{'color': getRandom(2)}">Ejemplo de Unificacion</h3>
+                </div>
+            </section>
+
+        </section>
+
+    </div>
+</div>
+
+
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('adminstracionBitbucket')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

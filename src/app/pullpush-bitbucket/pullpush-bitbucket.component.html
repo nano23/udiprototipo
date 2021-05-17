@@ -1,0 +1,88 @@
+<div class="reveal">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section class="topmid">
+            <h2 >Acciones subir/bajar codigo fuente</h2>
+            
+            <h5 >Entre las acciones mas comunes con un repositorio de fuentes remoto son las de integración de codigo</h5>
+            <h5 class="fragment" >Entre estas acciones estaria el echo de subir o bajar versiones</h5>
+        </section>
+
+        <section>
+            <section data-transition="fade-in slide-out" style="padding: 3rem;">
+                <p class="fragment highlight-blue">Ejemplo de Subir(Push)</p>
+                <p><span class="fragment slide mR1" style="color: white;">En este ejemplo practico se describe un
+                        pequeño paso a paso de como realizar un push, en el lenguaje de repositorio vendrian siendo la accion de  cargar cambios a un repositorio remoto </span></p>
+            </section>
+
+            <section data-transition="fade-in slide-out" style="padding: 3rem;">
+                <p class="fragment highlight-blue">Requisito Previo </p>
+                <p><span class="fragment slide mR1" style="color: white;">No es obligatorio, pero es posible utilizar herramientas que faciliten los procesos de integración con repositorios </span></p>
+                <p><span class="fragment slide mR1" style="color: white;">Para el ejemplo utilizaremos el software libre llamado tortoise git <a
+                            href="https://tortoisegit.org/" target="_blank">Tortoise Git </a> </span></p>
+            </section>
+
+
+            <section data-transition="fade-in slide-out" style="padding: 3rem;">
+                <p class="fragment highlight-blue">Commit</p>
+                <p><span class="fragment slide mR1" style="color: white;font-size: large;">1) Terminada la instalación TortoiseGit, lo que hacemos es ir a donde esta nuestro proyecto del prototipo, clic derecho y nos aparece un apartado de TortoiseGit donde podemos elegir qué acciones queremos hacer, como vamos a subir nuestro archivo local a remoto seleccionamos la opción de commit para poder guardar los cambios en la historia y acceder a ellos de ser necesario</span></p>
+            </section>
+
+            <section data-background="assets/img/fondo/bitbucketsubirfondo1.png"
+                class="backImgForceCenter backImgForceCenter2" data-transition="fade-in slide-out"
+                style="padding: 3rem;padding-top: 20rem;">
+                <div class="fragment"
+                    style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;">
+                    <h3 [ngStyle]="{'color': getRandom(2)}">Commit</h3>
+                </div>
+            </section>
+
+            <section data-transition="fade-in slide-out" style="padding: 3rem;">
+                <p class="fragment highlight-blue">Push(cargar fuentes)</p>
+                <p><span class="fragment slide mR1" style="color: white;font-size: large;">2) Con los cambios seleccionados se procede a realizar la accion de carga, con click derecho sobre el proyecto podemos ubicar la accion de push, y finalmente, se indica la rama del repositorio destino </span></p>
+            </section>
+
+            <section data-background="assets/img/fondo/bitbucketsubirfondo3.png"
+                class="backImgForceCenter backImgForceCenter2" data-transition="fade-in slide-out"
+                style="padding: 3rem;padding-top: 20rem;">
+                <div class="fragment"
+                    style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;">
+                    <h3 [ngStyle]="{'color': getRandom(2)}">Push(cargar fuentes)</h3>
+                </div>
+            </section>
+
+
+            <section data-background="assets/img/fondo/bitbucketsubirfondo2.png"
+            class="backImgForceCenter backImgForceCenter2" data-transition="fade-in slide-out"
+            style="padding: 3rem;padding-top: 20rem;">
+            <div class="fragment"
+                style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 3rem!important;">
+                <h3 [ngStyle]="{'color': getRandom(2)}">Commit Exitoso</h3>
+            </div>
+        </section>
+
+
+
+        </section>
+
+
+    </div>
+</div>
+
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('pullpushBitbucket')" [ngStyle]="{'background-color': getRandom(1)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(1)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+  </div>

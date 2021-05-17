@@ -1,0 +1,344 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2>Prototipo</h2>
+            <h4>Bienvenido, en este apartado se dara un acercamento sobre la relacion de la herramienta seleccionada
+                para el
+                reporte de calidad del codigo y el prototipo de software propuesto </h4>
+            <h4>Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> las herramientas seleccionada segun la
+                arquitectura del prototipo propuesta seria <span class="sonar"></span></h4>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid">
+            <section class="mgt0">
+                <h2 class="fragment highlight-blue">Sonarqube</h2>
+                <p [ngStyle]="{'color': getRandom(1)}"></p>
+                <p class="fragment fade-up">Prototipo</p>
+                <p><span class="fragment step-fade-in-then-out">El Reporte de calidad de codigo se integra con los procesos <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span> del prototipo en su compilacion, construccion de pruebas unitarias, repore de coboertura de codigo y orquestación</span>
+                    <span class="fragment step-fade-in-then-out">El sonarqube puede ser descargado gratuitamente desde la pagina oficial https://www.sonarqube.org/downloads/</span>
+                    <span class="fragment step-fade-in-then-out">Para ejecutar la herramienta de Sonarqube, se copia la ruta de ubicación del archivo del proyecto prototipo y escribimos StartSonar.bat ejecutado el comando mostrará que ya está corriendo</span>
+                    <span class="fragment step-fade-in-then-out">De forma instantánea se carga una página donde podrá ver todo lo relacionado con la herramienta, podrá notar que no existen proyectos, está en cero, el puerto por defecto es el 9000</span>
+                    <span class="fragment step-fade-in-then-out">El proceso de despliega cuenta con una interface de ingreso, usuario y contraseña para comenzar a utilizar el Sonarqube</span>
+                    <span class="fragment step-fade-in-then-out">Para el prototipo web se utiliza la plataforma web, aunque también se puede utilizar como herramienta de escritorio</span>
+                    <span class="fragment step-fade-in-then-out">Comando para ejecutar la generación del reporte mvn clean install sonar:sonar</span>
+                    
+
+                    <span class="fragment step-fade-in-then-out">A continuacion se muestra un ejemplo de como agregar la depencencia de Sonarqube en el archivo de maven con extension .pom</span>
+                    
+                </p>
+            </section>
+            <section class="mgt0">
+                <p>Archivo de dependencias de Maven: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">pom.xml</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="22|225-236">
+                    {{ '<' }}?xml version="1.0" encoding="UTF-8"?{{ '>' }}
+                    {{ '<' }}project xmlns="http://maven.apache.org/POM/4.0.0"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"{{ '>' }}
+                        {{ '<' }}modelVersion{{ '>' }}4.0.0{{ '<' }}/modelVersion{{ '>' }}
+                        {{ '<' }}parent{{ '>' }} 
+                            {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                            {{ '<' }}artifactId{{ '>' }}spring-boot-starter-parent{{ '<' }}/artifactId{{ '>' }}
+                            {{ '<' }}version{{ '>' }}2.1.5.RELEASE{{ '<' }}/version{{ '>' }}
+                            {{ '<' }}relativePath /{{ '>' }}
+                        {{ '<' }}/parent{{ '>' }}
+                        {{ '<' }}groupId{{ '>' }}com.example{{ '<' }}/groupId{{ '>' }}
+                        {{ '<' }}artifactId{{ '>' }}Prototipo-Udi{{ '<' }}/artifactId{{ '>' }}
+                        {{ '<' }}version{{ '>' }}0.0.1-SNAPSHOT{{ '<' }}/version{{ '>' }}
+                        {{ '<' }}name{{ '>' }}Prototipo-Udi{{ '<' }}/name{{ '>' }}
+                        {{ '<' }}description{{ '>' }}Prototipo Proyecto grado Udi{{ '<' }}/description{{ '>' }}
+                      
+                        {{ '<' }}properties{{ '>' }}
+                            {{ '<' }}java.version{{ '>' }}1.8{{ '<' }}/java.version{{ '>' }}
+                            {{ '<' }}!-- {{ '<' }}maven.compiler.target{{ '>' }}11{{ '<' }}/maven.compiler.target{{ '>' }} {{ '<' }}maven.compiler.source{{ '>' }}11{{ '<' }}/maven.compiler.source{{ '>' }} --{{ '>' }}
+                            {{ '<' }}jacoco.version{{ '>' }}0.8.5{{ '<' }}/jacoco.version{{ '>' }}
+                            {{ '<' }}sonar.core.codeCoveragePlugin{{ '>' }}jacoco{{ '<' }}/sonar.core.codeCoveragePlugin{{ '>' }}
+                            {{ '<' }}powermock.version{{ '>' }}1.7.0{{ '<' }}/powermock.version{{ '>' }}
+                            {{ '<' }}maven-surefire-plugin.version{{ '>' }}2.19.1{{ '<' }}/maven-surefire-plugin.version{{ '>' }}
+                            {{ '<' }}maven-failsafe-plugin.version{{ '>' }}2.12.4{{ '<' }}/maven-failsafe-plugin.version{{ '>' }}
+                            {{ '<' }}junit.version{{ '>' }}4.12{{ '<' }}/junit.version{{ '>' }}
+                        {{ '<' }}/properties{{ '>' }}
+                    
+                        {{ '<' }}dependencies{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}spring-boot-starter-data-jpa{{ '<' }}/artifactId{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}spring-boot-starter-data-rest{{ '<' }}/artifactId{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}spring-boot-starter-web{{ '<' }}/artifactId{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}spring-boot-starter-security{{ '<' }}/artifactId{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt --{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}io.jsonwebtoken{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}jjwt{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}version{{ '>' }}0.9.1{{ '<' }}/version{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}org.projectlombok{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}lombok{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}optional{{ '>' }}true{{ '<' }}/optional{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}org.modelmapper{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}modelmapper{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}version{{ '>' }}0.7.5{{ '<' }}/version{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}spring-boot-devtools{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}scope{{ '>' }}runtime{{ '<' }}/scope{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}org.postgresql{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}postgresql{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}scope{{ '>' }}runtime{{ '<' }}/scope{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}spring-boot-starter-test{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}scope{{ '>' }}test{{ '<' }}/scope{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}org.jacoco{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}org.jacoco.agent{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}version{{ '>' }}${{ '{' }}jacoco.version{{ '}' }}{{ '<' }}/version{{ '>' }}
+                                {{ '<' }}classifier{{ '>' }}runtime{{ '<' }}/classifier{{ '>' }}
+                                {{ '<' }}scope{{ '>' }}test{{ '<' }}/scope{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}junit{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}junit{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}scope{{ '>' }}test{{ '<' }}/scope{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}org.powermock{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}powermock-module-junit4{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}version{{ '>' }}2.0.2{{ '<' }}/version{{ '>' }}
+                                {{ '<' }}scope{{ '>' }}test{{ '<' }}/scope{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}org.powermock{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}powermock-api-mockito2{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}version{{ '>' }}2.0.2{{ '<' }}/version{{ '>' }}
+                                {{ '<' }}scope{{ '>' }}test{{ '<' }}/scope{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}org.mockito{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}mockito-core{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}scope{{ '>' }}test{{ '<' }}/scope{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}com.openpojo{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}openpojo{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}version{{ '>' }}0.8.3{{ '<' }}/version{{ '>' }}
+                                {{ '<' }}scope{{ '>' }}test{{ '<' }}/scope{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                            {{ '<' }}dependency{{ '>' }}
+                                {{ '<' }}groupId{{ '>' }}com.google.guava{{ '<' }}/groupId{{ '>' }}
+                                {{ '<' }}artifactId{{ '>' }}guava{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}version{{ '>' }}r05{{ '<' }}/version{{ '>' }}
+                            {{ '<' }}/dependency{{ '>' }}
+                        {{ '<' }}/dependencies{{ '>' }}
+                    
+                        {{ '<' }}build{{ '>' }}
+                            {{ '<' }}plugins{{ '>' }}
+                                {{ '<' }}plugin{{ '>' }}
+                                    {{ '<' }}groupId{{ '>' }}org.springframework.boot{{ '<' }}/groupId{{ '>' }}
+                                    {{ '<' }}artifactId{{ '>' }}spring-boot-maven-plugin{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}/plugin{{ '>' }}
+                                {{ '<' }}plugin{{ '>' }}
+                                    {{ '<' }}groupId{{ '>' }}org.apache.maven.plugins{{ '<' }}/groupId{{ '>' }}
+                                    {{ '<' }}artifactId{{ '>' }}maven-compiler-plugin{{ '<' }}/artifactId{{ '>' }}
+                                    {{ '<' }}!-- {{ '<' }}configuration{{ '>' }} {{ '<' }}release{{ '>' }}11{{ '<' }}/release{{ '>' }} {{ '<' }}/configuration{{ '>' }} --{{ '>' }}
+                                {{ '<' }}/plugin{{ '>' }}
+                                {{ '<' }}plugin{{ '>' }}
+                                    {{ '<' }}groupId{{ '>' }}org.jacoco{{ '<' }}/groupId{{ '>' }}
+                                    {{ '<' }}artifactId{{ '>' }}jacoco-maven-plugin{{ '<' }}/artifactId{{ '>' }}
+                                    {{ '<' }}version{{ '>' }}${{ '{' }}jacoco.version{{ '}' }}{{ '<' }}/version{{ '>' }}
+                                    {{ '<' }}executions{{ '>' }}
+                                        {{ '<' }}execution{{ '>' }}
+                                            {{ '<' }}id{{ '>' }}default-instrument{{ '<' }}/id{{ '>' }}
+                                            {{ '<' }}goals{{ '>' }}
+                                                {{ '<' }}goal{{ '>' }}instrument{{ '<' }}/goal{{ '>' }}
+                                            {{ '<' }}/goals{{ '>' }}
+                                        {{ '<' }}/execution{{ '>' }}
+                                        {{ '<' }}execution{{ '>' }}
+                                            {{ '<' }}id{{ '>' }}default-restore-instrumented-classes{{ '<' }}/id{{ '>' }}
+                                            {{ '<' }}goals{{ '>' }}
+                                                {{ '<' }}goal{{ '>' }}restore-instrumented-classes{{ '<' }}/goal{{ '>' }}
+                                            {{ '<' }}/goals{{ '>' }}
+                                        {{ '<' }}/execution{{ '>' }}
+                                        {{ '<' }}execution{{ '>' }}
+                                            {{ '<' }}id{{ '>' }}default-prepare-agent{{ '<' }}/id{{ '>' }}
+                                            {{ '<' }}goals{{ '>' }}
+                                                {{ '<' }}goal{{ '>' }}prepare-agent{{ '<' }}/goal{{ '>' }}
+                                            {{ '<' }}/goals{{ '>' }}
+                                            {{ '<' }}configuration{{ '>' }}
+                                                {{ '<' }}includes{{ '>' }}
+                                                    {{ '<' }}include{{ '>' }}{{ '<' }}/include{{ '>' }}
+                                                {{ '<' }}/includes{{ '>' }}
+                                            {{ '<' }}/configuration{{ '>' }}
+                                        {{ '<' }}/execution{{ '>' }}
+                                        {{ '<' }}execution{{ '>' }}
+                                            {{ '<' }}id{{ '>' }}default-report{{ '<' }}/id{{ '>' }}
+                                            {{ '<' }}phase{{ '>' }}prepare-package{{ '<' }}/phase{{ '>' }}
+                                            {{ '<' }}goals{{ '>' }}
+                                                {{ '<' }}goal{{ '>' }}report{{ '<' }}/goal{{ '>' }}
+                                            {{ '<' }}/goals{{ '>' }}
+                                            {{ '<' }}configuration{{ '>' }}
+                                                {{ '<' }}excludes{{ '>' }}
+                                                    {{ '<' }}exclude{{ '>' }}{{ '<' }}/exclude{{ '>' }}
+                                                {{ '<' }}/excludes{{ '>' }}
+                                            {{ '<' }}/configuration{{ '>' }}
+                                        {{ '<' }}/execution{{ '>' }}
+                                    {{ '<' }}/executions{{ '>' }}
+                                {{ '<' }}/plugin{{ '>' }}
+                                {{ '<' }}plugin{{ '>' }}
+                                    {{ '<' }}groupId{{ '>' }}org.apache.maven.plugins{{ '<' }}/groupId{{ '>' }}
+                                    {{ '<' }}artifactId{{ '>' }}maven-surefire-plugin{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}/plugin{{ '>' }}
+                                {{ '<' }}plugin{{ '>' }}
+                                    {{ '<' }}groupId{{ '>' }}org.apache.maven.plugins{{ '<' }}/groupId{{ '>' }}
+                                    {{ '<' }}artifactId{{ '>' }}maven-failsafe-plugin{{ '<' }}/artifactId{{ '>' }}
+                                {{ '<' }}/plugin{{ '>' }}
+                                {{ '<' }}plugin{{ '>' }}
+                                   {{ '<' }}artifactId{{ '>' }}maven-deploy-plugin{{ '<' }}/artifactId{{ '>' }}
+                                   {{ '<' }}version{{ '>' }}2.8.2{{ '<' }}/version{{ '>' }}
+                                   {{ '<' }}executions{{ '>' }}
+                                      {{ '<' }}execution{{ '>' }}
+                                         {{ '<' }}id{{ '>' }}default-deploy{{ '<' }}/id{{ '>' }}
+                                         {{ '<' }}phase{{ '>' }}deploy{{ '<' }}/phase{{ '>' }}
+                                         {{ '<' }}goals{{ '>' }}
+                                            {{ '<' }}goal{{ '>' }}deploy{{ '<' }}/goal{{ '>' }}
+                                         {{ '<' }}/goals{{ '>' }}
+                                      {{ '<' }}/execution{{ '>' }}
+                                   {{ '<' }}/executions{{ '>' }}
+                                {{ '<' }}/plugin{{ '>' }}
+                                {{ '<' }}plugin{{ '>' }}
+                                   {{ '<' }}groupId{{ '>' }}org.apache.maven.plugins{{ '<' }}/groupId{{ '>' }}
+                                   {{ '<' }}artifactId{{ '>' }}maven-deploy-plugin{{ '<' }}/artifactId{{ '>' }}
+                                   {{ '<' }}version{{ '>' }}${{ '{' }}maven-deploy-plugin.version{{ '}' }}{{ '<' }}/version{{ '>' }}
+                                   {{ '<' }}configuration{{ '>' }}
+                                      {{ '<' }}skip{{ '>' }}true{{ '<' }}/skip{{ '>' }}
+                                   {{ '<' }}/configuration{{ '>' }}
+                                {{ '<' }}/plugin{{ '>' }}
+                                {{ '<' }}plugin{{ '>' }}
+                                   {{ '<' }}groupId{{ '>' }}org.sonatype.plugins{{ '<' }}/groupId{{ '>' }}
+                                   {{ '<' }}artifactId{{ '>' }}nexus-staging-maven-plugin{{ '<' }}/artifactId{{ '>' }}
+                                   {{ '<' }}version{{ '>' }}1.5.1{{ '<' }}/version{{ '>' }}
+                                   {{ '<' }}executions{{ '>' }}
+                                      {{ '<' }}execution{{ '>' }}
+                                         {{ '<' }}id{{ '>' }}default-deploy{{ '<' }}/id{{ '>' }}
+                                         {{ '<' }}phase{{ '>' }}deploy{{ '<' }}/phase{{ '>' }}
+                                         {{ '<' }}goals{{ '>' }}
+                                            {{ '<' }}goal{{ '>' }}deploy{{ '<' }}/goal{{ '>' }}
+                                         {{ '<' }}/goals{{ '>' }}
+                                      {{ '<' }}/execution{{ '>' }}
+                                   {{ '<' }}/executions{{ '>' }}
+                                   {{ '<' }}configuration{{ '>' }}
+                                      {{ '<' }}serverId{{ '>' }}nexus{{ '<' }}/serverId{{ '>' }}
+                                      {{ '<' }}nexusUrl{{ '>' }}http://localhost:8081/nexus/{{ '<' }}/nexusUrl{{ '>' }}
+                                      {{ '<' }}skipStaging{{ '>' }}true{{ '<' }}/skipStaging{{ '>' }}
+                                   {{ '<' }}/configuration{{ '>' }}
+                                {{ '<' }}/plugin{{ '>' }}
+                            {{ '<' }}/plugins{{ '>' }}
+                        {{ '<' }}/build{{ '>' }}
+                    
+                        {{ '<' }}profiles{{ '>' }}
+                    
+                            {{ '<' }}profile{{ '>' }}
+                                {{ '<' }}id{{ '>' }}dev{{ '<' }}/id{{ '>' }}
+                                {{ '<' }}activation{{ '>' }}
+                                    {{ '<' }}activeByDefault{{ '>' }}true{{ '<' }}/activeByDefault{{ '>' }}
+                                {{ '<' }}/activation{{ '>' }}
+                                {{ '<' }}properties{{ '>' }}
+                                    {{ '<' }}activatedProperties{{ '>' }}dev{{ '<' }}/activatedProperties{{ '>' }}
+                                    {{ '<' }}sonar.host.url{{ '>' }}
+                                      http://localhost:9000
+                                    {{ '<' }}/sonar.host.url{{ '>' }}
+                                {{ '<' }}/properties{{ '>' }}
+                            {{ '<' }}/profile{{ '>' }}
+                    
+                            {{ '<' }}profile{{ '>' }}
+                                {{ '<' }}id{{ '>' }}prod{{ '<' }}/id{{ '>' }}
+                                {{ '<' }}properties{{ '>' }}
+                                    {{ '<' }}activatedProperties{{ '>' }}prod{{ '<' }}/activatedProperties{{ '>' }}
+                                {{ '<' }}/properties{{ '>' }}
+                            {{ '<' }}/profile{{ '>' }}
+                        {{ '<' }}/profiles{{ '>' }}
+                        
+                        {{ '<' }}distributionManagement{{ '>' }}
+                           {{ '<' }}snapshotRepository{{ '>' }}
+                              {{ '<' }}id{{ '>' }}nexus{{ '<' }}/id{{ '>' }}
+                              {{ '<' }}url{{ '>' }}http://localhost:8081/repository/maven-snapshots/{{ '<' }}/url{{ '>' }}
+                           {{ '<' }}/snapshotRepository{{ '>' }}
+                        {{ '<' }}/distributionManagement{{ '>' }}
+                    
+                    {{ '<' }}/project{{ '>' }}
+                                     
+                  </code></pre>
+            </section>
+
+            <section class="mgt0">
+                <p>Version del prugin de sonarqube: <span style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(2)}">sonar.core.codeCoverage</span></p>
+                 <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="5|80">
+                    {{ '<' }}properties{{ '>' }}
+                    {{ '<' }}java.version{{ '>' }}1.8{{ '<' }}/java.version{{ '>' }}
+                    {{ '<' }}!-- {{ '<' }}maven.compiler.target{{ '>' }}11{{ '<' }}/maven.compiler.target{{ '>' }} {{ '<' }}maven.compiler.source{{ '>' }}11{{ '<' }}/maven.compiler.source{{ '>' }} --{{ '>' }}
+                    {{ '<' }}jacoco.version{{ '>' }}0.8.5{{ '<' }}/jacoco.version{{ '>' }}
+                    {{ '<' }}sonar.core.codeCoveragePlugin{{ '>' }}jacoco{{ '<' }}/sonar.core.codeCoveragePlugin{{ '>' }}
+                    {{ '<' }}powermock.version{{ '>' }}1.7.0{{ '<' }}/powermock.version{{ '>' }}
+                    {{ '<' }}maven-surefire-plugin.version{{ '>' }}2.19.1{{ '<' }}/maven-surefire-plugin.version{{ '>' }}
+                    {{ '<' }}maven-failsafe-plugin.version{{ '>' }}2.12.4{{ '<' }}/maven-failsafe-plugin.version{{ '>' }}
+                    {{ '<' }}junit.version{{ '>' }}4.12{{ '<' }}/junit.version{{ '>' }}
+                {{ '<' }}/properties{{ '>' }}
+                   </code></pre>
+             </section>
+    
+             <section class="mgt0">
+                <p>Perfil de ejecucion de reporte de calidad: <span style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(2)}">profile</span></p>
+                 <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="1|80">
+                    {{ '<' }}profile{{ '>' }}
+                    {{ '<' }}id{{ '>' }}dev{{ '<' }}/id{{ '>' }}
+                    {{ '<' }}activation{{ '>' }}
+                        {{ '<' }}activeByDefault{{ '>' }}true{{ '<' }}/activeByDefault{{ '>' }}
+                    {{ '<' }}/activation{{ '>' }}
+                    {{ '<' }}properties{{ '>' }}
+                        {{ '<' }}activatedProperties{{ '>' }}dev{{ '<' }}/activatedProperties{{ '>' }}
+                        {{ '<' }}sonar.host.url{{ '>' }}
+                          http://localhost:9000
+                        {{ '<' }}/sonar.host.url{{ '>' }}
+                    {{ '<' }}/properties{{ '>' }}
+                {{ '<' }}/profile{{ '>' }}
+                   </code></pre>
+             </section>
+
+        </section>
+
+
+    </div>
+</div>
+
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('prototipoCalidad')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(1)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(1)}">Etapas de Estudio</button>
+  </div>

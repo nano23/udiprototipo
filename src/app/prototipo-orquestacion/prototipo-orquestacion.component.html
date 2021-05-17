@@ -1,0 +1,732 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2>Prototipo</h2>
+            <h4>Bienvenido, en este apartado se dara un acercamento sobre la herramienta seleccionada para la Orquestación</h4>
+            <h4>Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> la herramienta seleccionada segun la
+                arquitectura del prototipo propuesta seria <span class="jenkins" title="Jenkins"></span></h4>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid">
+            <section class="mgt0">
+                <h2 class="fragment highlight-blue">Jenkins</h2>
+                <p [ngStyle]="{'color': getRandom(1)}"></p>
+                <p class="fragment fade-up">Prototipo</p>
+                <p><span class="fragment step-fade-in-then-out">Para el prototipo web se utilizó la herramienta Jenkins, se instala de forma normal y se puede descargar desde el link https://www.jenkins.io/.</span>
+                    <span class="fragment step-fade-in-then-out">En la instalación aparecera un mensaje de alerta que indica que Jenkins debe ser ejecutado como servicio, para lograr esto es necesario realizar una modificación a las directivas de seguridad local</span>
+                    <span class="fragment step-fade-in-then-out">Cuando Jenkins ejecute como servicio, ingresar las credenciales requeridas, pedira un puerto para su funcionamiento, se debe seleccionar un puerto que este libre</span>
+                    <span class="fragment step-fade-in-then-out">Terminada la configuración del entorno, Jenkins desplegara la interfaz en donde se debe ingresar una contraseña temporal, esta contraseña se encuentra en la ruta que aparece en la misma interfaz</span>
+                    <span class="fragment step-fade-in-then-out">Jenkins permite instalar dos entornos, como sugerencia instalar el entorno por defecto</span>
+                    <span class="fragment step-fade-in-then-out">Jenkins mostrara la interfaz para crear el primer usuario administrador</span>
+                    <span class="fragment step-fade-in-then-out">Terminado todo el proceso, la herramienta de Jenkins nos despliega su pantalla principal en el puerto elegido</span>
+                    <span class="fragment step-fade-in-then-out">Es importante entender que Jenkins funciona como instancia independiente, por ende, para los proyectos, se deben realizar instalaciones para temas como, JDK, maven y <span class="tooltip2">nodejs<span class="tooltiptext">entorno en tiempo de ejecución multiplataforma, de código abierto en el lenguaje javascript</span></span></span>
+
+                    <span class="fragment step-fade-in-then-out">A continuacion se evidencia un ejemplo de script de codigo generado en el lenguaje groovy para el ambiente denominado de pruebas en el prototipo:</span>
+                </p>
+            </section>
+            <section class="mgt0">
+                <p>Pipeline - Script en Groovy: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">Ambiente de pruebas</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|544">
+                    pipeline {{ '{' }}
+    agent any
+
+    tools {{ '{' }}
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "M3"
+    {{ '}' }}
+
+    stages {{ '{' }}
+        
+                       //instalacion
+        stage{{ '(' }}'instalacion Dependencias Maven Servidor'{{ ')' }} {{ '{' }}
+            steps {{ '{' }}
+                // Get some code from a GitHub repository
+                git 'https://nanonano23@bitbucket.org/nanonano23/prototipoudiserviciorest.git'
+
+                // To run Maven on a Windows agent, use
+                 bat "mvn clean install -Dmaven.test.skip=true -P dev"
+            {{ '}' }}
+            
+            post {{ '{' }}
+                success {{ '{' }}
+                  echo 'instalacion exitosa...'
+                {{ '}' }}
+                failure {{ '{' }}
+                  echo 'instalacion stage fallo...'
+                  error{{ '(' }}'instalacion se cancelo por un fallo...'{{ ')' }}
+        
+                {{ '}' }}
+            {{ '}' }}
+        {{ '}' }}
+        
+        //pruebas
+        stage{{ '(' }}'Pruebas Unitarias Servidor'{{ ')' }} {{ '{' }}
+            steps {{ '{' }}
+                // Get some code from a GitHub repository
+                git 'https://nanonano23@bitbucket.org/nanonano23/prototipoudiserviciorest.git'
+
+                // To run Maven on a Windows agent, use
+                 bat "mvn test"
+            {{ '}' }}
+            
+            post {{ '{' }}
+                success {{ '{' }}
+                  echo 'pruebas Servidor exitosa...'
+                {{ '}' }}
+                failure {{ '{' }}
+                  echo 'pruebas Servidor stage fallo...'
+                  error{{ '(' }}'pruebas Servidor se cancelo por un fallo...'{{ ')' }}
+        
+                {{ '}' }}
+            {{ '}' }}
+        {{ '}' }}
+        
+        stage{{ '(' }}'Pruebas Unitarias Cliente'{{ ')' }} {{ '{' }}
+            steps {{ '{' }}
+                // Get some code from a GitHub repository
+                git 'https://nanonano23@bitbucket.org/nanonano23/prototipoudipaginaweb.git'
+                
+                // To run Maven on a Windows agent, use
+                bat "npm install"
+                bat "npm run ng test"
+            {{ '}' }}
+            
+            post {{ '{' }}
+                success {{ '{' }}
+                  echo 'pruebas Cliente exitosa...'
+                {{ '}' }}
+                failure {{ '{' }}
+                  echo 'pruebas Cliente stage fallo...'
+                  error{{ '(' }}'pruebas Cliente se cancelo por un fallo...'{{ ')' }}
+        
+                {{ '}' }}
+            {{ '}' }}
+        {{ '}' }}
+        
+        stage{{ '(' }}'Compilación Cliente'{{ ')' }} {{ '{' }}
+            steps {{ '{' }}
+                // Get some code from a GitHub repository
+                git 'https://nanonano23@bitbucket.org/nanonano23/prototipoudipaginaweb.git'
+                
+                // To run Maven on a Windows agent, use
+                bat "npm run ng build"
+            {{ '}' }}
+            
+            post {{ '{' }}
+                success {{ '{' }}
+                  echo 'Compilar Cliente exitosa...'
+                {{ '}' }}
+                failure {{ '{' }}
+                  echo 'Compilar Cliente stage fallo...'
+                  error{{ '(' }}'Compilar Cliente se cancelo por un fallo...'{{ ')' }}
+        
+                {{ '}' }}
+            {{ '}' }}
+        {{ '}' }}
+        
+        //despliegue nexus
+        stage{{ '(' }}'Cargar dependencia Proyecto - Nexus'{{ ')' }} {{ '{' }}
+            steps {{ '{' }}
+                // Get some code from a GitHub repository
+                git 'https://nanonano23@bitbucket.org/nanonano23/prototipoudiserviciorest.git'
+
+                // To run Maven on a Windows agent, use
+                 bat "mvn clean deploy -Dmaven.test.skip=true -P dev"
+            {{ '}' }}
+            
+            post {{ '{' }}
+                success {{ '{' }}
+                  echo 'nexus exitosa...'
+                {{ '}' }}
+                failure {{ '{' }}
+                  echo 'nexus stage fallo...'
+                  error{{ '(' }}'nexus se cancelo por un fallo...'{{ ')' }}
+        
+                {{ '}' }}
+            {{ '}' }}
+        {{ '}' }}
+        
+         //sonar nexus
+        stage{{ '(' }}'Ejecutar Reporte SonarQube'{{ ')' }} {{ '{' }}
+            steps {{ '{' }}
+                // Get some code from a GitHub repository
+                git 'https://nanonano23@bitbucket.org/nanonano23/prototipoudiserviciorest.git'
+
+                // To run Maven on a Windows agent, use
+                 bat "mvn sonar:sonar"
+            {{ '}' }}
+            
+            post {{ '{' }}
+                success {{ '{' }}
+                  echo 'sonar exitosa...'
+                {{ '}' }}
+                failure {{ '{' }}
+                  echo 'sonar stage fallo...'
+                  error{{ '(' }}'sonar se cancelo por un fallo...'{{ ')' }}
+        
+                {{ '}' }}
+            {{ '}' }}
+        {{ '}' }}
+        
+        //copiar a pruebas
+        stage{{ '(' }}'Copiar a pruebas Servidor'{{ ')' }} {{ '{' }}
+            steps {{ '{' }}
+                bat{{ '(' }}"xcopy C:\\Users\\Valkiria\\.m2\\repository\\com\\example\\Prototipo-Udi\\0.0.1-SNAPSHOT\\Prototipo-Udi-0.0.1-SNAPSHOT.jar D:\\proyecto\\deploy\\pruebas\\servidor /O /X /E /H /K /Y"{{ ')' }}
+            {{ '}' }}
+            
+            post {{ '{' }}
+                success {{ '{' }}
+                  echo 'copiar a pruebas Servidor exitosa...'
+                {{ '}' }}
+                failure {{ '{' }}
+                  echo 'copiar a pruebas Servidor stage fallo...'
+                  error{{ '(' }}'copiar a pruebas Servidor se cancelo por un fallo...'{{ ')' }}
+        
+               {{ '}' }}
+            {{ '}' }}
+        {{ '}' }}
+        
+         //copiar a pruebas
+        stage{{ '(' }}'Subir aplicación Cliente'{{ ')' }} {{ '{' }}
+            steps {{ '{' }}
+                
+                script{{ '{' }}
+                    try {{ '{' }}
+                        def stdout = bat{{ '(' }}returnStdout:true , script: "netstat -ano | findstr 4200"{{ ')' }}.trim{{ '(' }}{{ ')' }}
+                        result = stdout.readLines{{ '(' }}{{ ')' }}[1]
+                        def data = result.toString{{ '(' }}{{ ')' }}.split{{ '(' }}'LISTENING       '{{ ')' }}
+                        if {{ '(' }}data != null && data.size {{ '>' }} 0 {{ ')' }} {{ '{' }}
+                            echo "id a eliminar :" + data[1]                    
+                            bat "taskkill /f /pid "+ data[1]
+                        {{ '}' }}
+                    {{ '}' }} catch {{ '(' }}Exception e{{ ')' }} {{ '{' }}
+                         echo 'subir aplicacion : nuevo despliegue...'
+                      {{ '}' }}
+                {{ '}' }}
+                // Get some code from a GitHub repository
+                git 'https://nanonano23@bitbucket.org/nanonano23/prototipoudipaginaweb.git'
+                
+                bat{{ '(' }}"start npm run ng serve"{{ ')' }}
+            {{ '}' }}
+            
+            post {{ '{' }}
+                success {{ '{' }}
+                  echo 'Subir aplicación Cliente exitosa...'
+                {{ '}' }}
+                failure {{ '{' }}
+                  echo 'Subir aplicación Cliente stage fallo...'
+                  error{{ '(' }}'Subir aplicación Cliente se cancelo por un fallo...'{{ ')' }}
+        
+                {{ '}' }}
+            {{ '}' }}
+        {{ '}' }}
+        
+        
+        //subir aplicacion
+        stage{{ '(' }}'Subir aplicación Servidor'{{ ')' }} {{ '{' }}
+            steps {{ '{' }}
+                script{{ '{' }}
+                    try {{ '{' }}
+                        def stdout = bat{{ '(' }}returnStdout:true , script: "netstat -ano | findstr 8181"{{ ')' }}.trim{{ '(' }}{{ ')' }}
+                        result = stdout.readLines{{ '(' }}{{ ')' }}[1]
+                        def data = result.toString{{ '(' }}{{ ')' }}.split{{ '(' }}'LISTENING       '{{ ')' }}
+                        if {{ '(' }}data != null && data.size {{ '>' }} 0 {{ ')' }} {{ '{' }}
+                            echo "id a eliminar :" + data[1]                    
+                            bat "taskkill /f /pid "+ data[1]
+                        {{ '}' }}
+                    {{ '}' }} catch {{ '(' }}Exception e{{ ')' }} {{ '{' }}
+                         echo 'subir aplicacion : nuevo despliegue...'
+                      {{ '}' }}
+                {{ '}' }}
+                
+                withEnv{{ '(' }}['JENKINS_NODE_COOKIE=DontKillMe']{{ ')' }} {{ '{' }}
+                    bat "start java -jar D:\\proyecto\\deploy\\pruebas\\servidor\\Prototipo-Udi-0.0.1-SNAPSHOT.jar"
+                {{ '}' }}
+            {{ '}' }}
+            
+            post {{ '{' }}
+                success {{ '{' }}
+                  echo 'subir aplicacion exitosa...'
+                {{ '}' }}
+                failure {{ '{' }}
+                  echo 'subir aplicacion stage fallo...'
+                  error{{ '(' }}'subir aplicacion se cancelo por un fallo...'{{ ')' }}
+        
+                {{ '}' }}
+            {{ '}' }}
+        {{ '}' }}
+        
+        //Pruebas de Integración
+        stage{{ '(' }}'Pruebas de Integración'{{ ')' }} {{ '{' }}
+            steps {{ '{' }}
+                bat "newman run D:\\proyecto\\postmanscript\\Prototipo_Dev_Ops.postman_collection.json"
+            {{ '}' }}
+            
+            post {{ '{' }}
+                success {{ '{' }}
+                  echo 'Pruebas de Integración exitosa...'
+                {{ '}' }}
+                failure {{ '{' }}
+                  echo 'Pruebas de Integración stage fallo...'
+                  error{{ '(' }}'Pruebas de Integración se cancelo por un fallo...'{{ ')' }}
+        
+                {{ '}' }}
+            {{ '}' }}
+        {{ '}' }}
+        
+        //Pruebas de Carga
+        stage{{ '(' }}'Pruebas de Carga'{{ ')' }} {{ '{' }}
+            steps {{ '{' }}
+                bat 'bzt D:\\proyecto\\jmeter\\prototipo.yml -report'
+            {{ '}' }}
+            
+            post {{ '{' }}
+                success {{ '{' }}
+                  echo 'Pruebas de Carga exitosa...'
+                }
+                failure {{ '{' }}
+                  echo 'Pruebas de Carga stage fallo...'
+                  error{{ '(' }}'Pruebas de Carga se cancelo por un fallo...'{{ ')' }}
+        
+                {{ '}' }}
+            {{ '}' }}
+        {{ '}' }}
+        
+        stage{{ '(' }}'Correo Confirmación de pruebas'{{ ')' }} {{ '{' }}
+            steps {{ '{' }}
+                script{{ '{' }}
+                    try {{ '{' }}
+                        mail to: 'cgomez19@udi.edu.co',               
+                        subject: "Confirmación de fase pruebas con build nro: $BUILD_NUMBER" ,
+                        body: "Confirmación de fase pruebas nombre de tarea: $JOB_NAME, fecha:"+new Date{{ '(' }}{{ ')' }}
+                    {{ '}' }}catch {{ '(' }}err{{ ')' }} {{ '{' }}
+                        echo "Caught: ${{ '{' }}err{{ '}' }}"
+                        currentBuild.result = 'FAILURE'
+                    {{ '}' }}
+                {{ '}' }}
+            {{ '}' }}
+            
+            post {{ '{' }}
+                success {{ '{' }}
+                  echo 'Correo Confirmación de pruebas exitosa...'
+                {{ '}' }}
+                failure {{ '{' }}
+                  echo 'Correo Confirmación de pruebas stage fallo...'
+                  error{{ '(' }}'Correo Confirmación de pruebas se cancelo por un fallo...'{{ ')' }}
+        
+                {{ '}' }}
+            {{ '}' }}
+        {{ '}' }}
+        
+    {{ '}' }}
+{{ '}' }}
+
+                  </code></pre>
+            </section>
+
+
+            <section class="mgt0">
+                <p>Paso 1: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">Instalacion Dependencias Maven Servidor</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|544">
+
+        
+                       //instalacion
+        stage{{ '(' }}'instalacion Dependencias Maven Servidor'{{ ')' }} {{ '{' }}
+            steps {{ '{' }}
+                // Get some code from a GitHub repository
+                git 'https://nanonano23@bitbucket.org/nanonano23/prototipoudiserviciorest.git'
+
+                // To run Maven on a Windows agent, use
+                 bat "mvn clean install -Dmaven.test.skip=true -P dev"
+            {{ '}' }}
+            
+            post {{ '{' }}
+                success {{ '{' }}
+                  echo 'instalacion exitosa...'
+                {{ '}' }}
+                failure {{ '{' }}
+                  echo 'instalacion stage fallo...'
+                  error{{ '(' }}'instalacion se cancelo por un fallo...'{{ ')' }}
+        
+                {{ '}' }}
+            {{ '}' }}
+        {{ '}' }}
+        
+                  </code></pre>
+            </section>
+
+         
+            <section class="mgt0">
+                <p>Paso 2: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">Pruebas Unitarias Servidor</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|544">
+                    //pruebas
+                    stage{{ '(' }}'Pruebas Unitarias Servidor'{{ ')' }} {{ '{' }}
+                        steps {{ '{' }}
+                            // Get some code from a GitHub repository
+                            git 'https://nanonano23@bitbucket.org/nanonano23/prototipoudiserviciorest.git'
+            
+                            // To run Maven on a Windows agent, use
+                             bat "mvn test"
+                        {{ '}' }}
+                        
+                        post {{ '{' }}
+                            success {{ '{' }}
+                              echo 'pruebas Servidor exitosa...'
+                            {{ '}' }}
+                            failure {{ '{' }}
+                              echo 'pruebas Servidor stage fallo...'
+                              error{{ '(' }}'pruebas Servidor se cancelo por un fallo...'{{ ')' }}
+                    
+                            {{ '}' }}
+                        {{ '}' }}
+                    {{ '}' }}
+        
+                  </code></pre>
+            </section>
+
+            <section class="mgt0">
+                <p>Paso 3: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">Pruebas Unitarias Cliente</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|544">
+                    stage{{ '(' }}'Pruebas Unitarias Cliente'{{ ')' }} {{ '{' }}
+                    steps {{ '{' }}
+                        // Get some code from a GitHub repository
+                        git 'https://nanonano23@bitbucket.org/nanonano23/prototipoudipaginaweb.git'
+                        
+                        // To run Maven on a Windows agent, use
+                        bat "npm install"
+                        bat "npm run ng test"
+                    {{ '}' }}
+                    
+                    post {{ '{' }}
+                        success {{ '{' }}
+                          echo 'pruebas Cliente exitosa...'
+                        {{ '}' }}
+                        failure {{ '{' }}
+                          echo 'pruebas Cliente stage fallo...'
+                          error{{ '(' }}'pruebas Cliente se cancelo por un fallo...'{{ ')' }}
+                
+                        {{ '}' }}
+                    {{ '}' }}
+                {{ '}' }}
+        
+        
+                  </code></pre>
+            </section>
+
+
+            <section class="mgt0">
+                <p>Paso 4: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">Compilación Cliente</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|544">
+                    stage{{ '(' }}'Compilación Cliente'{{ ')' }} {{ '{' }}
+                    steps {{ '{' }}
+                        // Get some code from a GitHub repository
+                        git 'https://nanonano23@bitbucket.org/nanonano23/prototipoudipaginaweb.git'
+                        
+                        // To run Maven on a Windows agent, use
+                        bat "npm run ng build"
+                    {{ '}' }}
+                    
+                    post {{ '{' }}
+                        success {{ '{' }}
+                          echo 'Compilar Cliente exitosa...'
+                        {{ '}' }}
+                        failure {{ '{' }}
+                          echo 'Compilar Cliente stage fallo...'
+                          error{{ '(' }}'Compilar Cliente se cancelo por un fallo...'{{ ')' }}
+                
+                        {{ '}' }}
+                    {{ '}' }}
+                {{ '}' }}
+                  </code></pre>
+            </section>
+
+
+            <section class="mgt0">
+                <p>Paso 5: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">Cargar dependencia Proyecto - Nexus</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|544">
+                    //despliegue nexus
+                    stage{{ '(' }}'Cargar dependencia Proyecto - Nexus'{{ ')' }} {{ '{' }}
+                        steps {{ '{' }}
+                            // Get some code from a GitHub repository
+                            git 'https://nanonano23@bitbucket.org/nanonano23/prototipoudiserviciorest.git'
+            
+                            // To run Maven on a Windows agent, use
+                             bat "mvn clean deploy -Dmaven.test.skip=true -P dev"
+                        {{ '}' }}
+                        
+                        post {{ '{' }}
+                            success {{ '{' }}
+                              echo 'nexus exitosa...'
+                            {{ '}' }}
+                            failure {{ '{' }}
+                              echo 'nexus stage fallo...'
+                              error{{ '(' }}'nexus se cancelo por un fallo...'{{ ')' }}
+                    
+                            {{ '}' }}
+                        {{ '}' }}
+                    {{ '}' }}
+                  </code></pre>
+            </section>
+
+            <section class="mgt0">
+                <p>Paso 6: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">Ejecutar Reporte SonarQube</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|544">
+                    //sonar
+                    stage{{ '(' }}'Ejecutar Reporte SonarQube'{{ ')' }} {{ '{' }}
+                        steps {{ '{' }}
+                            // Get some code from a GitHub repository
+                            git 'https://nanonano23@bitbucket.org/nanonano23/prototipoudiserviciorest.git'
+            
+                            // To run Maven on a Windows agent, use
+                             bat "mvn sonar:sonar"
+                        {{ '}' }}
+                        
+                        post {{ '{' }}
+                            success {{ '{' }}
+                              echo 'sonar exitosa...'
+                            {{ '}' }}
+                            failure {{ '{' }}
+                              echo 'sonar stage fallo...'
+                              error{{ '(' }}'sonar se cancelo por un fallo...'{{ ')' }}
+                    
+                            {{ '}' }}
+                        {{ '}' }}
+                    {{ '}' }}
+                  </code></pre>
+            </section>
+
+
+            <section class="mgt0">
+                <p>Paso 7: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">Copiar a pruebas Servidor</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|544">
+                    //copiar a pruebas
+                    stage{{ '(' }}'Copiar a pruebas Servidor'{{ ')' }} {{ '{' }}
+                        steps {{ '{' }}
+                            bat{{ '(' }}"xcopy C:\\Users\\Valkiria\\.m2\\repository\\com\\example\\Prototipo-Udi\\0.0.1-SNAPSHOT\\Prototipo-Udi-0.0.1-SNAPSHOT.jar D:\\proyecto\\deploy\\pruebas\\servidor /O /X /E /H /K /Y"{{ ')' }}
+                        {{ '}' }}
+                        
+                        post {{ '{' }}
+                            success {{ '{' }}
+                              echo 'copiar a pruebas Servidor exitosa...'
+                            {{ '}' }}
+                            failure {{ '{' }}
+                              echo 'copiar a pruebas Servidor stage fallo...'
+                              error{{ '(' }}'copiar a pruebas Servidor se cancelo por un fallo...'{{ ')' }}
+                    
+                           {{ '}' }}
+                        {{ '}' }}
+                    {{ '}' }}
+                  </code></pre>
+            </section>
+
+            <section class="mgt0">
+                <p>Paso 8: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">Subir aplicación Cliente</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|544">
+
+                    stage{{ '(' }}'Subir aplicación Cliente'{{ ')' }} {{ '{' }}
+                        steps {{ '{' }}
+                            
+                            script{{ '{' }}
+                                try {{ '{' }}
+                                    def stdout = bat{{ '(' }}returnStdout:true , script: "netstat -ano | findstr 4200"{{ ')' }}.trim{{ '(' }}{{ ')' }}
+                                    result = stdout.readLines{{ '(' }}{{ ')' }}[1]
+                                    def data = result.toString{{ '(' }}{{ ')' }}.split{{ '(' }}'LISTENING       '{{ ')' }}
+                                    if {{ '(' }}data != null && data.size {{ '>' }} 0 {{ ')' }} {{ '{' }}
+                                        echo "id a eliminar :" + data[1]                    
+                                        bat "taskkill /f /pid "+ data[1]
+                                    {{ '}' }}
+                                {{ '}' }} catch {{ '(' }}Exception e{{ ')' }} {{ '{' }}
+                                     echo 'subir aplicacion : nuevo despliegue...'
+                                  {{ '}' }}
+                            {{ '}' }}
+                            // Get some code from a GitHub repository
+                            git 'https://nanonano23@bitbucket.org/nanonano23/prototipoudipaginaweb.git'
+                            
+                            bat{{ '(' }}"start npm run ng serve"{{ ')' }}
+                        {{ '}' }}
+                        
+                        post {{ '{' }}
+                            success {{ '{' }}
+                              echo 'Subir aplicación Cliente exitosa...'
+                            {{ '}' }}
+                            failure {{ '{' }}
+                              echo 'Subir aplicación Cliente stage fallo...'
+                              error{{ '(' }}'Subir aplicación Cliente se cancelo por un fallo...'{{ ')' }}
+                    
+                            {{ '}' }}
+                        {{ '}' }}
+                    {{ '}' }}
+                  </code></pre>
+            </section>
+
+
+            <section class="mgt0">
+                <p>Paso 9: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">Subir aplicación Cliente</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|544">
+
+                    
+                    stage{{ '(' }}'Subir aplicación Servidor'{{ ')' }} {{ '{' }}
+                        steps {{ '{' }}
+                            script{{ '{' }}
+                                try {{ '{' }}
+                                    def stdout = bat{{ '(' }}returnStdout:true , script: "netstat -ano | findstr 8181"{{ ')' }}.trim{{ '(' }}{{ ')' }}
+                                    result = stdout.readLines{{ '(' }}{{ ')' }}[1]
+                                    def data = result.toString{{ '(' }}{{ ')' }}.split{{ '(' }}'LISTENING       '{{ ')' }}
+                                    if {{ '(' }}data != null && data.size {{ '>' }} 0 {{ ')' }} {{ '{' }}
+                                        echo "id a eliminar :" + data[1]                    
+                                        bat "taskkill /f /pid "+ data[1]
+                                    {{ '}' }}
+                                {{ '}' }} catch {{ '(' }}Exception e{{ ')' }} {{ '{' }}
+                                     echo 'subir aplicacion : nuevo despliegue...'
+                                  {{ '}' }}
+                            {{ '}' }}
+                            
+                            withEnv{{ '(' }}['JENKINS_NODE_COOKIE=DontKillMe']{{ ')' }} {{ '{' }}
+                                bat "start java -jar D:\\proyecto\\deploy\\pruebas\\servidor\\Prototipo-Udi-0.0.1-SNAPSHOT.jar"
+                            {{ '}' }}
+                        {{ '}' }}
+                        
+                        post {{ '{' }}
+                            success {{ '{' }}
+                              echo 'subir aplicacion exitosa...'
+                            {{ '}' }}
+                            failure {{ '{' }}
+                              echo 'subir aplicacion stage fallo...'
+                              error{{ '(' }}'subir aplicacion se cancelo por un fallo...'{{ ')' }}
+                    
+                            {{ '}' }}
+                        {{ '}' }}
+                    {{ '}' }}
+                  </code></pre>
+            </section>
+
+
+            <section class="mgt0">
+                <p>Paso 10: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">Pruebas de Integración</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|544">
+                    //Pruebas de Integración
+                    stage{{ '(' }}'Pruebas de Integración'{{ ')' }} {{ '{' }}
+                        steps {{ '{' }}
+                            bat "newman run D:\\proyecto\\postmanscript\\Prototipo_Dev_Ops.postman_collection.json"
+                        {{ '}' }}
+                        
+                        post {{ '{' }}
+                            success {{ '{' }}
+                              echo 'Pruebas de Integración exitosa...'
+                            {{ '}' }}
+                            failure {{ '{' }}
+                              echo 'Pruebas de Integración stage fallo...'
+                              error{{ '(' }}'Pruebas de Integración se cancelo por un fallo...'{{ ')' }}
+                    
+                            {{ '}' }}
+                        {{ '}' }}
+                    {{ '}' }}
+                    
+                    //Pruebas de Carga
+                    stage{{ '(' }}'Pruebas de Carga'{{ ')' }} {{ '{' }}
+                        steps {{ '{' }}
+                            bat 'bzt D:\\proyecto\\jmeter\\prototipo.yml -report'
+                        {{ '}' }}
+                        
+                        post {{ '{' }}
+                            success {{ '{' }}
+                              echo 'Pruebas de Carga exitosa...'
+                            }
+                            failure {{ '{' }}
+                              echo 'Pruebas de Carga stage fallo...'
+                              error{{ '(' }}'Pruebas de Carga se cancelo por un fallo...'{{ ')' }}
+                    
+                            {{ '}' }}
+                        {{ '}' }}
+                    {{ '}' }}
+                  </code></pre>
+            </section>
+            
+            <section class="mgt0">
+                <p>Paso 11: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">Pruebas de Carga</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|544">
+                    //Pruebas de Carga
+                    stage{{ '(' }}'Pruebas de Carga'{{ ')' }} {{ '{' }}
+                        steps {{ '{' }}
+                            bat 'bzt D:\\proyecto\\jmeter\\prototipo.yml -report'
+                        {{ '}' }}
+                        
+                        post {{ '{' }}
+                            success {{ '{' }}
+                              echo 'Pruebas de Carga exitosa...'
+                            }
+                            failure {{ '{' }}
+                              echo 'Pruebas de Carga stage fallo...'
+                              error{{ '(' }}'Pruebas de Carga se cancelo por un fallo...'{{ ')' }}
+                    
+                            {{ '}' }}
+                        {{ '}' }}
+                    {{ '}' }}
+                  </code></pre>
+            </section>
+
+            <section class="mgt0">
+                <p>Paso 12: <span style="letter-spacing: 2px"
+                        [ngStyle]="{'color': getRandom(2)}">Correo Confirmación de pruebas</span></p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|544">
+                    stage{{ '(' }}'Correo Confirmación de pruebas'{{ ')' }} {{ '{' }}
+                    steps {{ '{' }}
+                        script{{ '{' }}
+                            try {{ '{' }}
+                                mail to: 'cgomez19@udi.edu.co',               
+                                subject: "Confirmación de fase pruebas con build nro: $BUILD_NUMBER" ,
+                                body: "Confirmación de fase pruebas nombre de tarea: $JOB_NAME, fecha:"+new Date{{ '(' }}{{ ')' }}
+                            {{ '}' }}catch {{ '(' }}err{{ ')' }} {{ '{' }}
+                                echo "Caught: ${{ '{' }}err{{ '}' }}"
+                                currentBuild.result = 'FAILURE'
+                            {{ '}' }}
+                        {{ '}' }}
+                    {{ '}' }}
+                    
+                    post {{ '{' }}
+                        success {{ '{' }}
+                          echo 'Correo Confirmación de pruebas exitosa...'
+                        {{ '}' }}
+                        failure {{ '{' }}
+                          echo 'Correo Confirmación de pruebas stage fallo...'
+                          error{{ '(' }}'Correo Confirmación de pruebas se cancelo por un fallo...'{{ ')' }}
+                
+                        {{ '}' }}
+                    {{ '}' }}
+                {{ '}' }}
+                  </code></pre>
+            </section>
+
+
+        </section>
+
+
+
+    </div>
+</div>
+
+<div class="divBotom">
+  <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+  <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+  <button style="margin: 0.2rem;" mat-raised-button (click)="ir('prototipoOrquestacion')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+  <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(1)}">Volver a la lista de <b>Contenido Informativo</b></button>
+  <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+  <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(1)}">Etapas de Estudio</button>
+</div>

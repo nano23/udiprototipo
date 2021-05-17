@@ -1,0 +1,21 @@
+.t100{
+    display: contents!important;
+
+}
+
+.t100 span{
+    text-shadow: 2px 2px 3px #a239ca;
+}
+
+section{
+    top: 180.5px!important;
+}
+
+section > p > span{
+    text-shadow: 2px 2px 3px #a239ca;
+}
+
+::ng-deep .mat-radio-label-content{
+    text-shadow: 2px 2px 3px #4717f6!important;
+}
+

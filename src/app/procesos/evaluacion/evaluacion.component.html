@@ -1,0 +1,970 @@
+<div class="reveal">
+    <span [ngStyle]="{'background-color': getRandom(0)}" style="display: none;"></span>
+<span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+<span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+<span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+<span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <div class="slides">
+        <h2 style="text-transform: uppercase; text-align: center;padding-bottom: 0rem;font-size: larger; color: rgb(71, 23, 246);border-bottom: 1px solid;padding: 1rem;"  [ngStyle]="{'color': getRandom(4)}">{{getProceso()}}</h2>
+        <section data-background="assets/img/fondo/evaluacion.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p  style="font-size: revert;">EVALUACION</p>
+            <p  class="fragment slide mR1">En este apartado se presentaran preguntas de seleccion multiple para conocer que tanto has aprendido:</p>
+        </section>
+
+        <section *ngIf="proceso ==='prototipo'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">1) <span  >¿Que Framework del lado del cliente se trabaja en el desarrollo del contenido informativo?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[0]">
+                    <mat-radio-button class="mR1" value="React">React</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Angular">Angular</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Angular">VueJs</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Angular">Thymeleaf</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+
+        <section *ngIf="proceso ==='prototipo'" data-background="assets/img/fondo/evaluacion2.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">2) <span  >¿Que lenguaje de programacion se uso para el desarrollo del Back-End?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[1]">
+                    <mat-radio-button class="mR1" value="TypeScript">Java Script</mat-radio-button>
+                    <mat-radio-button class="mR1" value="C#">C#</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Java 8">Java 8</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Java 11">Java 11</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='prototipo'" data-background="assets/img/fondo/evaluacion2.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">3) <span  >¿En que archivo del proyecto front-end se definen las dependencias?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[2]">
+                    <mat-radio-button class="mR1" value="Package.json">Package.json</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Angular.json">Angular.json</mat-radio-button>
+                    <mat-radio-button class="mR1" value="index.html">index.html</mat-radio-button>
+                    <mat-radio-button class="mR1" value="environment.ts">environment.ts</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='prototipo'" data-background="assets/img/fondo/evaluacion2.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">4) <span  >¿En que archivo de typeScript se configuran las variables por ambiente, ejemplo pruebas/produccion?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[3]">
+                    <mat-radio-button class="mR1" value="pagina1Component.ts">pagina1Component.ts</mat-radio-button>
+                    <mat-radio-button class="mR1" value="jwt.interceptor.ts">jwt.interceptor.ts</mat-radio-button>
+                    <mat-radio-button class="mR1" value="environment.ts">environment.ts</mat-radio-button>
+                    <mat-radio-button class="mR1" value="pagina1Component.css">pagina1Component.css</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='prototipo'" data-background="assets/img/fondo/evaluacion2.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">5) <span  >¿que extension se usa en el prototipo para agregar estilos a las paginas?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[4]">
+                    <mat-radio-button class="mR1" value=".js">.js</mat-radio-button>
+                    <mat-radio-button class="mR1" value=".html">.html</mat-radio-button>
+                    <mat-radio-button class="mR1" value=".ts">.ts</mat-radio-button>
+                    <mat-radio-button class="mR1" value=".css">.css</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='prototipo'" data-background="assets/img/fondo/evaluacion2.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">6) <span  >¿que dependencia del lado del back-end agrega las capacidades de spring boot?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[5]">
+                    <mat-radio-button class="mR1" value="jacoco">jacoco</mat-radio-button>
+                    <mat-radio-button class="mR1" value="spring-boot-starter-parent">spring-boot-starter-parent</mat-radio-button>
+                    <mat-radio-button class="mR1" value="maven">maven</mat-radio-button>
+                    <mat-radio-button class="mR1" value="sonar.core">sonar.core</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='prototipo'" data-background="assets/img/fondo/evaluacion2.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">7) <span  >¿que apartado del archivo pom.xml en el back-end me permite configurar variables reutlizables en el mismo archivo?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[6]">
+                    <mat-radio-button class="mR1" value="properties">properties</mat-radio-button>
+                    <mat-radio-button class="mR1" value="build">build</mat-radio-button>
+                    <mat-radio-button class="mR1" value="dependencies">dependencies</mat-radio-button>
+                    <mat-radio-button class="mR1" value="profile">profile</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='prototipo'" data-background="assets/img/fondo/evaluacion2.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">8) <span  >¿cual es la definición del metodo de ejecucion del proyecto back-end?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[7]">
+                    <mat-radio-button class="mR1" value="public static main">public static main</mat-radio-button>
+                    <mat-radio-button class="mR1" value="public static void">public static void</mat-radio-button>
+                    <mat-radio-button class="mR1" value="public static void main">public static void main</mat-radio-button>
+                    <mat-radio-button class="mR1" value="static void main">static void main</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='prototipo'" data-background="assets/img/fondo/evaluacion2.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">9) <span  >¿que anotacion se usa para definir el nombre de la tabla en el back-end?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[8]">
+                    <mat-radio-button class="mR1" value="@Entity">@Entity</mat-radio-button>
+                    <mat-radio-button class="mR1" value="@Id">@Id</mat-radio-button>
+                    <mat-radio-button class="mR1" value="@Column">@Column</mat-radio-button>
+                    <mat-radio-button class="mR1" value="@Table">@Table</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='prototipo'" data-background="assets/img/fondo/evaluacion2.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">10) <span  >¿que video se ve en la presentacion en la fase de ejecucion?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[9]">
+                    <mat-radio-button class="mR1" value="Eliminación de objetos de la pagina1">Eliminación de objetos de la pagina1</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Borrar usuarios">Borrar usuarios</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Crear objetos pagina 2">Crear objetos pagina 2</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Consultar paginas por codigo">Consultar paginas por codigo</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='seguimiento'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">1) <span  >La siguiente afirmacion es falsa o verdadera? Jira es una herramienta en la nube que permite administrar proyectos de desarrollo y hacer seguimiento a incidencias</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[0]">
+                    <mat-radio-button class="mR1" value="verdadero">verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="falso">falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='seguimiento'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">2) <span  >¿cual es el nombre de la herramienta tipo dashboard de Jira?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[1]">
+                    <mat-radio-button class="mR1" value="taskboard">taskboard</mat-radio-button>
+                    <mat-radio-button class="mR1" value="dashboard">dashboard</mat-radio-button>
+                    <mat-radio-button class="mR1" value="tablero">tablero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="marco de trabajo">marco de trabajo</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='seguimiento'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">3) <span  >La siguiente afirmacion es falsa o verdadera? En la configuracion de un proyecto Jira es posible agregar aplicaciones de terceros y en su mayoria son gratuitas</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[2]">
+                    <mat-radio-button class="mR1" value="verdadero">verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="falso">falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='seguimiento'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">4) <span  >¿La Hoja de ruta de la herramienta Jira es una herramienta de tipo?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[3]">
+                    <mat-radio-button class="mR1" value="Diagrama de Gantt">Diagrama de Gantt</mat-radio-button>
+                    <mat-radio-button class="mR1" value="dashboard">dashboard</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Tabla">Tabla</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Arbol de decisión">Arbol de decisión</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='seguimiento'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">5) <span  >La siguiente afirmacion es falsa o verdadera? La opcion de incidencias de Jira no permite hacer filtros en la tabla resumen</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[4]">
+                    <mat-radio-button class="mR1" value="verdadero">verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="falso">falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='seguimiento'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">6) <span  >La siguiente afirmacion es falsa o verdadera? En jira es posible crear campos personalizados para la creación de incidencias</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[5]">
+                    <mat-radio-button class="mR1" value="verdadero">verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="falso">falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='seguimiento'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">7) <span  >En el contenido Informativo del modulo de intregación entre Jira y bitbucket se hablo del siguiente tema</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[6]">
+                    <mat-radio-button class="mR1" value="solicitud de cambios">solicitud de cambios</mat-radio-button>
+                    <mat-radio-button class="mR1" value="como subir cambios">como subir cambios</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Como clonar un repositorio">Como clonar un repositorio</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Merge">Merge</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='seguimiento'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">8) <span  >¿cual es el nombre del repositorio que se uso para el ejemplo de confirmaciones de cambios?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[7]">
+                    <mat-radio-button class="mR1" value="Prototipo">Prototipo</mat-radio-button>
+                    <mat-radio-button class="mR1" value="PrototipoUdiPagina">PrototipoUdiPagina</mat-radio-button>
+                    <mat-radio-button class="mR1" value="PrototipoUdiPaginaWeb">PrototipoUdiPaginaWeb</mat-radio-button>
+                    <mat-radio-button class="mR1" value="PrototipoUdi">PrototipoUdi</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='repositorio'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">1) <span  >¿Que sistema de control de versiones usa Bitbucket?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[0]">
+                    <mat-radio-button class="mR1" value="Git">Git</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Svn">Svn</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Mercurial">Mercurial</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='repositorio'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">2) <span  >¿Una funcion del administrador de bitbucket es?</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[1]">
+                    <mat-radio-button class="mR1" value="Dashboard">Dashboard</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Solicitudes de Unión">Solicitudes de Unión</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Procesos">Procesos</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Seguimiento">Seguimiento</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='repositorio'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">3) <span  >La siguiente afirmacion es falsa o verdadera? En bitbucket es posible ver las incidencias relacionadas con la herramienta Jira</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[2]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='repositorio'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">4) <span  >La siguiente afirmacion es falsa o verdadera? No es necesario instalar algun software local para poder clonar el repositorio bitbucket</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[3]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='repositorio'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">5) <span  >La siguiente afirmacion es falsa o verdadera? Es necesario usar credenciales para clonar un repositorio bitbucket</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[4]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='repositorio'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">6) <span  >Los nombres de las funcionalidades de carga y descarga de fuentes en un repositorio bitbucket son</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[5]">
+                    <mat-radio-button class="mR1" value="carga y descarga">carga y descarga</mat-radio-button>
+                    <mat-radio-button class="mR1" value="subir y bajar">subir y bajar</mat-radio-button>
+                    <mat-radio-button class="mR1" value="traer y llevar">traer y llevar</mat-radio-button>
+                    <mat-radio-button class="mR1" value="pull y push">pull y push</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='repositorio'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">7) <span  >El nombre del software utilizado en el ejemplo de carga de fuentes al repositorio remoto fue</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[6]">
+                    <mat-radio-button class="mR1" value="Git software">Git software</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Tortoise Git">Tortoise Git</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Svn">Svn</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Rabbit">Rabbit</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+
+        <section *ngIf="proceso ==='repositorio'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">8) <span  >Nombre del proceso que permite guardar un historico de archivos que van a ser cargados al repositorio central</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[7]">
+                    <mat-radio-button class="mR1" value="Push">Push</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Pull">Pull</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Commit">Commit</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Merge">Merge</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+
+        <section *ngIf="proceso ==='colaboración'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">1) <span  >La siguiente afirmacion es falsa o verdadera? confluence permite agregar contenido dinámico y de multimedia</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[0]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='colaboración'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">2) <span  >Una funcionalidad de Confluence descrita en el contenido informativo fue</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[1]">
+                    <mat-radio-button class="mR1" value="Documentos Nuevos">Documentos Nuevos</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Publicaciones">Publicaciones</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Compartir">Compartir</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Jira">Jira</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='colaboración'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">3) <span  >La siguiente afirmacion es falsa o verdadera? Confluence no puede intregrarse con Jira</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[2]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='colaboración'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">4) <span  >La siguiente afirmacion es falsa o verdadera? Confluence funge como una base de conocimientos de documentación</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[3]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='colaboración'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">5) <span  >Una tipo de documento de Confluence descrito en el contenido informativo fue</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[4]">
+                    <mat-radio-button class="mR1" value="Pagina Nueva">Pagina Nueva</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Analisis Empresarial">Analisis Empresarial</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Analisis FODA">Analisis FODA</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Analisis DAFO">Analisis DAFO</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='colaboración'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">6) <span  >La siguiente afirmacion es falsa o verdadera? Confluence tiene una utilidad que permite asociar a los documentos las incidencias de Jira</span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[5]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='artefactos'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">1) <span  >Que herramienta de repositorio de artefactos se menciono en el contenido informativo </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[0]">
+                    <mat-radio-button class="mR1" value="Nexus Repository">Nexus Repository</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Repository Nexis">Repository Nexis</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Jfrog">Jfrog</mat-radio-button>
+                    <mat-radio-button class="mR1" value="artifactory">artifactory</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='artefactos'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">2) <span  >La siguiente afirmacion es falsa o verdadera?El repositorio de artefactos mencionado solo permite trabajar con distribuciones de java </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[1]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='artefactos'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">3) <span  >La siguiente afirmacion es falsa o verdadera?Una finalidad es compartir el código del proyecto con otros colaboradores y/o interesados </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[2]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='artefactos'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">4) <span  >La siguiente afirmacion es falsa o verdadera? Nexus Repositoy solo se puede instalar en windows </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[3]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='artefactos'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">5) <span  >La siguiente afirmacion es falsa o verdadera? El administrador de Nexus Repositoy se gestiona atravez de una pagina web </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[4]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='artefactos'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">6) <span  [ngStyle]="{'color': getRandom(5)}">La siguiente afirmacion es falsa o verdadera? En el ejemplo de versionamiento se enuncia que es necerio tener previa configuración de un proyecto java con maven </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[5]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='artefactos'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">7) <span  >En el ejemplo de creación de repositorio en nexus se configura un repositorio de tipo </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[6]">
+                    <mat-radio-button class="mR1" value="helm">helm</mat-radio-button>
+                    <mat-radio-button class="mR1" value="go">go</mat-radio-button>
+                    <mat-radio-button class="mR1" value="npm">npm</mat-radio-button>
+                    <mat-radio-button class="mR1" value="maven">maven</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='artefactos'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">8) <span  >Nombre del archivo maven donde se agregar las configuraciones para integrarse con el servidor de nexus repository </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[7]">
+                    <mat-radio-button class="mR1" value="extrac">extrac</mat-radio-button>
+                    <mat-radio-button class="mR1" value="pom">pom</mat-radio-button>
+                    <mat-radio-button class="mR1" value="arc">arc</mat-radio-button>
+                    <mat-radio-button class="mR1" value="conf">conf</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariascliente'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">1) <span  >Nombre del framework con el que se construyen las pruebas </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[0]">
+                    <mat-radio-button class="mR1" value="Jasmine">Jasmine</mat-radio-button>
+                    <mat-radio-button class="mR1" value="karma">karma</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Jmeter">Jmeter</mat-radio-button>
+                    <mat-radio-button class="mR1" value="React">React</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariascliente'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">2) <span  >La siguiente afirmacion es falsa o verdadera? El framework de angular no implementa por default la herramienta de pruebas unitarias Jasmine </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[1]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariascliente'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">3) <span  >La siguiente afirmacion es falsa o verdadera? Las pruebas con el framework jasmine se construyen con el lenguaje de programación Typescript </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[2]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariascliente'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">4) <span  >La siguiente afirmacion es falsa o verdadera? Los archivos de construcción de pruebas deben tener la extensión .spec.ts </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[3]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariascliente'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">5) <span  >Palabra clave para crear funciones de pruebas con la herramienta jasmine </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[4]">
+                    <mat-radio-button class="mR1" value="at">at</mat-radio-button>
+                    <mat-radio-button class="mR1" value="et">et</mat-radio-button>
+                    <mat-radio-button class="mR1" value="it">it</mat-radio-button>
+                    <mat-radio-button class="mR1" value="ot">ot</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariascliente'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">6) <span  >Comando por defecto que se usa para realizar las pruebas unitarias del lado del cliente </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[5]">
+                    <mat-radio-button class="mR1" value="npm prueba">npm prueba</mat-radio-button>
+                    <mat-radio-button class="mR1" value="npm testing">npm testing</mat-radio-button>
+                    <mat-radio-button class="mR1" value="npm test">npm test</mat-radio-button>
+                    <mat-radio-button class="mR1" value="ng testing">ng testing</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariascliente'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">7) <span  >La siguiente afirmacion es falsa o verdadera? El resultado de la prueba unitaria es posible visualizarla por un navegador </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[6]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariasserver'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">1) <span  >El framework del lado del servidor usado para la construccion de pruebas unitarias es </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[0]">
+                    <mat-radio-button class="mR1" value="karma">karma</mat-radio-button>
+                    <mat-radio-button class="mR1" value="junit">junit</mat-radio-button>
+                    <mat-radio-button class="mR1" value="testeo">testeo</mat-radio-button>
+                    <mat-radio-button class="mR1" value="serenity">serenity</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariasserver'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">2) <span  >La siguiente afirmacion es falsa o verdadera? Junit no fue diseñado para ejecutarse con Java </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[1]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariasserver'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">3) <span  >La siguiente afirmacion es falsa o verdadera? Las pruebas unitarias del lado del servidor hacen parte del engranaje <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span> </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[2]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariasserver'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">4) <span  >La extension del archivo donde se construyen las pruebas unitarias del lado del servidor es </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[3]">
+                    <mat-radio-button class="mR1" value=".jar">.jar</mat-radio-button>
+                    <mat-radio-button class="mR1" value=".css">.css</mat-radio-button>
+                    <mat-radio-button class="mR1" value=".java">.java</mat-radio-button>
+                    <mat-radio-button class="mR1" value=".ts">.ts</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='unitariasserver'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">5) <span  >Tipo de metodo para testear operaciones de encapsulamiento usado en creacion de pruebas unitarias </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[4]">
+                    <mat-radio-button class="mR1" value="mojo">mojo</mat-radio-button>
+                    <mat-radio-button class="mR1" value="pojo">pojo</mat-radio-button>
+                    <mat-radio-button class="mR1" value="jopo">jopo</mat-radio-button>
+                    <mat-radio-button class="mR1" value="jomo">jomo</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='cobertura'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">1) <span  >La siguiente afirmacion es falsa o verdadera? Cobertura de código es un indicador de medida que notifica cuántas líneas / bloques / arcos de su código </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[0]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='cobertura'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">2) <span  >El nombre del software usado para la cobertura de codigo es </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[1]">
+                    <mat-radio-button class="mR1" value="Cobertura">Cobertura</mat-radio-button>
+                    <mat-radio-button class="mR1" value="jacoco">jacoco</mat-radio-button>
+                    <mat-radio-button class="mR1" value="cobertex">cobertex</mat-radio-button>
+                    <mat-radio-button class="mR1" value="cojaco">cojaco</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='cobertura'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">3) <span  >La siguiente afirmacion es falsa o verdadera? El reporte de cobertura de codigo no es posible visualizarlo como una pagina html </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[2]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='cobertura'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">4) <span  >La siguiente afirmacion es falsa o verdadera? En el reporte de cobertura de codigo es posible ver en detalle por clase las lineas cubiertas </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[3]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='cobertura'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">5) <span  >Extension del archivo en el cual se configuran las dependencias del reporte de cobertura de codigo </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[4]">
+                    <mat-radio-button class="mR1" value=".ts">.ts</mat-radio-button>
+                    <mat-radio-button class="mR1" value=".css">.css</mat-radio-button>
+                    <mat-radio-button class="mR1" value=".yml">.yml</mat-radio-button>
+                    <mat-radio-button class="mR1" value=".xml">.xml</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='cobertura'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">6) <span  >La siguiente afirmacion es falsa o verdadera? El reporte de cobertura de codigo necesita de la ejecución de pruebas unitarias </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[5]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='cobertura'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">7) <span  >Nombre del archivo que permite ver en una pagina web el reporte de cobertura de codigo generado en la carpeta del compilado </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[6]">
+                    <mat-radio-button class="mR1" value="index.html">index.html</mat-radio-button>
+                    <mat-radio-button class="mR1" value="index.exe">index.exe</mat-radio-button>
+                    <mat-radio-button class="mR1" value="sh.html">sh.html</mat-radio-button>
+                    <mat-radio-button class="mR1" value="sh.exe">sh.exe</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='calidad'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">1) <span  >La siguiente afirmacion es falsa o verdadera? el software de reporte de caldiad genera si informacion basdo en reportes de más de 600 reglas </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[0]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='calidad'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">2) <span  >El nombre del software usado para el reporte de calidad del codigo es </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[1]">
+                    <mat-radio-button class="mR1" value="Cobertura">Cobertura</mat-radio-button>
+                    <mat-radio-button class="mR1" value="sonarqube">sonarqube</mat-radio-button>
+                    <mat-radio-button class="mR1" value="cobertex">cobertex</mat-radio-button>
+                    <mat-radio-button class="mR1" value="jacoco">jacoco</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='calidad'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">3) <span  >La siguiente afirmacion es falsa o verdadera?Ayuda a medir la calidad con la que el código está siendo escrito aplicado a temas como código estándares de codificación y <span class="tooltip2">bugs<span class="tooltiptext">Error de software</span></span> </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[2]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='calidad'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">4) <span  >La siguiente afirmacion es falsa o verdadera?El Reporte de calidad de codigo se integra con los procesos <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span> como por ejemplo el proceso de pruebas unitarias </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[3]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='calidad'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">5) <span  >La siguiente afirmacion es falsa o verdadera? el software de reporte de calidad no cuenta con un acceso via login donde se ingresa un usuario y contraseña </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[4]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='calidad'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">6) <span  >El comando que utiliza para generar el reporte de calidad en el video fue </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[5]">
+                    <mat-radio-button class="mR1" value="mvn clean install sonar">mvn clean install sonar</mat-radio-button>
+                    <mat-radio-button class="mR1" value="mvn install sonar:sonar">mvn install sonar:sonar</mat-radio-button>
+                    <mat-radio-button class="mR1" value="mvn clean sonar:sonar">mvn clean sonar:sonar</mat-radio-button>
+                    <mat-radio-button class="mR1" value="mvn clean install sonar:sonar">mvn clean install sonar:sonar</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='calidad'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">7) <span  >La siguiente afirmacion es falsa o verdadera? el software de reporte de calidad cuenta con un apartado para visualizar los <span class="tooltip2">bugs<span class="tooltiptext">Error de software</span></span> en el codigo </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[6]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebasintegracion'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">1) <span  >El nombre del software que permite crear <span class="tooltip2">scripts<span class="tooltiptext">secuencia de comandos en un lenguaje legible por una maquina</span></span> con request de pruebas de integración sobre Apis descrito en el contenido informativo fue: </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[0]">
+                    <mat-radio-button class="mR1" value="newman">newman</mat-radio-button>
+                    <mat-radio-button class="mR1" value="postman">postman</mat-radio-button>
+                    <mat-radio-button class="mR1" value="jmeter">jmeter</mat-radio-button>
+                    <mat-radio-button class="mR1" value="maven">maven</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebasintegracion'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">2) <span  >La siguiente afirmacion es falsa o verdadera? La misión de las pruebas de integración es verificar el correcto ensamblaje entre los distintos componentes </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[1]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebasintegracion'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">3) <span  >El comando para instalar newman desde <span class="tooltip2">nodejs<span class="tooltiptext">entorno en tiempo de ejecución multiplataforma, de código abierto en el lenguaje javascript</span></span> descrito en el contenido informativo fue: </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[2]">
+                    <mat-radio-button class="mR1" value="npm newman">npm newman</mat-radio-button>
+                    <mat-radio-button class="mR1" value="npn install newman">npn install newman</mat-radio-button>
+                    <mat-radio-button class="mR1" value="npm install newman">npm install newman</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">install newman</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebasintegracion'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">4) <span  >La siguiente afirmacion es falsa o verdadera? Newman no es posible instalarlo usando <span class="tooltip2">nodejs<span class="tooltiptext">entorno en tiempo de ejecución multiplataforma, de código abierto en el lenguaje javascript</span></span> </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[3]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebasintegracion'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">5) <span  >En el ejemplo en video se evidencia la ejecucion de pruebas desde Postman y newman </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[4]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebasintegracion'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">6) <span  >las _____ permiten configurarse en entorno de pruebas de integración y se usan en la ejecución automática para capturar información y reutilizarla </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[5]">
+                    <mat-radio-button class="mR1" value="capacidades">capacidades</mat-radio-button>
+                    <mat-radio-button class="mR1" value="variables">variables</mat-radio-button>
+                    <mat-radio-button class="mR1" value="listas">listas</mat-radio-button>
+                    <mat-radio-button class="mR1" value="colecciones">colecciones</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+
+        <section *ngIf="proceso ==='pruebascarga'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">1) <span  >El nombre del software que permite guardar de forma automatica una prueba de carga desde el navegador es </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[0]">
+                    <mat-radio-button class="mR1" value="jmeter">jmeter</mat-radio-button>
+                    <mat-radio-button class="mR1" value="blazemeter">blazemeter</mat-radio-button>
+                    <mat-radio-button class="mR1" value="taurus">taurus</mat-radio-button>
+                    <mat-radio-button class="mR1" value="maven">maven</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebascarga'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">2) <span  >La siguiente afirmacion es falsa o verdadera? Uno de los factor mas importantes en las pruebas de carga es determinar el tiempo de ejecución de la prueba </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[1]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebascarga'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">3) <span  >La siguiente afirmacion es falsa o verdadera? Los <span class="tooltip2">scripts<span class="tooltiptext">secuencia de comandos en un lenguaje legible por una maquina</span></span> de Taurus se usan para complementar procesos <span class="tooltip2">DevOps<span class="tooltiptext">Grupo de prácticas que unifica operaciones de TI y desarrollo de software</span></span> </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[2]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebascarga'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">4) <span  >La extensión del archivo de pruebas de blazemeter es </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[3]">
+                    <mat-radio-button class="mR1" value="jmx">jmx</mat-radio-button>
+                    <mat-radio-button class="mR1" value="jmm">jmm</mat-radio-button>
+                    <mat-radio-button class="mR1" value="yml">yml</mat-radio-button>
+                    <mat-radio-button class="mR1" value="css">css</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebascarga'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">5) <span  >La siguiente afirmacion es falsa o verdadera? Taurus crea con los <span class="tooltip2">scripts<span class="tooltiptext">secuencia de comandos en un lenguaje legible por una maquina</span></span> de jmeter un archivo yml de ejecucion de pruebas automaticas </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[4]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='pruebascarga'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">6) <span  >La siguiente afirmacion es falsa o verdadera? Taurus se conecta con un reporteador gratuito de jmeter que en tiempo de ejecución reporta el resultado de la prueba </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[5]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='orquestación'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">1) <span  >El nombre del software utilizado para la orquestación es </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[0]">
+                    <mat-radio-button class="mR1" value="jenkins">jenkins</mat-radio-button>
+                    <mat-radio-button class="mR1" value="taurus">taurus</mat-radio-button>
+                    <mat-radio-button class="mR1" value="maven">maven</mat-radio-button>
+                    <mat-radio-button class="mR1" value="jmeter">jmeter</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='orquestación'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">2) <span  >La siguiente afirmacion es falsa o verdadera? Los <span class="tooltip2">pipelines<span class="tooltiptext">Fracción de proceso de un ciclo de vida DevOps</span></span> son basicamente ciclos completos del comportamiento de una parte de la aplicación </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[1]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='orquestación'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">3) <span  >La siguiente afirmacion es falsa o verdadera? En Jenkins no es posible detectar los cambios en tiempo real del proyecto </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[2]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='orquestación'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">4) <span  >El nombre del lenguaje de programacion usado en la construccion de <span class="tooltip2">pipelines<span class="tooltiptext">Fracción de proceso de un ciclo de vida DevOps</span></span> en jenkins es </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[3]">
+                    <mat-radio-button class="mR1" value="python">python</mat-radio-button>
+                    <mat-radio-button class="mR1" value="groomy">groomy</mat-radio-button>
+                    <mat-radio-button class="mR1" value="java">java</mat-radio-button>
+                    <mat-radio-button class="mR1" value="groovy">groovy</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section *ngIf="proceso ==='orquestación'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">5) <span  >La siguiente afirmacion es falsa o verdadera? La herramienta de orquestacion utlizada en el contenido informativo es posible instalarla en un equipo local de windows </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[4]">
+                    <mat-radio-button class="mR1" value="Verdadero">Verdadero</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Falso">Falso</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+
+        <section *ngIf="proceso ==='orquestación'" data-background="assets/img/fondo/evaluacion1.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;">6) <span  >Uno de los pasos descritos en el contenido informativo para el proceso de orquestacion en jenkins fuente </span></p>
+            <p  class="fragment slide mR1">
+                <mat-radio-group [(ngModel)]="preguntas[5]">
+                    <mat-radio-button class="mR1" value="envio de notificaciones">Envio de notificaciones</mat-radio-button>
+                    <mat-radio-button class="mR1" value="admon proyecto">Admon proyecto</mat-radio-button>
+                    <mat-radio-button class="mR1" value="hacer pruebas">Hacer pruebas</mat-radio-button>
+                    <mat-radio-button class="mR1" value="Correo Confirmación de pruebas">Correo Confirmación de pruebas</mat-radio-button>
+                </mat-radio-group>
+            </p>
+        </section>
+
+        <section data-background="assets/img/fondo/evaluacion.png" class="backImgEzqInfderecha " data-transition="fade-in slide-out" style="padding: 0rem;">
+            <p class="" style="text-align: justify;font-size: x-large;"><span  style="color: rgb(102 171 140)!important;
+                text-align: center;
+                margin: 0px auto;
+                display: block;
+                font-size: xx-large;
+                text-shadow: none;">¿Finalizar Evaluación?</span></p>
+            <div>
+                <button style="background-color: #66ab8c;
+                margin: 2rem!important;" *ngIf="!isCalificado" mat-raised-button color="primary" (click)="calificar()">Calificar</button>
+                <div *ngIf="isCalificado">
+                    <p>Resultado: <b style="color: #a239ca;">{{resultado}}</b> / {{preguntas.length}} </p>
+                    <p> <b style="text-shadow: 2px 2px 3px #66ab8c;">Felicitaciones</b> Por tu resultado has conseguido una calificación del <b style="color: #a239ca;">{{(resultado === 0 ? resultado : (resultado / preguntas.length) * 100) }} % </b></p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('evaluacion')" [ngStyle]="{'background-color': getRandom(2)}">Volver a iniciar la <b>evaluación</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(1)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+</div>

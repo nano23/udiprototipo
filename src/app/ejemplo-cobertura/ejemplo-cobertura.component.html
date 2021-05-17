@@ -1,0 +1,50 @@
+<div class="reveal">
+
+    <div class="slides">
+        <h2 class="tituloPaginas">{{getProceso()}}</h2>
+        <section data-transition="fade-in slide-out" class="topmid">
+            <h2>Ejemplo</h2>
+            <h4>Bienvenido, en este apartado se mostrara un ejemplo de la herramienta seleccionada
+                para el reporte de cobertura de codigo y el prototipo de software propuesto </h4>
+            <h4>Basado en un proceso de <span class="tooltip2">benchmarking<span class="tooltiptext">benchmarking es un proceso de crear, recopilar, comparar y analizar indicadores claves que permitan medir el rendimiento de los procesos</span></span> las herramientas seleccionada segun la
+                arquitectura del prototipo propuesta seria <span class="jacoco"></span></h4>
+        </section>
+
+        <section data-transition="fade-in slide-out" class="topmid">
+            <section class="mgt0">
+                <h2 class="fragment highlight-blue">Jacoco</h2>
+                <p [ngStyle]="{'color': getRandom(1)}"></p>
+                <p class="fragment fade-up">Ejemplo</p>
+                <p><span class="fragment step-fade-in-then-out">Para visualizar el reporte de cobertura de codigo se debe ejecutar algun comando maven de que involucre ejecucion de pruebas, ejemplo, mvn clean install</span>
+                    <span class="fragment step-fade-in-then-out">A continuacion se evidencia un ejemplo en video de ejecución de prueba que genera reporte de cobertura de codigo</span>
+                </p>
+            </section>
+        </section>
+
+        <section data-background-video="assets/video/pruebaCobertura.mp4" data-background-color="#000000">
+            <div class="divVideo" style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;margin-top: 26rem!important;">
+                <h4 [ngStyle]="{'color': getRandom(2)}">Ejemplo de reporte de cobertura de codigo</h4>
+                <p><span class="fragment step-fade-in-then-out">El resultado se visualiza en el navegador al abrir el archivo index.html generado en la carpeta de jacoco dentro del compilado</span>
+                    <span class="fragment step-fade-in-then-out">Para explorar el comportamiento por clase que Jacoco evaluó, pulsar en algun link del reporte que género</span>
+                    <span class="fragment step-fade-in-then-out">Al seleccionar una clase determinada se presenta de forma grafica y con colores el resultado de cobertura para facilitar la comprensión del desarrollador</span>
+                        <span class="fragment step-fade-in-then-out"></span>
+                </p>
+            </div>
+        </section>
+
+
+
+    </div>
+</div>
+
+<div class="divBotom">
+    <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+    <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+    <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('ejemploCobertura')" [ngStyle]="{'background-color': getRandom(0)}">Volver a iniciar el <b>Contenido</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(1)}">Volver a la lista de <b>Contenido Informativo</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(0)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+    <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(1)}">Etapas de Estudio</button>
+  </div>

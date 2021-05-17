@@ -1,0 +1,907 @@
+
+<div class="reveal">
+  <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+  <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+    <div class="slides">
+      <h2 class="tituloPaginas">{{proceso}}</h2>
+        <section class="topmid">
+            <h2 >Desarrollo del lado del Cliente</h2>
+           
+            <h3 >Front-End</h3>
+           
+            <h5 >Bienvenido, en este apartado se dara a conocer los aspectos relevantes para desarrollar el front-end del prototipo </h5>
+           
+        </section>
+
+      <section data-transition="zoom">
+          <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+          <div class="desarrolloContenedor">
+            <p><a href="desarrolloCliente/#package" [ngStyle]="{'color': getRandom(1)}">package.json :</a> Archivo de definición de <span class="tooltip2">nodejs<span class="tooltiptext">entorno en tiempo de ejecución multiplataforma, de código abierto en el lenguaje javascript</span></span>, en este archivo se detallan el nombre del proyecto, version, <span class="tooltip2">scripts<span class="tooltiptext">secuencia de comandos en un lenguaje legible por una maquina</span></span> de ejecución y dependencias del proyecto</p>
+            <p><a href="desarrolloCliente/#angular" [ngStyle]="{'color': getRandom(2)}">angular.json :</a> Archivo principal de configuración de un proyecto angular, en el se definen propiedades para las diferentes etapas de construcción del proyecto</p>
+            <p><a href="desarrolloCliente/#index" [ngStyle]="{'color': getRandom(4)}">index.html :</a> Archivo de ejecución del proyecto</p>
+            <p><a href="desarrolloCliente/#environment" [ngStyle]="{'color': getRandom(1)}">environment.ts :</a> Permite especificar variables que controlaran funciones segun el ambiente de ejecucion, por lo general pruebas/producción</p>
+            <p><a href="desarrolloCliente/#interceptor" [ngStyle]="{'color': getRandom(2)}">jwt.interceptor.ts :</a> tipo de elemento de angular que permite crear intermediarios de procesos, ejemplo, mecanismo que intercepte todas las peticiones http que salgan de la aplicación</p>
+            <p><a href="desarrolloCliente/#pagina1html" [ngStyle]="{'color': getRandom(4)}">pagina1.component.html :</a> pagina ejemplo creada para la construcción del prototipo, se construye apartir de html, css y elementos de angular</p>
+            <p><a href="desarrolloCliente/#pagina1ts" [ngStyle]="{'color': getRandom(1)}">pagina1.component.ts :</a> archivo angular en lenguajetypescript que controla el comportamiento de la pagina pagina1.component.ts</p>
+            <p><a href="desarrolloCliente/#pagina1css" [ngStyle]="{'color': getRandom(2)}">pagina1.component.css :</a> documento con los estilos a aplicar en el componente de pagina web pagina1.component.cs</p>
+          </div>
+      </section>
+
+        <section data-transition="zoom" id="package">
+          <section>
+                <h4 style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(1)}">package.json</h4>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|52">
+                    {{ '{' }}
+                    "name": "Prototipo",
+                    "version": "0.0.0",
+                    "scripts": {{ '{' }}
+                      "ng": "ng",
+                      "start": "ng serve",
+                      "build": "ng build",
+                      "test": "ng test",
+                      "lint": "ng lint",
+                      "e2e": "ng e2e"
+                    {{ '}' }},
+                    "private": true,
+                    "dependencies": {{ '{' }}
+                      "@angular/animations": "~8.0.1",
+                      "@angular/common": "~8.0.1",
+                      "@angular/compiler": "~8.0.1",
+                      "@angular/core": "~8.0.1",
+                      "@angular/forms": "~8.0.1",
+                      "@angular/platform-browser": "~8.0.1",
+                      "@angular/platform-browser-dynamic": "~8.0.1",
+                      "@angular/router": "~8.0.1",
+                      "@swimlane/ngx-datatable": "^15.0.2",
+                      "@tinymce/tinymce-angular": "^3.3.1",
+                      "alertifyjs": "^1.11.4",
+                      "bootstrap": "^4.3.1",
+                      "jquery": "^3.4.1",
+                      "ngx-bootstrap": "^4.3.0",
+                      "ngx-datatable": "^1.0.3",
+                      "rxjs": "~6.4.0",
+                      "tslib": "^1.9.0",
+                      "zone.js": "~0.9.1"
+                    {{ '}' }},
+                    "devDependencies": {{ '{' }}
+                      "@angular-devkit/build-angular": "~0.800.0",
+                      "@angular/cli": "^8.3.29",
+                      "@angular/compiler-cli": "~8.0.1",
+                      "@angular/language-service": "~8.0.1",
+                      "@types/jasmine": "~3.3.8",
+                      "@types/jasminewd2": "~2.0.3",
+                      "@types/node": "~8.9.4",
+                      "codelyzer": "^5.0.0",
+                      "jasmine-core": "~3.4.0",
+                      "jasmine-spec-reporter": "~4.2.1",
+                      "karma": "~4.1.0",
+                      "karma-chrome-launcher": "~2.2.0",
+                      "karma-coverage-istanbul-reporter": "~2.0.1",
+                      "karma-jasmine": "~2.0.1",
+                      "karma-jasmine-html-reporter": "^1.4.0",
+                      "protractor": "~5.4.0",
+                      "ts-node": "~7.0.0",
+                      "tslint": "~5.15.0",
+                      "typescript": "~3.4.3"
+                    {{ '}' }}
+                  {{ '}' }}
+                  </code></pre>
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(1)}">name :</span> Nombre del proyecto</p>
+              <pre data-id="code-animation"><code class="hljs">
+                {{ '{' }}
+                "name": "Prototipo",
+                "version": "0.0.0",
+              {{ '}' }}
+              </code></pre>
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(2)}">scripts :</span> Comandos de ejecución de tareas dentro del proyecto</p>
+              <pre data-id="code-animation"><code class="hljs">
+                {{ '{' }}
+                "scripts": {{ '{' }}
+                  "ng": "ng",
+                  "start": "ng serve",
+                  "build": "ng build",
+                  "test": "ng test",
+                  "lint": "ng lint",
+                  "e2e": "ng e2e"
+                {{ '}' }},
+                "private": true,
+              {{ '}' }}
+              </code></pre>
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(4)}">dependencies y devDependencies:</span> packetes/librerias instaladas en el proyecto</p>
+              <pre data-id="code-animation"><code class="hljs">
+                {{ '{' }}
+                "dependencies": {{ '{' }}
+                  "@angular/animations": "~8.0.1",
+                  "@angular/common": "~8.0.1",
+                  "@angular/compiler": "~8.0.1",
+                  "@angular/core": "~8.0.1",
+                  "@angular/forms": "~8.0.1",
+                  "@angular/platform-browser": "~8.0.1",
+                  "@angular/platform-browser-dynamic": "~8.0.1",
+                  "@angular/router": "~8.0.1",
+                  "@swimlane/ngx-datatable": "^15.0.2",
+                  "@tinymce/tinymce-angular": "^3.3.1",
+                  "alertifyjs": "^1.11.4",
+                  "bootstrap": "^4.3.1",
+                  "jquery": "^3.4.1",
+                  "ngx-bootstrap": "^4.3.0",
+                  "ngx-datatable": "^1.0.3",
+                  "rxjs": "~6.4.0",
+                  "tslib": "^1.9.0",
+                  "zone.js": "~0.9.1"
+                {{ '}' }},
+                "devDependencies": {{ '{' }}
+                  "@angular-devkit/build-angular": "~0.800.0",
+                  "@angular/cli": "^8.3.29",
+                  "@angular/compiler-cli": "~8.0.1",
+                  "@angular/language-service": "~8.0.1",
+                  "@types/jasmine": "~3.3.8",
+                  "@types/jasminewd2": "~2.0.3",
+                  "@types/node": "~8.9.4",
+                  "codelyzer": "^5.0.0",
+                  "jasmine-core": "~3.4.0",
+                  "jasmine-spec-reporter": "~4.2.1",
+                  "karma": "~4.1.0",
+                  "karma-chrome-launcher": "~2.2.0",
+                  "karma-coverage-istanbul-reporter": "~2.0.1",
+                  "karma-jasmine": "~2.0.1",
+                  "karma-jasmine-html-reporter": "^1.4.0",
+                  "protractor": "~5.4.0",
+                  "ts-node": "~7.0.0",
+                  "tslint": "~5.15.0",
+                  "typescript": "~3.4.3"
+                {{ '}' }}
+              {{ '}' }}
+              </code></pre>
+            </section>
+        </section>
+
+        <section data-transition="zoom" id="angular">
+          <section>
+                <h4 style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(1)}">angular.json</h4>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|132">
+                  {{ '{' }}
+                  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+                  "version": 1,
+                  "newProjectRoot": "projects",
+                  "projects": {{ '{' }}
+                    "Prototipo": {{ '{' }}
+                      "projectType": "application",
+                      "schematics": {{ '{' }}{{ '}' }},
+                      "root": "",
+                      "sourceRoot": "src",
+                      "prefix": "app",
+                      "architect": {{ '{' }}
+                        "build": {{ '{' }}
+                          "builder": "@angular-devkit/build-angular:browser",
+                          "options": {{ '{' }}
+                            "outputPath": "dist/Prototipo",
+                            "index": "src/index.html",
+                            "main": "src/main.ts",
+                            "polyfills": "src/polyfills.ts",
+                            "tsConfig": "tsconfig.app.json",
+                            "aot": false,
+                            "assets": [
+                              "src/favicon.ico",
+                              "src/assets"
+                            ],
+                            "styles": [
+                              "src/styles.css",
+                              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+                              "node_modules/@swimlane/ngx-datatable/release/index.css",
+                              "node_modules/@swimlane/ngx-datatable/release/themes/bootstrap.css",
+                              "node_modules/@swimlane/ngx-datatable/release/assets/icons.css",
+                              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                              "node_modules/alertifyjs/build/css/alertify.min.css",
+                              "node_modules/alertifyjs/build/css/themes/bootstrap.min.css"
+                              
+
+                            ],
+                            "scripts": [
+                              "node_modules/jquery/dist/jquery.min.js",
+                              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+                              "node_modules/alertifyjs/build/alertify.min.js"
+                            ]
+                          {{ '}' }},
+                          "configurations": {{ '{' }}
+                            "production": {{ '{' }}
+                              "fileReplacements": [
+                                {{ '{' }}
+                                  "replace": "src/environments/environment.ts",
+                                  "with": "src/environments/environment.prod.ts"
+                                {{ '}' }}
+                              ],
+                              "optimization": true,
+                              "outputHashing": "all",
+                              "sourceMap": false,
+                              "extractCss": true,
+                              "namedChunks": false,
+                              "aot": true,
+                              "extractLicenses": true,
+                              "vendorChunk": false,
+                              "buildOptimizer": true,
+                              "budgets": [
+                                {{ '{' }}
+                                  "type": "initial",
+                                  "maximumWarning": "2mb",
+                                  "maximumError": "5mb"
+                                {{ '}' }}
+                              ]
+                            {{ '}' }}
+                          {{ '}' }}
+                        {{ '}' }},
+                        "serve": {{ '{' }}
+                          "builder": "@angular-devkit/build-angular:dev-server",
+                          "options": {{ '{' }}
+                            "browserTarget": "Prototipo:build"
+                          {{ '}' }},
+                          "configurations": {{ '{' }}
+                            "production": {{ '{' }}
+                              "browserTarget": "Prototipo:build:production"
+                            {{ '}' }}
+                          {{ '}' }}
+                        {{ '}' }},
+                        "extract-i18n": {{ '{' }}
+                          "builder": "@angular-devkit/build-angular:extract-i18n",
+                          "options": {{ '{' }}
+                            "browserTarget": "Prototipo:build"
+                          {{ '}' }}
+                        {{ '}' }},
+                        "test": {{ '{' }}
+                          "builder": "@angular-devkit/build-angular:karma",
+                          "options": {{ '{' }}
+                            "main": "src/test.ts",
+                            "polyfills": "src/polyfills.ts",
+                            "tsConfig": "tsconfig.spec.json",
+                            "karmaConfig": "karma.conf.js",
+                            "assets": [
+                              "src/favicon.ico",
+                              "src/assets"
+                            ],
+                            "styles": [
+                              "src/styles.css"
+                            ],
+                            "scripts": []
+                          {{ '}' }}
+                        {{ '}' }},
+                        "lint": {{ '{' }}
+                          "builder": "@angular-devkit/build-angular:tslint",
+                          "options": {{ '{' }}
+                            "tsConfig": [
+                              "tsconfig.app.json",
+                              "tsconfig.spec.json",
+                              "e2e/tsconfig.json"
+                            ],
+                            "exclude": [
+                              "**/node_modules/**"
+                            ]
+                          {{ '}' }}
+                        {{ '}' }},
+                        "e2e": {{ '{' }}
+                          "builder": "@angular-devkit/build-angular:protractor",
+                          "options": {{ '{' }}
+                            "protractorConfig": "e2e/protractor.conf.js",
+                            "devServerTarget": "Prototipo:serve"
+                          {{ '}' }},
+                          "configurations": {{ '{' }}
+                            "production": {{ '{' }}
+                              "devServerTarget": "Prototipo:serve:production"
+                            {{ '}' }}
+                          {{ '}' }}
+                        {{ '}' }}
+                      {{ '}' }}
+                    {{ '}' }}{{ '}' }},
+                  "defaultProject": "Prototipo"
+                {{ '}' }}
+                  </code></pre>
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(1)}">assets :</span> rutas de archivos accedidos como rutas externas, suelen usarse para archivos como imagenes,<span class="tooltip2">scripts<span class="tooltiptext">secuencia de comandos en un lenguaje legible por una maquina</span></span>, estilos y videos</p>
+              <pre data-id="code-animation"><code class="hljs">
+                {{ '{' }}
+                "assets": [
+                "src/favicon.ico",
+                "src/assets"
+              ],
+              {{ '}' }}
+              </code></pre>
+            </section>
+
+            <section style="padding: 3rem;">
+              <p><span [ngStyle]="{'color': getRandom(2)}">styles y scripts :</span> rutas de paquetes deneralmente dentro del node_module que se cargaran al momento del despliegue de la aplicación</p>
+              <pre data-id="code-animation"><code class="hljs">
+                {{ '{' }}
+                "styles": [
+                "src/styles.css",
+                "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+                "node_modules/@swimlane/ngx-datatable/release/index.css",
+                "node_modules/@swimlane/ngx-datatable/release/themes/bootstrap.css",
+                "node_modules/@swimlane/ngx-datatable/release/assets/icons.css",
+                "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                "node_modules/alertifyjs/build/css/alertify.min.css",
+                "node_modules/alertifyjs/build/css/themes/bootstrap.min.css"
+                
+
+              ],
+              "scripts": [
+                "node_modules/jquery/dist/jquery.min.js",
+                "node_modules/bootstrap/dist/js/bootstrap.min.js",
+                "node_modules/alertifyjs/build/alertify.min.js"
+              ]
+              {{ '}' }}
+              </code></pre>
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(4)}">test:</span> configuración relacionada con la fase de pruebas comunmente ejecutada con el comando <b>ng test</b></p>
+              <pre data-id="code-animation"><code class="hljs">
+                {{ '{' }}
+                "test": {{ '{' }}
+                "builder": "@angular-devkit/build-angular:karma",
+                "options": {{ '{' }}
+                  "main": "src/test.ts",
+                  "polyfills": "src/polyfills.ts",
+                  "tsConfig": "tsconfig.spec.json",
+                  "karmaConfig": "karma.conf.js",
+                  "assets": [
+                    "src/favicon.ico",
+                    "src/assets"
+                  ],
+                  "styles": [
+                    "src/styles.css"
+                  ],
+                  "scripts": []
+                {{ '}' }}
+              {{ '}' }},
+              {{ '}' }}
+              </code></pre>
+            </section>
+        </section>
+
+        <section data-transition="zoom" id="index">
+          <section>
+                <h4 style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(1)}">index.html</h4>
+                <pre data-id="code-animation"><code class="hljs">
+                  {{ '<' }}!doctype html{{ '>' }}
+                  {{ '<' }}html lang="en"{{ '>' }}
+                  {{ '<' }}head{{ '>' }}
+                    {{ '<' }}meta charset="utf-8"{{ '>' }}
+                    {{ '<' }}title{{ '>' }}Prototipo DevOps{{ '<' }}/title{{ '>' }}
+                    {{ '<' }}base href="/"{{ '>' }}
+                  
+                    {{ '<' }}meta name="viewport" content="width=device-width, initial-scale=1"{{ '>' }}
+                    {{ '<' }}link rel="icon" type="image/x-icon" href="favicon.ico"{{ '>' }}
+                  {{ '<' }}/head{{ '>' }}
+                  {{ '<' }}body{{ '>' }}
+                    {{ '<' }}app-root{{ '>' }}{{ '<' }}/app-root{{ '>' }}
+                  {{ '<' }}/body{{ '>' }}
+                  {{ '<' }}/html{{ '>' }}                  
+                </code></pre>
+                
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(1)}">base :</span> patron de enrutamiento del proyecto, debe ser cambiado bajo circunstancias especificas de algunos proyectos que asi lo requieran</p>
+              <pre data-id="code-animation"><code class="hljs">
+                <base href="/">
+              </code></pre>
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(2)}">app-root :</span> nombre de la propiedad selector del componente principal(app.component) del proyecto angular</p>
+              <pre data-id="code-animation"><code class="hljs">
+                <app-root></app-root>
+              </code></pre>
+            </section>
+
+        </section>
+
+
+        <section data-transition="zoom" id="environment">
+          <section style="padding: 3rem;">
+                <h4 style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(1)}">environment.ts</h4>
+                <p style="font-size: x-large;">Archivo al que se le deben especificar las variables que dependan de diferentes ambientes, en el ejemplo se indica que el proyecto se ejecuta en ambiente no productivo, tambien se indica la url del servicio rest <span class="tooltip2">API<span class="tooltiptext">Interfaz de programación de aplicaciones</span></span> a consumir</p>
+                <pre data-id="code-animation"><code class="hljs">
+                  export const environment = {{ '{' }}
+                    production: false,
+                    API_BASE_PATH: 'http://localhost:8181/api',
+                    {{ '}' }};                  
+                  </code></pre>
+            </section>
+
+        </section>
+
+        <section data-transition="zoom" id="interceptor">
+          <section>
+                <h4 style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(1)}">jwt.interceptor.ts</h4>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|20">
+                  import {{ '{' }} Injectable {{ '}' }} from '@angular/core';
+                  import {{ '{' }} HttpRequest, HttpHandler, HttpEvent, HttpInterceptor {{ '}' }} from '@angular/common/http';
+                  import {{ '{' }} Observable {{ '}' }} from 'rxjs';
+                  
+                  @Injectable{{ '(' }}{{ ')' }}
+                  export class JwtInterceptor implements HttpInterceptor {{ '{' }}
+                  
+                    intercept{{ '(' }}request: HttpRequest{{ '<' }}any{{ '>' }}, next: HttpHandler{{ ')' }}: Observable{{ '<' }}HttpEvent{{ '<' }}any{{ '>' }}{{ '>' }} {{ '{' }}
+                  
+                      // header de autenticacion con jwt token 
+                      let currentUser = JSON.parse{{ '(' }}localStorage.getItem{{ '(' }}'currentUser'{{ ')' }}{{ ')' }};
+                      if {{ '(' }}currentUser && currentUser.token{{ ')' }} {{ '{' }}
+                        request = request.clone{{ '(' }}{{ '{' }}
+                          setHeaders: {{ '{' }}
+                            Authorization: `Bearer ${{ '{' }}currentUser.token{{ '}' }}`
+                          {{ '}' }}
+                        {{ '}' }}{{ ')' }};
+                      {{ '}' }}
+                      return next.handle{{ '(' }}request{{ ')' }};
+                    {{ '}' }}
+                  {{ '}' }}
+                  </code></pre>
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(1)}">Injectable :</span> configuración propia de angular cuya finalidad es definir la clase como un servicio</p>
+              <pre data-id="code-animation"><code class="hljs">
+                @Injectable{{ '(' }}{{ ')' }}
+              </code></pre>
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(2)}">HttpInterceptor :</span> tipo de elemento propio de angular que permite heredar caracteristicas de una clase que permite interceptar las peticiones http salientes</p>
+              <pre data-id="code-animation"><code class="hljs">
+                export class JwtInterceptor implements HttpInterceptor {{ '{' }}
+              </code></pre>
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(4)}">intercept :</span> metodo sobre escrito de la clase HttpInterceptor para customizar las peticiones http</p>
+              <pre data-id="code-animation"><code class="hljs">
+                intercept{{ '(' }}request: HttpRequest{{ '<' }}any{{ '>' }}, next: HttpHandler{{ ')' }}: Observable{{ '<' }}HttpEvent{{ '<' }}any{{ '>' }}{{ '>' }} {{ '{' }}
+              </code></pre>
+            </section>
+
+        </section>
+
+        <section data-transition="zoom" id="pagina1html">
+          <section>
+                <h4 style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(1)}">pagina1.component.html</h4>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|20">
+                  {{ '<' }}h2{{ '>' }}Pagina1{{ '<' }}/h2{{ '>' }}
+
+                  {{ '<' }}!--{{ '<' }}button {{ '(' }}click{{ ')' }}='ngOnInit{{ '(' }}{{ ')' }}' class="btn btn-primary mb-2"{{ '>' }}Actualizar{{ '<' }}/button{{ '>' }}--{{ '>' }}
+                  {{ '<' }}hr{{ '>' }}
+                  {{ '<' }}div *ngIf="message" class="alert alert-warning alert-dismissible fade show" role="alert"{{ '>' }}
+                    {{ '<' }}strong{{ '>' }}Atención !!! {{ '<' }}/strong{{ '>' }} 
+                    {{ '<' }}button type="button" class="close" data-dismiss="alert" aria-label="Close"{{ '>' }}
+                      {{ '<' }}span aria-hidden="true"{{ '>' }}&times;{{ '<' }}/span{{ '>' }}
+                    {{ '<' }}/button{{ '>' }}
+                  {{ '<' }}/div{{ '>' }}
+                  {{ '<' }}button type="button" class="btn btn-warning" data-toggle="modal" data-target="#insertPagina1Panel"
+                  {{ '(' }}click{{ ')' }}="loadPagina1FormPanel{{ '(' }}{{ ')' }}" data-whatever="@mdo"{{ '>' }}Crear Registro Pagina1{{ '<' }}/button{{ '>' }}
+                  {{ '<' }}div class="modal fade" id="insertPagina1Panel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"{{ '>' }}
+                    {{ '<' }}div class="modal-dialog" role="document"{{ '>' }}
+                      {{ '<' }}div class="modal-content"{{ '>' }}
+                        {{ '<' }}div class="modal-header"{{ '>' }}
+                          {{ '<' }}h5 class="modal-title" id="exampleModalLabel"{{ '>' }}Crear Registro Pagina1...{{ '<' }}/h5{{ '>' }}
+                          {{ '<' }}button type="button" class="close" data-dismiss="modal" aria-label="Close"{{ '>' }}
+                            {{ '<' }}span aria-hidden="true"{{ '>' }}&times;{{ '<' }}/span{{ '>' }}
+                          {{ '<' }}/button{{ '>' }}
+                        {{ '<' }}/div{{ '>' }}
+                        {{ '<' }}div *ngIf="controlPagina1Form; else elseBlock1" class="modal-body"{{ '>' }}
+                          {{ '<' }}form [formGroup]="Pagina1Form" {{ '(' }}ngSubmit{{ ')' }}="savePagina1{{ '(' }}{{ ')' }}"{{ '>' }}
+                            {{ '<' }}div class="form-group"{{ '>' }}
+                              {{ '<' }}label{{ '>' }}campo1{{ '<' }}/label{{ '>' }}
+                              {{ '<' }}input type="text" formControlName="campo1" class="form-control"
+                                 /{{ '>' }}
+                              {{ '<' }}div *ngIf="f.campo1.errors" class="invalid-feedback"{{ '>' }}
+                                {{ '<' }}div *ngIf="f.campo1.errors.required"{{ '>' }}campo1 es requerido{{ '<' }}/div{{ '>' }}
+                              {{ '<' }}/div{{ '>' }}
+                            {{ '<' }}/div{{ '>' }}
+                            {{ '<' }}div class="form-group"{{ '>' }}
+                              {{ '<' }}label{{ '>' }}campo2{{ '<' }}/label{{ '>' }}
+                              {{ '<' }}input type="text" formControlName="campo2" class="form-control"
+                                 /{{ '>' }}
+                              {{ '<' }}div *ngIf="f.campo2.errors" class="invalid-feedback"{{ '>' }}
+                                {{ '<' }}div *ngIf="f.campo2.errors.required"{{ '>' }}campo2 es requerido{{ '<' }}/div{{ '>' }}
+                              {{ '<' }}/div{{ '>' }}
+                            {{ '<' }}/div{{ '>' }}
+                            {{ '<' }}div class="form-group"{{ '>' }}
+                              {{ '<' }}label{{ '>' }}campo3{{ '<' }}/label{{ '>' }}
+                              {{ '<' }}input type="text" formControlName="campo3" class="form-control"
+                                /{{ '>' }}
+                              {{ '<' }}div *ngIf="f.campo3.errors" class="invalid-feedback"{{ '>' }}
+                                {{ '<' }}div *ngIf="f.campo3.errors.campo3"{{ '>' }}campo3 debe ser formato email{{ '<' }}/div{{ '>' }}
+                                {{ '<' }}div *ngIf="f.campo3.errors.required"{{ '>' }}campo3 es requerido{{ '<' }}/div{{ '>' }}
+                              {{ '<' }}/div{{ '>' }}
+                            {{ '<' }}/div{{ '>' }}
+                            {{ '<' }}div class="form-group"{{ '>' }}
+                              {{ '<' }}label{{ '>' }}campo4{{ '<' }}/label{{ '>' }}
+                              {{ '<' }}input type="text" formControlName="campo4" class="form-control"
+                                /{{ '>' }}
+                              {{ '<' }}div *ngIf="f.campo4.errors" class="invalid-feedback"{{ '>' }}
+                                {{ '<' }}div *ngIf="f.campo4.errors.required"{{ '>' }}campo4 es requerido{{ '<' }}/div{{ '>' }}
+                              {{ '<' }}/div{{ '>' }}
+                            {{ '<' }}/div{{ '>' }}
+                            {{ '<' }}!-- {{ '<' }}div class="form-group"{{ '>' }}
+                              {{ '<' }}label{{ '>' }}campo5{{ '<' }}/label{{ '>' }}
+                              {{ '<' }}textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"  type="text" formControlName="campo5" class="form-control"
+                                 {{ '>' }}{{ '<' }}/textarea{{ '>' }}
+                              {{ '<' }}div *ngIf="f.campo5.errors" class="invalid-feedback"{{ '>' }}
+                                {{ '<' }}div *ngIf="f.campo5.errors.required"{{ '>' }}campo5 is required{{ '<' }}/div{{ '>' }}
+                              {{ '<' }}/div{{ '>' }}
+                            {{ '<' }}/div{{ '>' }} --{{ '>' }}
+                            {{ '<' }}div class="form-group"{{ '>' }}
+                              {{ '<' }}label{{ '>' }}campo5{{ '<' }}/label{{ '>' }}
+                              {{ '<' }}editor formControlName="campo5" {{ '>' }}{{ '<' }}/editor{{ '>' }}
+                              {{ '<' }}div *ngIf="f.campo5.errors" class="invalid-feedback"{{ '>' }}
+                                {{ '<' }}div *ngIf="f.campo5.errors.required"{{ '>' }}campo5 es requerido{{ '<' }}/div{{ '>' }}
+                              {{ '<' }}/div{{ '>' }}
+                            {{ '<' }}/div{{ '>' }}
+                            {{ '<' }}div class="modal-footer"{{ '>' }}
+                              {{ '<' }}button type="submit" class="btn btn-primary"{{ '>' }}Crear{{ '<' }}/button{{ '>' }}
+                            {{ '<' }}/div{{ '>' }}
+                          {{ '<' }}/form{{ '>' }}
+                        {{ '<' }}/div{{ '>' }}
+                        {{ '<' }}ng-template #elseBlock1{{ '>' }}
+                          {{ '<' }}div class="modal-body"{{ '>' }}
+                            {{ '<' }}h5{{ '>' }}Información.....!{{ '<' }}/h5{{ '>' }}
+                            {{ '<' }}strong{{ '>' }}Pagina1 agregado.....{{ '<' }}/strong{{ '>' }}
+                          {{ '<' }}/div{{ '>' }}
+                        {{ '<' }}/ng-template{{ '>' }}
+                        {{ '<' }}div class="modal-footer"{{ '>' }}
+                          {{ '<' }}button class="btn btn-secondary" data-dismiss="modal"{{ '>' }}Cerrar{{ '<' }}/button{{ '>' }}
+                        {{ '<' }}/div{{ '>' }}
+                      {{ '<' }}/div{{ '>' }}
+                    {{ '<' }}/div{{ '>' }}
+                  {{ '<' }}/div{{ '>' }}
+                  {{ '<' }}form class="form-inline" [formGroup]="searchForm" {{ '(' }}ngSubmit{{ ')' }}="searchPagina1{{ '(' }}{{ ')' }}"{{ '>' }}
+                    {{ '<' }}div class="form-group"{{ '>' }}
+                      {{ '<' }}label for="inputPassword6"{{ '>' }}Ingrese Campo1 o Campo2 : {{ '<' }}/label{{ '>' }}
+                      {{ '<' }}input  type="text" class="form-control mx-sm-3" placeholder="Mínimo 3 caracteres" formControlName="campo1" class="form-control"
+                         /{{ '>' }}
+                      {{ '<' }}div *ngIf="sf.campo1.errors" class="invalid-feedback"{{ '>' }}
+                        {{ '<' }}div *ngIf="sf.campo1.errors.minLength"{{ '>' }}campo1 Mínimo 3 caracteres.{{ '<' }}/div{{ '>' }}
+                      {{ '<' }}/div{{ '>' }}
+                    {{ '<' }}/div{{ '>' }}
+                    {{ '<' }}div class="from-group"{{ '>' }}
+                      {{ '<' }}button type="submit" class="btn btn-primary mb-2"{{ '>' }} Buscar {{ '<' }}/button{{ '>' }}
+                    {{ '<' }}/div{{ '>' }}
+                  {{ '<' }}/form{{ '>' }}
+                  {{ '<' }}hr{{ '>' }}
+                  {{ '<' }}div *ngIf="control; else elseBlock2"{{ '>' }}
+                    {{ '<' }}ngx-datatable
+                    class="bootstrap"
+                    [rows]="rows"
+                    [columnMode]="'force'"
+                    [headerHeight]="50"
+                    [footerHeight]="50"
+                    [rowHeight]="'auto'"
+                    [externalPaging]="true"
+                    [count]="page.totalElements"
+                    [offset]="page.page"
+                    [limit]="page.size"
+                    {{ '(' }}page{{ ')' }}='setPage{{ '(' }}$event{{ ')' }}'{{ '>' }}
+                      {{ '<' }}ngx-datatable-column prop="id" campo1="No" maxWidth="40"  sortable="false"{{ '>' }}{{ '<' }}/ngx-datatable-column{{ '>' }}
+                      {{ '<' }}ngx-datatable-column prop="campo1" campo1="campo1" sortable="false"{{ '>' }}{{ '<' }}/ngx-datatable-column{{ '>' }}
+                      {{ '<' }}ngx-datatable-column prop="campo2" campo1="campo2" sortable="false"{{ '>' }}{{ '<' }}/ngx-datatable-column{{ '>' }}
+                      {{ '<' }}ngx-datatable-column prop="campo3" campo1="campo3" sortable="false"{{ '>' }}{{ '<' }}/ngx-datatable-column{{ '>' }}
+                      {{ '<' }}ngx-datatable-column prop="campo4" campo1="campo4" sortable="false"{{ '>' }}{{ '<' }}/ngx-datatable-column{{ '>' }}
+                      {{ '<' }}ngx-datatable-column prop="" campo1="Actions " sortable="false"{{ '>' }}
+                        {{ '<' }}ng-template let-value="value" ngx-datatable-cell-template{{ '>' }}
+                          {{ '<' }}a [routerLink]="['pagina1-detail/',value.id]" class="btn btn-sm btn-info"{{ '>' }}{{ '<' }}strong{{ '>' }}Ver en detalle{{ '<' }}/strong{{ '>' }}{{ '<' }}/a{{ '>' }}
+                          {{ '<' }}button class="btn btn-sm btn-danger" {{ '(' }}click{{ ')' }}="deletePagina1{{ '(' }}value.id{{ ')' }}" {{ '>' }}{{ '<' }}strong{{ '>' }}Eliminar{{ '<' }}/strong{{ '>' }}{{ '<' }}/button{{ '>' }}
+                        {{ '<' }}/ng-template{{ '>' }}
+                      {{ '<' }}/ngx-datatable-column{{ '>' }}
+                    {{ '<' }}/ngx-datatable{{ '>' }}
+                  {{ '<' }}/div{{ '>' }}
+                  
+                  {{ '<' }}ng-template #elseBlock2{{ '>' }}
+                    {{ '<' }}table class="table table-striped"{{ '>' }}
+                      {{ '<' }}thead{{ '>' }}
+                        {{ '<' }}tr{{ '>' }}
+                          {{ '<' }}th scope="col"{{ '>' }}id{{ '<' }}/th{{ '>' }}
+                          {{ '<' }}th scope="col"{{ '>' }}campo1{{ '<' }}/th{{ '>' }}
+                          {{ '<' }}th scope="col"{{ '>' }}campo2{{ '<' }}/th{{ '>' }}
+                          {{ '<' }}th scope="col"{{ '>' }}campo3{{ '<' }}/th{{ '>' }}
+                          {{ '<' }}th scope="col"{{ '>' }}campo4{{ '<' }}/th{{ '>' }}
+                          {{ '<' }}th scope="col"{{ '>' }}{{ '<' }}/th{{ '>' }}
+                        {{ '<' }}/tr{{ '>' }}
+                      {{ '<' }}/thead{{ '>' }}
+                      {{ '<' }}tbody{{ '>' }}
+                        {{ '<' }}tr  *ngFor="let auth of pagina1s"{{ '>' }}
+                          
+                          {{ '<' }}td{{ '>' }}
+                            {{ '<' }}a [routerLink]="['pagina1-detail/',auth.id]" class="btn btn-sm btn-info"{{ '>' }}{{ '<' }}strong{{ '>' }}Ver en detalle{{ '<' }}/strong{{ '>' }}{{ '<' }}/a{{ '>' }}
+                            {{ '<' }}button class="btn btn-sm btn-danger" {{ '(' }}click{{ ')' }}="deletePagina1{{ '(' }}auth.id{{ ')' }}" {{ '>' }}{{ '<' }}strong{{ '>' }}Eliminar{{ '<' }}/strong{{ '>' }}{{ '<' }}/button{{ '>' }}{{ '<' }}/td{{ '>' }}
+                        {{ '<' }}/tr{{ '>' }}
+                      {{ '<' }}/tbody{{ '>' }}
+                    {{ '<' }}/table{{ '>' }}
+                    {{ '<' }}hr{{ '>' }}
+                  {{ '<' }}/ng-template{{ '>' }}
+                  </code></pre>
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(1)}">*ngIf :</span> elemento de angular llamado directiva, este permite mostrar en el dom de la pagina el contenido si cumple la condición escrita</p>
+              
+                <img src="assets/img/pagina6.png">
+              
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(2)}">interpolación de texto :</span> permite imprimir contenido de texto proveniente del controlador angular, archivo de extension (.ts)</p>
+              
+                <img src="assets/img/pagina7.png">
+              
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(4)}">input y output :</span> elementos asignados dentro de corchetes[] obedecen a la propiedad input, elementos asignados dentro de un parentesis() obedecen a la propiedad outputs, su funcionalidad es permitir ingresar y extraer información de los componentes </p>
+              
+                <img src="assets/img/pagina8.png">
+              
+            </section>
+
+        </section>
+
+        <section data-transition="zoom" id="pagina1ts">
+          <section>
+                <h4 style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(1)}">pagina1.component.ts</h4>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="2|126">
+                  import {{ '{' }} Component, OnInit, TemplateRef, ViewChild {{ '}' }} from '@angular/core';
+                  import {{ '{' }} Pagina1Service {{ '}' }} from 'src/app/services/pagina1.service';
+                  import {{ '{' }} Page {{ '}' }} from 'src/app/shared/Page';
+                  import {{ '{' }} ModalDirective {{ '}' }} from 'ngx-bootstrap';
+                  import {{ '{' }} FormGroup, FormBuilder, Validators {{ '}' }} from '@angular/forms';
+                  import {{ '{' }} AlertifyService {{ '}' }} from 'src/app/services/alertify.service';
+
+                  @Component{{ '(' }}{{ '{' }}
+                    selector: 'app-pagina1',
+                    templateUrl: './pagina1.component.html',
+                    styleUrls: {{ '[' }}'./pagina1.component.css'{{ ']' }}
+                  }{{ ')' }}
+                  export class Pagina1Component implements OnInit {{ '{' }}
+                    pagina1s = {{ '[' }}{{ ']' }};
+                    rows = {{ '[' }}{{ ']' }};
+                    cols = {{ '[' }}{{ ']' }};
+                    page = new Page{{ '(' }}{{ ')' }};
+                    control = true;
+                    controlPagina1Form = true;
+                    
+                    Pagina1Form: FormGroup;
+
+                    searchForm: FormGroup;
+                    message: string | undefined;
+                    constructor{{ '(' }}private pagina1Service: Pagina1Service,
+                                private alert: AlertifyService,
+                                private formBuilder: FormBuilder{{ ')' }} {{ '{' }} {{ '}' }}
+
+                    ngOnInit{{ '(' }}{{ ')' }} {{ '{' }}
+                      this.control = true;
+                      this.loadStaticPage{{ '(' }}{{ ')' }};
+                    {{ '}' }}
+
+                    loadStaticPage{{ '(' }}{{ ')' }}{{ '{' }}
+                      this.setPage{{ '(' }}{{ '{' }} offset: 0 }{{ ')' }};
+                      this.searchForm=  this.formBuilder.group{{ '(' }}{{ '{' }}
+                        'campo1': {{ '[' }}null, {{ '[' }}Validators.minLength{{ '(' }}3{{ ')' }}{{ ']' }}{{ ']' }}
+                      {{ '}' }}{{ ')' }};
+                      this.Pagina1Form = this.formBuilder.group{{ '(' }}{{ '{' }}
+                        'campo1': {{ '[' }}null, {{ '[' }}Validators.required{{ ']' }}{{ ']' }},
+                        'campo2': {{ '[' }}null, {{ '[' }}Validators.required{{ ']' }}{{ ']' }},
+                        'campo5': {{ '[' }}null, {{ '[' }}Validators.required{{ ']' }}{{ ']' }},
+                        'campo3': {{ '[' }}null, {{ '[' }}Validators.email{{ ']' }}{{ ']' }},
+                        'campo4': {{ '[' }}null, {{ '[' }}Validators.required{{ ']' }}{{ ']' }}
+                      {{ '}' }}{{ ')' }};
+                    {{ '}' }}
+
+                    loadPagina1s{{ '(' }}{{ ')' }}{{ '{' }}
+                      this.pagina1Service.getAll{{ '(' }}{{ ')' }}.subscribe{{ '(' }}res ={{ '>' }} {{ '{' }}
+                        this.pagina1s = res;
+                      {{ '}' }}
+                    {{ '}' }}
+
+                    loadPagina1FormPanel{{ '(' }}{{ ')' }}{{ '{' }}
+                      this.controlPagina1Form=true;
+                      this.Pagina1Form = this.formBuilder.group{{ '(' }}{{ '{' }}
+                        'campo1': {{ '[' }}null, {{ '[' }}Validators.required{{ ']' }}{{ ']' }},
+                        'campo2': {{ '[' }}null, {{ '[' }}Validators.required{{ ']' }}{{ ']' }},
+                        'campo5': {{ '[' }}null, {{ '[' }}Validators.required{{ ']' }}{{ ']' }},
+                        'campo3': {{ '[' }}null, {{ '[' }}Validators.email,Validators.required{{ ']' }}{{ ']' }},
+                        'campo4': {{ '[' }}null, {{ '[' }}Validators.required{{ ']' }}{{ ']' }},
+                      {{ '}' }}{{ ')' }};
+                    {{ '}' }}
+
+                    setPage{{ '(' }}pageInfo{{ ')' }} {{ '{' }}
+                      this.page.page = pageInfo.offset;
+                      this.pagina1Service.getAllPageable{{ '(' }}this.page{{ ')' }}.subscribe{{ '(' }}pagedData ={{ '>' }} {{ '{' }}
+                        this.page.size = pagedData.size;
+                        this.page.page = pagedData.page;
+                        this.page.totalElements = pagedData.totalElements;
+                        this.rows = pagedData.content;
+                      {{ '}' }}{{ ')' }};
+                    {{ '}' }}
+                    savePagina1{{ '(' }}{{ ')' }}{{ '{' }}
+                      if {{ '(' }}!this.Pagina1Form.valid{{ ')' }} {{ '{' }}
+                        return;
+                      {{ '}' }}
+                      this.pagina1Service.post{{ '(' }}this.Pagina1Form.value{{ ')' }}.subscribe{{ '(' }}
+                        res ={{ '>' }} {{ '{' }}
+                        this.Pagina1Form.reset{{ '(' }}{{ ')' }};
+                        this.setPage{{ '(' }}{{ '{' }} offset: 0 }{{ ')' }};
+                        this.controlPagina1Form = false;
+                        this.message = 'El registro es exitoso.';
+                        this.alert.success{{ '(' }} 'El registro es exitoso.'{{ ')' }};
+                        {{ '}' }},
+                        error ={{ '>' }}{{ '{' }}
+                          this.alert.error{{ '(' }}'Registro fallido {{ '<' }}br/{{ '>' }} Error : ' + error{{ ')' }};
+                          this.message = 'Registro fallido';
+                        {{ '}' }}{{ ')' }};
+                    {{ '}' }}
+                    deletePagina1{{ '(' }}id{{ ')' }}{{ '{' }}
+                      console.log{{ '(' }}id{{ ')' }};
+                      this.pagina1Service.delete{{ '(' }}id{{ ')' }}.subscribe{{ '(' }}
+                        res={{ '>' }}{{ '{' }}
+                          this.alert.success{{ '(' }}'Su registro ha sido eliminado..'{{ ')' }};
+                          this.setPage{{ '(' }}{{ '{' }} offset: 0 }{{ ')' }};
+                          this.control = true;
+                          this.loadStaticPage{{ '(' }}{{ ')' }};
+                        {{ '}' }},
+                        error ={{ '>' }}{{ '{' }}
+                          this.alert.error{{ '(' }}'No se pudo borrar su registro..{{ '<' }}br/{{ '>' }}Error : ' + error{{ ')' }};
+                          this.loadStaticPage{{ '(' }}{{ ')' }};
+                        {{ '}' }}
+                      {{ ')' }};
+                    {{ '}' }}
+
+                    searchPagina1{{ '(' }}{{ ')' }}{{ '{' }}
+                      if {{ '(' }}!this.searchForm.valid{{ ')' }} {{ '{' }}
+                        return;
+                      {{ '}' }}
+                      this.pagina1Service.findAllByCampo1{{ '(' }}this.searchForm.value{{ '[' }}'campo1'{{ ']' }}{{ ')' }}.subscribe{{ '(' }}res ={{ '>' }} {{ '{' }}
+                        this.pagina1s = res;
+                        this.control = false;
+                        this.message = 'Se han encontrado registros.';
+                        this.alert.success{{ '(' }}'Se han encontrado registros.'{{ ')' }};
+                      {{ '}' }}, 
+                      error ={{ '>' }}{{ '{' }}
+                        this.message = 'No se encontraron registros' ;
+                        this.alert.error{{ '(' }}'No se encontraron registros '{{ ')' }};      
+                        this.control = true;
+                        this.loadStaticPage{{ '(' }}{{ ')' }};
+                      {{ '}' }}{{ ')' }};
+                    {{ '}' }}
+
+                    get sf{{ '(' }}{{ ')' }} {{ '{' }} return this.searchForm.controls; }
+                    get f{{ '(' }}{{ ')' }} {{ '{' }} return this.Pagina1Form.controls; }
+                  {{ '}' }}
+
+                  </code></pre>
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(1)}">Component :</span> definición de capacidades del componente pagina1.component</p>
+              <pre data-id="code-animation"><code class="hljs">
+                @Component{{ '(' }}{{ '{' }}
+                selector: 'app-pagina1',
+                templateUrl: './pagina1.component.html',
+                styleUrls: {{ '[' }}'./pagina1.component.css'{{ ']' }}
+              }{{ ')' }}
+              </code></pre>
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(2)}">clase :</span> definición de la clase Pagina1Component que funge como controlador de la pagina1.component, se le asignan funcionalidades adcionales con la implementacion de la interfaz OnInit</p>
+              <pre data-id="code-animation"><code class="hljs">
+                export class Pagina1Component implements OnInit {{ '{' }}
+              </code></pre>
+            </section>
+
+            <section>
+              <p><span [ngStyle]="{'color': getRandom(4)}">constructor :</span> funcionalidad que permite instanciar una clase asi como en los demas lenguajes orientados a objetos</p>
+              <pre data-id="code-animation"><code class="hljs">
+                constructor{{ '(' }}private pagina1Service: Pagina1Service,
+                private alert: AlertifyService,
+                private formBuilder: FormBuilder{{ ')' }} {{ '{' }} {{ '}' }}
+              </code></pre>
+            </section>
+
+            <section style="padding-top: 5rem;">
+              <p style="font-size: x-large;"><span [ngStyle]="{'color': getRandom(4)}">funciones/metodos :</span> procesos ejecutados por el usuario para el ejemplo, en este caso permiten, guardar, eliminar y buscar registro en el componente pagina1.component</p>
+              <pre data-id="code-animation"><code class="hljs">
+                savePagina1{{ '(' }}{{ ')' }}{{ '{' }}
+                if {{ '(' }}!this.Pagina1Form.valid{{ ')' }} {{ '{' }}
+                  return;
+                {{ '}' }}
+                this.pagina1Service.post{{ '(' }}this.Pagina1Form.value{{ ')' }}.subscribe{{ '(' }}
+                  res ={{ '>' }} {{ '{' }}
+                  this.Pagina1Form.reset{{ '(' }}{{ ')' }};
+                  this.setPage{{ '(' }}{{ '{' }} offset: 0 }{{ ')' }};
+                  this.controlPagina1Form = false;
+                  this.message = 'El registro es exitoso.';
+                  this.alert.success{{ '(' }} 'El registro es exitoso.'{{ ')' }};
+                  {{ '}' }},
+                  error ={{ '>' }}{{ '{' }}
+                    this.alert.error{{ '(' }}'Registro fallido {{ '<' }}br/{{ '>' }} Error : ' + error{{ ')' }};
+                    this.message = 'Registro fallido';
+                  {{ '}' }}{{ ')' }};
+              {{ '}' }}
+              deletePagina1{{ '(' }}id{{ ')' }}{{ '{' }}
+                console.log{{ '(' }}id{{ ')' }};
+                this.pagina1Service.delete{{ '(' }}id{{ ')' }}.subscribe{{ '(' }}
+                  res={{ '>' }}{{ '{' }}
+                    this.alert.success{{ '(' }}'Su registro ha sido eliminado..'{{ ')' }};
+                    this.setPage{{ '(' }}{{ '{' }} offset: 0 }{{ ')' }};
+                    this.control = true;
+                    this.loadStaticPage{{ '(' }}{{ ')' }};
+                  {{ '}' }},
+                  error ={{ '>' }}{{ '{' }}
+                    this.alert.error{{ '(' }}'No se pudo borrar su registro..{{ '<' }}br/{{ '>' }}Error : ' + error{{ ')' }};
+                    this.loadStaticPage{{ '(' }}{{ ')' }};
+                  {{ '}' }}
+                {{ ')' }};
+              {{ '}' }}
+
+              searchPagina1{{ '(' }}{{ ')' }}{{ '{' }}
+                if {{ '(' }}!this.searchForm.valid{{ ')' }} {{ '{' }}
+                  return;
+                {{ '}' }}
+                this.pagina1Service.findAllByCampo1{{ '(' }}this.searchForm.value{{ '[' }}'campo1'{{ ']' }}{{ ')' }}.subscribe{{ '(' }}res ={{ '>' }} {{ '{' }}
+                  this.pagina1s = res;
+                  this.control = false;
+                  this.message = 'Se han encontrado registros.';
+                  this.alert.success{{ '(' }}'Se han encontrado registros.'{{ ')' }};
+                {{ '}' }}, 
+                error ={{ '>' }}{{ '{' }}
+                  this.message = 'No se encontraron registros' ;
+                  this.alert.error{{ '(' }}'No se encontraron registros '{{ ')' }};      
+                  this.control = true;
+                  this.loadStaticPage{{ '(' }}{{ ')' }};
+                {{ '}' }}{{ ')' }};
+              </code></pre>
+            </section>
+
+        </section>
+
+        <section data-transition="zoom" id="pagina1css">
+          <section>
+                <h4 style="letter-spacing: 2px" [ngStyle]="{'color': getRandom(1)}">pagina1.component.css</h4>
+                <p>Hoja de estilos independientes para el componente pagina1.component.html, cualquier estilo escrito en esta hoja sobreescribira los pre existentes exclusivamente en el componente donde se implemente</p>
+                <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers="1|3">
+                  .modal-dialog{{ '{' }}
+                    width: 90%;
+                    {{ '}' }}
+                  </code></pre>
+            </section>
+
+        </section>
+        
+    </div>
+</div>
+
+
+<div class="divBotom">
+  <span style="display: none;"  [ngStyle]="{'color': getRandom(0)}"></span>
+  <span [ngStyle]="{'background-color': getRandom(1)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(2)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(3)}" style="display: none;"></span>
+  <span [ngStyle]="{'background-color': getRandom(4)}" style="display: none;"></span>
+  <button style="margin: 0.2rem;" mat-raised-button (click)="ir('desarrolloCliente')" [ngStyle]="{'background-color': getRandom(1)}">Volver a iniciar el <b>Contenido</b></button>
+  <button style="margin: 0.2rem;" mat-raised-button (click)="ir('home')" [ngStyle]="{'background-color': getRandom(2)}">Volver a la lista de <b>Contenido Informativo</b></button>
+  <button style="margin: 0.2rem;" mat-raised-button (click)="ir('seleccion')" [ngStyle]="{'background-color': getRandom(1)}">Volver al contenido de la etapa <b>{{proceso}}</b></button>
+  <button style="margin: 0.2rem;" mat-raised-button (click)="ir('principal')" [ngStyle]="{'background-color': getRandom(2)}">Etapas de Estudio</button>
+</div>
